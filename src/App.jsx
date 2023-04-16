@@ -1,38 +1,31 @@
 import React from "react";
-import Home from "./component/Home"
-
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-}, {
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-{
-    title: "202. Happy Number",
-    difficulty: "Easy",
-    acceptance: "54.9%"
-},
-{
-    title: "203. Remove Linked List Elements",
-    difficulty: "Hard",
-    acceptance: "42%"
-}];
-
+import { BrowserRouter as Router,Routes,Route, Link } from "react-router-dom";
+import Home from "./component/Home";
+import Login from "./component/Login"
+import SignUp from "./component/SignUp"
+import Problem from "./component/Problem"
+import ProblemSet from "./component/ProblemSet"
 
 function App() {
-
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
     return (
         <div>
-         hello
+            <Router>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/problemset/all">Problems</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/signup">SignUp</Link>
+            </nav>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/signup" element={<SignUp/>}/>
+                    <Route path="/problemset/all" element={<Problem/>}/>
+                    <Route path="/problemset/:slug" element={<ProblemSet/>}/>
+                </Routes>
+            </Router>
+
+          
         </div>
     )
 }
