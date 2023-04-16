@@ -1,25 +1,25 @@
-/*
- * Temporary problems array schema
- */
+import React from "react";
+import Home from "./component/Home"
+
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "42%"
-},{
+}, {
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "412%"
 },
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+{
+    title: "202. Happy Number",
+    difficulty: "Easy",
+    acceptance: "54.9%"
+},
+{
+    title: "203. Remove Linked List Elements",
+    difficulty: "Hard",
+    acceptance: "42%"
+}];
 
 
 function App() {
@@ -30,12 +30,11 @@ function App() {
        /problemset/all/ - All problems (see problems array above)
        /problems/:problem_slug - A single problem page
      */
-
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+        <div>
+         hello
+        </div>
+    )
 }
 
 // A demo component
