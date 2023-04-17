@@ -1,6 +1,15 @@
 /*
  * Temporary problems array schema
  */
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./Login";
+import Signup from "./Signup";
+import Allproblems  from "./Allproblems";
+import Singleproblem from "./Singleproblem";
+
+
+
+
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
@@ -31,10 +40,26 @@ function App() {
        /problems/:problem_slug - A single problem page
      */
 
+
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
+   
+    <Router>
+        <Switch>
+            <Route exact path="/login">
+             <Login />
+            </Route>
+            <Route exact path="/signup">
+            <Signup />
+            </Route>
+            <Route exact path="/problemset/all/">
+            < Allproblems />
+            </Route>
+            <Route exact path="/singleproblem/:problem_slug">
+            <Singleproblem />
+            </Route>
+        </Switch>
+    </Router>
+
   )
 }
 
