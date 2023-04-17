@@ -1,5 +1,6 @@
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import { Switch, Route} from 'react-router-dom';
 import LoginPage from './Components/LoginPage/index'
+import SignUpPage from './Components/SignUpPage'
 
 
 /*
@@ -27,11 +28,12 @@ const problems = [{
 
 
 const App = () => (
-    <BrowserRouter>
+
         <Switch>
-            <Route exact='/login' component={LoginPage} />
+            <Route exact path='/login' component={LoginPage} />
+            <Route exact path='/signup' component={SignUpPage} />
         </Switch>
-    </BrowserRouter>
+ 
 )
 
 export default App
