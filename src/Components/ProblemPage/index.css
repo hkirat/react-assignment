@@ -1,0 +1,28 @@
+li{
+    list-style: none;
+    display: flex;
+    min-height: 90%;
+
+}
+.link{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    min-height: 50vh;
+}
+.list-para1{
+    margin-left: 20px;
+    margin-right: 20px;
+    min-width: 50%;
+}
+.list-para2{
+    margin-left: 20px;
+    margin-right: 20px;
+    min-width: 20%;
+}
+.list-para3{
+    margin-left: 20px;
+    margin-right: 20px;
+    min-width: 20%;
+}

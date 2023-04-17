@@ -1,0 +1,29 @@
+.login-main-container {display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+min-height: 100vh;}
+.login-form-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #e66712; /* Orange border */
+    box-shadow: 0px 0px 10px 0px #ba3939c0; /* Orange shadow */
+  
+}
+.input-container {display: flex;
+flex-direction: column;
+margin-bottom: 10px;}
+.showpassword-container{
+    display: flex;
+    margin-bottom: 10px;
+}
+.signUpContainer{align-items: center;}
+.showpassword-check{
+    height: 15px;
+    width: 15px;
+}
+.Newuser{
+    font-size: 25px;
+    font-family: Roboto;
+}
