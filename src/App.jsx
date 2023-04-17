@@ -1,4 +1,6 @@
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import LoginPage from './Components/LoginPage/index'
+
 
 /*
  * Temporary problems array schema
@@ -24,8 +26,12 @@ const problems = [{
     }];
 
 
-const App = () => {
-
-}
+const App = () => (
+    <BrowserRouter>
+        <Switch>
+            <Route exact='/login' component={LoginPage} />
+        </Switch>
+    </BrowserRouter>
+)
 
 export default App
