@@ -1,6 +1,9 @@
-/*
- * Temporary problems array schema
- */
+import React from 'react';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+
+
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
@@ -23,28 +26,81 @@ const problems = [{
 
 
 function App() {
-
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
-
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
+        <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/problemset/all/">All Problems</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route exact path="/">
+            <h1>Welcome to the homepage!</h1>
+          </Route>
+          <Route exact path="/problemset/all/">
+            <h1>All Problems</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Acceptance</th>
+                  <th>Difficulty</th>
+                </tr>
+              </thead>
+              <tbody>
+                {problems.map((problem) => (
+                  <tr key={problem.slug}>
+                    <td>
+                      <Link to={`/problems/${problem.slug}`}>
+                        {problem.title}
+                      </Link>
+                    </td>
+                    <td>{problem.acceptance}</td>
+                    <td>{problem.difficulty}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </Route>
+          <Route path="/problems/:problemSlug">
+            <ProblemPage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
+function ProblemPage() {
+    const { problemSlug } = useParams();
+    const problem = problems.find((p) => p.slug === problemSlug);
+  
+    if (!problem) {
+      return <h1>Problem not found!</h1>;
+    }
+  
+    return (
+      <div>
+        <h1>{problem.title}</h1>
+        <h2>Difficulty: {problem.difficulty}</h2>
+        <h2>Acceptance: {problem.acceptance}</h2>
+      </div>
+    );
+  }
 
-    return <tr>
+
+
+function ProblemStatement(props) {
+    const { title, acceptance, difficulty } = props;
+
+    return (<tr>
         <td>
             {title}
         </td>
@@ -55,5 +111,6 @@ function ProblemStatement(props) {
             {difficulty}
         </td>
     </tr>
+    );
 }
 export default App
