@@ -1,42 +1,161 @@
-#root {
-  max-width: 1280px;
+.FormDiv{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.LoginBox{
+    height: 130px;
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.submit{
+  background-color: grey;
+  font-size: small;
+  
+  
+}
+
+.forget{
+  font-size: medium;
+  cursor: pointer;
+}
+.register{
+  font-size: medium;
+  cursor: pointer;
+}
+
+.create{
+  justify-content: space-between;
+  display: flex;
+}
+
+
+.signup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+
+.signupform{
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  width: 200px;
+  justify-content: space-between;
+}
+
+.signupButton{
+  background-color: grey;
+  cursor: pointer;
+}
+
+.topbar{
+  position: fixed;
+  z-index: 99;
+  height: 60px;
+  width: 100vw;
+  margin: none;
+  padding: none;
+  border: none;
+}
+
+body{
+  margin: 0%;
+}
+
+.navbar{
+
+  margin-top: 0%;
+  top: 0;
+  background-color: rgb(49, 46, 46);
+}
+
+.list{
+  margin-top: 0%;
+  display: flex;
+  text-decoration: none;
+  color: grey;
+}
+
+.options{
+  cursor: pointer;
+  list-style: none;
+  margin: 8px;
+  
+}
+
+.problems{
+  display: flex;
+  position: relative;
+  
+  align-items: center;
+  top: 34px;
+  height: calc(100vh-60px);
+  background-color: rgb(25, 25, 25);
+}
+
+.Home{
+ 
+  height: 100vh;
+  background-color: rgb(25, 25, 25);
+
+}
+
+.title{
+  color: white;
+  cursor: pointer;
+}
+.accept{
+  color: white;
+}
+
+.difficulty{
+  color: white;
+  
+}
+
+.tabel{
+  margin: 10px;
+}
+
+
+td{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.problem-details {
+  width: 80%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 16px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.problem-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.problem-description {
+  font-size: 16px;
+  line-height: 1.5;
 }
