@@ -32,7 +32,7 @@ function App() {
      */
 
     return (
-    <div>
+    <div className="bg-red-500 text-orange-400">
         Finish the assignment! Look at the comments in App.jsx as a starting point
     </div>
   )
