@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // handle form submission here
     // check if password and confirmPassword match
     if (password !== confirmPassword) {
         alert('Passwords do not match');
@@ -23,25 +26,31 @@ function Signup() {
   
     try {
     // send the POST request to the /signup endpoint
-    const response = await fetch('http://localhost:3001/signup', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-    });
-
+    const response = await axios.post('http://localhost:3001/signup', {
+        email,
+        password,
+        'role': 'user'
+      });
     // handle the response
     if (response.ok) {
         // signup was successful
         // redirect the user to the login page or show a success message
+        navigate('/login');
     } else {
         // signup failed
         // show an error message to the user
+        navigate('/signup');
     }
     } catch (error) {
     // an error occurred while sending the request
     // show an error message to the user
+        console.log(error.message)
+        if(error.message='Request failed with status code 400')
+        {
+            alert('Unable to create the user. Please contact support');
+            return;
+        }
+        navigate('/signup');
     }
   };
 

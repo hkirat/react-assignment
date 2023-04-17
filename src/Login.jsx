@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,6 +29,7 @@ function LoginPage() {
         // Handle successful login
         // You can store the token in local storage, Redux store, or a cookie for further use
         console.log('Login successful:', response.data.token);
+        navigate('/home')
       } else {
         // Handle login error
         console.error('Login failed:', response);
