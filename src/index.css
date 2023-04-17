@@ -1,0 +1,7 @@
+html, body, #app, #app>div {
+    height: 100%
+}
+
+#root {
+    height: 90vh;
+}

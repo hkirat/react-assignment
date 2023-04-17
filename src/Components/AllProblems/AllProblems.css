@@ -1,0 +1,32 @@
+table {
+    margin-top: 2rem;
+    width: 95%;
+    border-collapse: collapse;
+}
+
+
+tr {
+    color: rgb(0, 0, 156);
+    border: 1px solid grey;
+}
+
+th {
+    border: 1px solid red;
+    text-align: start;
+    padding: 0.5rem 0 0.5rem 0.3rem;
+    color: black;
+}
+
+td {
+    padding: 1rem;
+}
+
+.Easy {
+    color: green;
+}
+.Medium {
+    color: orange;
+}
+.Hard {
+    color: red;
+}
