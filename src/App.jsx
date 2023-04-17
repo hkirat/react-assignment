@@ -1,3 +1,7 @@
+import React,{ useEffect } from 'react';
+import { BrowserRouter as Router, Routes,Route,useNavigate } from 'react-router-dom';
+import Login from './Login'; 
+
 /*
  * Temporary problems array schema
  */
@@ -31,11 +35,15 @@ function App() {
        /problems/:problem_slug - A single problem page
      */
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+       
+       return (
+         <Router>
+           <Routes>
+             {/* <Route path="/" element={<Home />} /> */}
+             <Route path="/login" element={<Login />} />
+           </Routes>
+         </Router>
+       );
 }
 
 // A demo component
