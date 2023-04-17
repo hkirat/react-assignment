@@ -5,9 +5,13 @@ class LoginPage extends Component{
     state={username:'',password:'', loginStatus:true, showpassword:true}
 
     onSuccessfullLogin= ()=> {
-        const { history } = this.props
-        history.replace('/')
-    }
+        const { username, password } = this.state;
+        if (username.length !== 0 && password.length !== 0) {  
+          this.setState({ loginStatus: true });
+          const { history } = this.props;
+          history.replace('/problemset/all/');
+
+    }}
 
     onClickLoginButton = Event=> {
         const {loginStatus} = this.state
@@ -29,13 +33,18 @@ class LoginPage extends Component{
         this.setState((prevState) => ({ showpassword: !prevState.showpassword }));
     }
 
+    OnClickSignup=()=>{
+        const {history} = this.props
+        history.push('/signup')
+    }
+
     render(){
         return(
             <div className='login-main-container'>
                 <form className='login-form-container' onSubmit={this.onClickLoginButton}>
                     <div className='input-container'>
                         <label htmlFor='username'>Username</label>
-                        <input onChange={this.onChangeUsername} id='username' type='password'/>
+                        <input onChange={this.onChangeUsername} id='username' type='text'/>
                     </div>
                     <div className='input-container'>
                         <label htmlFor='password'>Password</label>
@@ -43,15 +52,16 @@ class LoginPage extends Component{
                        
                     </div>
                     <div className='showpassword-container'>
-                        <input onChange={this.onShowPassword} type='checkbox' id='checkbox' />
+                        <input className='showpassword-check' onChange={this.onShowPassword} type='checkbox' id='checkbox' />
                         <label htmlFor='checkbox'>Show password</label>
                     </div>
                     <div className='button-container'>
+                    {! this.state.loginStatus && <p>Provide Valid Username and Password</p>}
                         <button className='login-button' type='submit' >Login</button>
                     </div>
                     <div className='signUpContainer'>
-                    <p>New User</p>
-                    <button>SignUp</button>
+                    <p className='Newuser'>New User</p>
+                    <button type='button' onClick={this.OnClickSignup}>SignUp</button>
                 </div>
                 </form>
             </div>

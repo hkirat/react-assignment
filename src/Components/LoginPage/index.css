@@ -19,3 +19,11 @@ margin-bottom: 10px;}
     margin-bottom: 10px;
 }
 .signUpContainer{align-items: center;}
+.showpassword-check{
+    height: 15px;
+    width: 15px;
+}
+.Newuser{
+    font-size: 25px;
+    font-family: Roboto;
+}
