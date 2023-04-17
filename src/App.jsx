@@ -1,7 +1,7 @@
 import React,{ useEffect } from 'react';
 import { BrowserRouter as Router, Routes,Route,useNavigate } from 'react-router-dom';
 import Login from './Login'; 
-
+import Signup from './Signup'; 
 /*
  * Temporary problems array schema
  */
@@ -25,6 +25,20 @@ const problems = [{
         acceptance: "42%"
     }];
 
+function Home() {
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        // replace this with your own logic to check if the user is logged in
+        const isLoggedIn = false;
+    
+        if (!isLoggedIn) {
+        navigate('/login');
+        }
+    }, [navigate]);
+    
+    return <div>Home</div>;
+    }
 
 function App() {
 
@@ -39,8 +53,9 @@ function App() {
        return (
          <Router>
            <Routes>
-             {/* <Route path="/" element={<Home />} /> */}
+             <Route path="/" element={<Home />} />
              <Route path="/login" element={<Login />} />
+             <Route path="/signup" element={<Signup />} />
            </Routes>
          </Router>
        );
