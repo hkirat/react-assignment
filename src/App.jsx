@@ -36,13 +36,29 @@ const problems = [
 function App() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // if (localStorage.getItem("token")) {
-    //   navigate("/problemset/all");
-    // } else navigate("/login");
-  }, [navigate]);
 
-  const queryClient = new QueryClient();
+  useEffect(() => {
+const token=localStorage.getItem("token")
+if(!token){
+    navigate("/login") || navigate("/signup")
+
+}
+
+
+
+   if(window.location.pathname==="/"){
+        navigate("/problemset/all")
+   }
+ 
+  }, [window.location.pathname]);
+
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
   /* Add routing here, routes look like -
        /login - Login page
        /signup - Signup page
@@ -52,37 +68,24 @@ function App() {
 
   return (
     <div className="bg-[#2e2e2e] text-white h-screen ">
-    <QueryClientProvider client={queryClient}>
-      <Routes>
-        <Route path="/login" exact element={<Login />} />
-        <Route path="/signup" exact element={<Signup />} />
+      <QueryClientProvider client={queryClient}>
+        <Routes>
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/signup" exact element={<Signup />} />
 
-        <Route path="/problemset/all" exact element={<Problems />} />
-        <Route path="/problems/:problem_slug" exact element={<ProblemSlug />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </QueryClientProvider>
+          <Route path="/problemset/all" exact element={<Problems />} />
+          <Route
+            path="/problems/:problem_slug"
+            exact
+            element={<ProblemSlug />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </QueryClientProvider>
     </div>
   );
 }
 
-// // A demo component
-// function ProblemStatement(props) {
-//     const title = props.title;
-//     const acceptance = props.acceptance;
-//     const difficulty = props.difficulty;
 
-//     return <tr>
-//         <td>
-//             {title}
-//         </td>
-//         <td>
-//             {acceptance}
-//         </td>
-//         <td>
-//             {difficulty}
-//         </td>
-//     </tr>
-// }
 
 export default App;
