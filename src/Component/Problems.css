@@ -1,0 +1,44 @@
+/* CSS for LeetCodeProblems component */
+
+.container {
+  margin-top: 20px;
+}
+
+/* Style for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Style for table head (thead) */
+thead {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+/* Style for table head cells (th) */
+th {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style for table body (tbody) */
+tbody {
+  font-size: 14px;
+}
+
+/* Style for table body rows (tr) */
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for table body cells (td) */
+td {
+  padding: 10px;
+}
+
+/* Hover effect on table rows */
+tr:hover {
+  background-color: #f5f5f5;
+}

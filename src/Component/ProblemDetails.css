@@ -1,0 +1,42 @@
+/* problem-details.css */
+
+.problem-details {
+  padding: 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.problem-details__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.problem-details__subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.problem-details__description {
+  font-size: 16px;
+}
+
+.button-container {
+  display: flex;
+  gap: 8px; /* Adjust the value to set the desired spacing between buttons */
+}
+
+.button-container button {
+  /* Add styles for the buttons */
+  background-color: #007bff; /* Set the background color */
+  color: #fff; /* Set the text color */
+  padding: 8px 16px; /* Set the padding */
+  border: none; /* Remove the border */
+  cursor: pointer; /* Add cursor pointer on hover */
+}
+
+.button-container button:hover {
+  /* Add styles for button hover state */
+  opacity: 0.8; /* Reduce opacity on hover */
+}
