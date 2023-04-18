@@ -1,8 +1,36 @@
 // Layout.jsx
 
 import React from 'react';
+import { Link, useLocation,useNavigate } from "react-router-dom";
 
 const Layout = (props) => {
+  // Get the current location
+  const location = useLocation();
+  // Extract the pathname from the location object
+  const { pathname } = location;
+   // Conditionally render login button
+   const renderHeaderButtons = () => {
+    const navigate = useNavigate(); // Get the navigate function
+    const handleLoginClick = () => {
+      // Handle login button click
+      navigate("/login"); // Redirect to /login page
+    };
+    const handleSignupClick = () => {
+      // Handle signup button click
+      navigate("/signup"); // Redirect to /signup page
+  };
+    if (pathname === "/signup") {
+      return (
+        <button type="button" className="btn btn-secondary" onClick={handleLoginClick} >Login</button>
+      );
+      
+    } else if (pathname === "/login"){
+      return(
+        <button type="button" className="btn btn-secondary" onClick={handleSignupClick}>Sign-up</button> 
+      );
+      
+    }
+  };
   // You can define the layout structure here
   return (
     <div>
@@ -22,12 +50,13 @@ const Layout = (props) => {
         </ul>
 
         <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" className="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" />
+          <input type="search" className="form-control form-control-dark text-bg-dark" 
+          placeholder="Search..." aria-label="Search" />
+          
         </form>
 
         <div className="text-end">
-          <button type="button" className="btn btn-outline-light me-2">Login</button>
-          <button type="button" className="btn btn-warning">Sign-up</button>
+          {renderHeaderButtons()}
         </div>
       </div>
       </header>
