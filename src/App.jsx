@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 /*
  * Temporary problems array schema
  */
@@ -31,11 +32,42 @@ function App() {
        /problems/:problem_slug - A single problem page
      */
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+       return (
+        <BrowserRouter>
+          <div>
+            <Switch>
+              <Route path="/login">
+              </Route>
+              <Route path="/signup">
+              </Route>
+              <Route exact path="/problemset/all">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Acceptance</th>
+                      <th>Difficulty</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {problems.map(problem => (
+                      <ProblemStatement
+                        key={problem.title}
+                        title={problem.title}
+                        acceptance={problem.acceptance}
+                        difficulty={problem.difficulty}
+                      />
+                    ))}
+                  </tbody>
+                </table>
+              </Route>
+              <Route path="/problems/:problem_slug">
+                {/* Render a single problem page component here */}
+              </Route>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      );
 }
 
 // A demo component
