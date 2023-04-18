@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from './AuthContext';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { setAuthState } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,7 +31,8 @@ function LoginPage() {
         // Handle successful login
         // You can store the token in local storage, Redux store, or a cookie for further use
         console.log('Login successful:', response.data.token);
-        navigate('/home')
+        setAuthState({ isLoggedIn: true, token: response.data.token });
+        navigate('/')
       } else {
         // Handle login error
         console.error('Login failed:', response);
