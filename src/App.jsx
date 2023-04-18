@@ -1,9 +1,11 @@
 import React,{ useEffect,useState } from 'react';
 import { BrowserRouter as Router, Routes,Route,useNavigate } from 'react-router-dom';
-import Login from './Login'; 
+//import Login from './Login'; 
 import Signup from './Signup'; 
-import Home from './Home'
+import Home from './Home';
 import AuthContext from './AuthContext';
+import Layout from './components/Layout';
+import Login from './components/Login'
 
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
@@ -41,11 +43,14 @@ function App() {
     return (
     <AuthContext.Provider value={{ ...authState, setAuthState }}>
         <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-            </Routes>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    {/* <Route path="/login" element={<Login />} /> */}
+                    <Route path="/signup" element={<Signup />} />
+                </Routes>
+            </Layout>
         </Router>
     </AuthContext.Provider>
          
