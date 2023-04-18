@@ -1,42 +1,86 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.LoginBox{
+  height: 130px;
+  width: 200px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.problems-container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.problems-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.problems-table th,
+.problems-table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.problems-table th {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+.problems-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.problems-table tr:hover {
+  background-color: #ddd;
+}
+
+.problem-statement {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+.problem-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.problem-difficulty {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.problem-acceptance {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.button {
+  background-color: #5082ce;
+  border: none;
+  color: white;
+  padding: 10px 16px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.button:hover {
+  background-color: #3e8e41;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.lynk {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
 }
