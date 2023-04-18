@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from './AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LOGIN_API_URL from './config';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -21,7 +22,7 @@ function LoginPage() {
 
     try {
       // Make login API call
-      const response = await axios.post('http://localhost:3001/login', {
+      const response = await axios.post(LOGIN_API_URL, {
         email,
         password,
         'role': 'user'
