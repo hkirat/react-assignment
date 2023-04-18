@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    top: 0;
+    margin: 0;
+}
+
+
+.landingPage-buttons{
+   
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #E5BEEC;
+}
+
+#button{
+    font-size: 13px;
+    color: #2A2F4F;
+   background-color: #E5BEEC;
+    padding: 10px;
+    border-radius: 5px;
+ outline: none;
+    border: none;
+}
+
+#button:hover{
+    color: white;
+}
+
+div.shitcode   {
+    height: 10em;
+    position: relative;
+}
+div.shitcode p{
+       margin: 0;
+    background: yellow;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+
+
+.signup{
+    padding: 10px;
+    height: 20px;
+    width: 100px;
+    justify-content: space-between;
+}
+
+#problembutton{
+
+    padding: 10px ;
+}

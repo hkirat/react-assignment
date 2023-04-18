@@ -1,59 +1,30 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+import React from "react";
+import "./index.css";
+import {Link}from 'react-router-dom';
+const Landingpage = () => {
+  return (
+    <>
+      <div className="landingPage-buttons">
+        <Link to="/signup">
+          <button id="button">Signup</button>
+        </Link>
 
+        <Link to="/login">
+          <button id="button">Login</button>
+        </Link>
+      
+         <Link to="/problems/all">
+          <button id="button">Problems</button>
+        </Link>
+      
+         <Link to="/problem-slug">
+          <button id="button">Problem :slug</button>
+        </Link>
+      
+      </div>
+      <div className="shitcode"><p>SHIT-CODE</p></div>
+    </>
+  );
+};
 
-function App() {
-
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
-
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
-}
-
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+export default Landingpage;
