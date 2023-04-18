@@ -14,7 +14,7 @@
 
 ### Favour
 
-If you find any mistakes, wrong approach or even slow approach it would be big help you drop a comment or something
+If you find any mistakes, wrong approach or even slow approach it would be big help if you drop a comment or something
 and please feel free to critique or give feedback. 
 <br/>
 Arigato 
