@@ -2,6 +2,7 @@ import React, { useState,useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from './AuthContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -50,25 +51,43 @@ function LoginPage() {
   };
 
   return (
-    <div>
-      <h1>Login Page</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="container">
+    <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+                <h2 className="card-title text-center">Login</h2>
+                <form onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="email">Email:</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="email"
+                      placeholder="Enter email"
+                      value={email}
+                      onChange={(e)=>setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="password">Password:</label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                      placeholder="Enter password"
+                      value={password}
+                      onChange={(e)=>setPassword(e.target.value)}
+                    />
+                  </div>
+                  <button type="submit" className="btn btn-primary">Login</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
