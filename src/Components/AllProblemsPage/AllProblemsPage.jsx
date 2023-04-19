@@ -14,7 +14,8 @@ const AllProblemsPage = ({ problems }) => {
 
           {problems.map((prob, index) => (
             <tr key={index}>
-              <Link to={`/problems/:${prob.problemId}`}>
+              {console.log(prob, "hello")}
+              <Link to={`/problems/${prob.title}/`}>
                 <td>{prob.title}</td>
               </Link>
               <td className={`${prob.difficulty}`}>{prob.difficulty}</td>

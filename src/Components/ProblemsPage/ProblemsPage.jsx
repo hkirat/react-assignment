@@ -1,13 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import "./ProblemsPage.css";
 
 const ProblemsPage = ({ problems }) => {
-  const { pid } = useParams();
-  const cleanId = pid.substring(1);
-  // console.log(cleanId) ;
+  const { id } = useParams();
+  console.log(id);
+  // const cleanId = id.substring(1);
 
   const found = problems.find((prob) => {
-    return prob.problemId === cleanId;
+    return prob.title === id;
   });
 
   return (
@@ -23,7 +24,7 @@ const ProblemsPage = ({ problems }) => {
           </div>
           <div className="code">
             <h1>Code Here</h1>
-            <form className="code-form" action="post">
+            <form className="code-form border border-black" action="post">
               <textarea name="SolvedCode"></textarea>
               <button type="submit" id="test">
                 TestCode
