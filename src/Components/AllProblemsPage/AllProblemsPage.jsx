@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllProblemsPage = ({ problems }) => {
   return (
-    <div id="allproblems">
+    <div id="allproblems" className="h-[90vh]">
       <table>
         <tbody>
           <tr>
@@ -13,7 +13,7 @@ const AllProblemsPage = ({ problems }) => {
           </tr>
 
           {problems.map((prob, index) => (
-            <tr>
+            <tr key={index}>
               <Link to={`/problems/:${prob.problemId}`}>
                 <td>{prob.title}</td>
               </Link>

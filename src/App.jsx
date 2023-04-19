@@ -5,6 +5,7 @@ import SignupPage from "./Components/SignupPage/SignupPage";
 import AllProblemsPage from "./Components/AllProblemsPage/AllProblemsPage";
 import Navbar from "./Constants/Navbar/Navbar";
 import Error from "./Error";
+import Footer from "./Components/Footer/Footer";
 /*
  * Temporary problems array schema
  */
@@ -35,6 +36,7 @@ const Layout = () => {
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 };
