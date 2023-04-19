@@ -1,0 +1,76 @@
+
+#codeEditor{
+    /* float: right; */
+    background-color: #1d1d1d;
+    width: 50%;
+    min-width:400px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.console-compile-btns{
+    height: 10vh;
+    box-sizing: border-box;
+    background-color: #2e3235;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 60%; */
+    padding: 0 10px;
+}
+#console-btn{
+    font-size: 0.9rem;
+
+    cursor: pointer;
+    background-color: #424242;
+    color: rgb(213, 213, 213);
+    outline: none;
+    padding: 0 12px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    height: 32px;
+
+}
+#console-btn:hover{
+    background-color: #606060;
+
+}
+#run-btn{
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #424242;
+    color: rgb(213, 213, 213);
+    outline: none;
+    padding: 0 12px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    height: 32px;
+
+}
+#run-btn:hover{
+    background-color: #606060;
+}
+#submit-btn{
+    font-size: 0.9rem;
+    margin-left: 15px;
+    cursor: pointer;
+    background-color: #5aa73c;
+    color: rgb(213, 213, 213);
+    outline: none;
+    padding: 0 12px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    height: 32px;
+}
+#submit-btn:hover{
+    background-color: #74b05d;
+    
+}

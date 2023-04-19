@@ -1,0 +1,839 @@
+[
+    {
+        "id": 1,
+        "title": "Two Sum",
+        "difficulty": "Easy",
+        "acceptance_rate": "46.4%",
+        "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+        "examples": [
+            {
+                "input": [
+                    2,
+                    7,
+                    11,
+                    15
+                ],
+                "output": [
+                    0,
+                    1
+                ]
+            },
+            {
+                "input": [
+                    3,
+                    2,
+                    4
+                ],
+                "output": [
+                    1,
+                    2
+                ]
+            }
+        ],
+        "sample_code": "var twoSum = function(nums, target) {\n    let map = new Map();\n    for(let i = 0; i < nums.length; i++) {\n        let complement = target - nums[i];\n        if(map.has(complement)) {\n            return [map.get(complement), i];\n        }\n        map.set(nums[i], i);\n    }\n};"
+    },
+    {
+        "id": 2,
+        "title": "Add Two Numbers",
+        "difficulty": "Medium",
+        "acceptance_rate": "35.9%",
+        "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+        "examples": [
+            {
+                "input": [
+                    [
+                        2,
+                        4,
+                        3
+                    ],
+                    [
+                        5,
+                        6,
+                        4
+                    ]
+                ],
+                "output": [
+                    7,
+                    0,
+                    8
+                ]
+            },
+            {
+                "input": [
+                    [
+                        0
+                    ],
+                    [
+                        0
+                    ]
+                ],
+                "output": [
+                    0
+                ]
+            }
+        ],
+        "sample_code": "var addTwoNumbers = function(l1, l2) {\n    let dummyHead = new ListNode(0);\n    let current = dummyHead;\n    let carry = 0;\n    while(l1 !== null || l2 !== null) {\n        let x = (l1 !== null) ? l1.val : 0;\n        let y = (l2 !== null) ? l2.val : 0;\n        let sum = carry + x + y;\n        carry = Math.floor(sum / 10);\n        current.next = new ListNode(sum % 10);\n        current = current.next;\n        if(l1 !== null) l1 = l1.next;\n        if(l2 !== null) l2 = l2.next;\n    }\n    if(carry > 0) {\n        current.next = new ListNode(carry);\n    }\n    return dummyHead.next;\n};"
+    },
+    {
+        "id": 3,
+        "title": "Longest Substring Without Repeating Characters",
+        "difficulty": "Medium",
+        "acceptance_rate": "30.0%",
+        "description": "Given a string s, find the length of the longest substring without repeating characters.",
+        "examples": [
+            {
+                "input": "s = 'abcabcbb'",
+                "output": "3"
+            },
+            {
+                "input": "s = 'bbbbb'",
+                "output": "1"
+            }
+        ],
+        "sample_code": "var lengthOfLongestSubstring = function(s) {\n  let set = new Set(), left = 0, right = 0, maxLen = 0;\n  while (right < s.length) {\n    if (!set.has(s.charAt(right))) {\n      set.add(s.charAt(right));\n      maxLen = Math.max(maxLen, set.size);\n      right++;\n    } else {\n      set.delete(s.charAt(left));\n      left++;\n    }\n  }\n  return maxLen;\n};"
+    },
+    {
+        "id": 4,
+        "title": "Median of Two Sorted Arrays",
+        "difficulty": "Hard",
+        "acceptance_rate": "30.0%",
+        "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\nFollow up: The overall run time complexity should be O(log (m+n)).",
+        "examples": [
+            {
+                "input": "nums1 = [1,3], nums2 = [2]",
+                "output": "2.00000"
+            },
+            {
+                "input": "nums1 = [1,2], nums2 = [3,4]",
+                "output": "2.50000"
+            }
+        ],
+        "sample_code": "var findMedianSortedArrays = function(nums1, nums2) {\n  let len1 = nums1.length, len2 = nums2.length;\n  if (len1 > len2) {\n    [nums1, nums2] = [nums2, nums1];\n    [len1, len2] = [len2, len1];\n  }\n  let low = 0, high = len1;\n  while (low <= high) {\n    let partition1 = Math.floor((low + high) / 2);\n    let partition2 = Math.floor((len1 + len2 + 1) / 2) - partition1;\n    let maxLeft1 = partition1 === 0 ? -Infinity : nums1[partition1 - 1];\n    let maxLeft2 = partition2 === 0 ? -Infinity : nums2[partition2 - 1];\n    let minRight1 = partition1 === len1 ? Infinity : nums1[partition1];\n    let minRight2 = partition2 === len2 ? Infinity : nums2[partition2];\n    if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {\n      if ((len1 + len2) % 2 === 0) {\n        return (Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2)) / 2;\n      } else {\n        return Math.max(maxLeft1, maxLeft2);\n      }\n    }"
+    },
+    {
+        "id": 5,
+        "title": "Longest Palindromic Substring",
+        "difficulty": "Medium",
+        "acceptance_rate": "29.3%",
+        "description": "Given a string s, return the longest palindromic substring in s.",
+        "examples": [
+            {
+                "input": "s = 'babad'",
+                "output": "'bab'"
+            },
+            {
+                "input": "s = 'cbbd'",
+                "output": "'bb'"
+            }
+        ],
+        "sample_code": "var longestPalindrome = function(s) {\n  let start = 0, maxLen = 0;\n  function expandAroundCenter(left, right) {\n    while (left >= 0 && right < s.length && s.charAt(left) === s.charAt(right)) {\n      left--;\n      right++;\n    }\n    if (right - left - 1 > maxLen) {\n      maxLen = right - left - 1;\n      start = left + 1;\n    }\n  }\n  for (let i = 0; i < s.length; i++) {\n    expandAroundCenter(i, i);\n    expandAroundCenter(i, i + 1);\n  }\n  return s.substring(start, start + maxLen);\n};"
+    },
+    {
+        "id": 6,
+        "title": "ZigZag Conversion",
+        "difficulty": "Medium",
+        "acceptance_rate": "38.7%",
+        "description": "The string `s` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\n```\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\nExplanation:\nP   A   H   N\nA P L S I I G\nY   I   R\n```",
+        "examples": [
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 3 }",
+                "output": "\"PAHNAPLSIIGYIR\""
+            },
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 4 }",
+                "output": "\"PINALSIGYAHRPI\""
+            }
+        ],
+        "sample_code": "var convert = function(s, numRows) {\n  if (numRows === 1) return s;\n  const rows = new Array(numRows).fill('');\n  let curRow = 0, goingDown = false;\n  for (const c of s) {\n    rows[curRow] += c;\n    if (curRow === 0 || curRow === numRows - 1) goingDown = !goingDown;\n    curRow += goingDown ? 1 : -1;\n  }\n  return rows.join('');\n};"
+    },
+    {
+        "id": 7,
+        "title": "3Sum",
+        "difficulty": "Medium",
+        "acceptance_rate": "27.9%",
+        "description": "Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.\n\nNotice that the solution set must not contain duplicate triplets.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-1,0,1,2,-1,-4] }",
+                "output": "[[-1,-1,2],[-1,0,1]]"
+            },
+            {
+                "input": "{ \"nums\": [] }",
+                "output": "[]"
+            }
+        ],
+        "sample_code": "var threeSum = function(nums) {\n  const res = [];\n  nums.sort((a, b) => a - b);\n  for (let i = 0; i < nums.length - 2; i++) {\n    if (nums[i] > 0) break;\n    if (i > 0 && nums[i] === nums[i - 1]) continue;\n    let j = i + 1, k = nums.length - 1;\n    while (j < k) {\n      const sum = nums[i] + nums[j] + nums[k];\n      if (sum === 0) {\n        res.push([nums[i], nums[j], nums[k]]);\n        while (j < k && nums[j] === nums[j + 1]) j++;\n        while (j < k && nums[k] === nums[k - 1]) k--;\n        j++, k--;\n      } else if (sum < 0) {\n        j++;\n      } else {\n        k--;\n      }\n    }\n  }\n  return res;\n};"
+    },
+    {
+        "id": 8,
+        "title": "Maximum Subarray",
+        "difficulty": "Easy",
+        "acceptance_rate": "52.5%",
+        "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.\n\nA subarray is a contiguous part of an array.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-2,1,-3,4,-1,2,1,-5,4] }",
+                "output": "6"
+            },
+            {
+                "input": "{ \"nums\": [1] }",
+                "output": "1"
+            }
+        ],
+        "sample_code": "var maxSubArray = function(nums) {\n  let maxSoFar = nums[0];\n  let maxEndingHere = nums[0];\n  for (let i = 1; i < nums.length; i++) {\n    maxEndingHere = Math.max(maxEndingHere + nums[i], nums[i]);\n    maxSoFar = Math.max(maxSoFar, maxEndingHere);\n  }\n  return maxSoFar;\n};"
+    },
+    {
+        "id": 9,
+        "title": "Regular Expression Matching",
+        "difficulty": "Hard",
+        "acceptance_rate": "28.9%",
+        "description": "Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*' where:\n\n'.' Matches any single character.\n'*' Matches zero or more of the preceding element.\nThe matching should cover the entire input string (not partial).\n\nNote:\n\ns could be empty and contains only lowercase letters a-z.\np could be empty and contains only lowercase letters a-z, and characters like . or *.",
+        "examples": [
+            {
+                "input": "{ \"s\": \"aa\", \"p\": \"a\" }",
+                "output": "false"
+            },
+            {
+                "input": "{ \"s\": \"aa\", \"p\": \".*\" }",
+                "output": "true"
+            }
+        ],
+        "sample_code": "var isMatch = function(s, p) {\n  if (p.length === 0) return s.length === 0;\n  const firstMatch = s.length > 0 && (p[0] === s[0] || p[0] === '.');\n  if (p.length >= 2 && p[1] === '*') {\n    return isMatch(s, p.substring(2)) || (firstMatch && isMatch(s.substring(1), p));\n  } else {\n    return firstMatch && isMatch(s.substring(1), p.substring(1));\n  }\n};"
+    },
+    {
+        "id": 10,
+        "title": "Word Ladder",
+        "difficulty": "Medium",
+        "acceptance_rate": "28.5%",
+        "description": "Given two words beginWord and endWord, and a dictionary wordList, return the length of the shortest transformation sequence from beginWord to endWord, such that:\n\nOnly one letter can be changed at a time.\nEach transformed word must exist in the word list. Note that beginWord is not a transformed word.\n\nNote:\n\nReturn 0 if there is no such transformation sequence.\nAll words have the same length.\nAll words contain only lowercase alphabetic characters.\nYou may assume no duplicates in the word list.\nYou may assume beginWord and endWord are non-empty and are not the same.",
+        "examples": [
+            {
+                "input": "{ \"beginWord\": \"hit\", \"endWord\": \"cog\", \"wordList\": [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"] }",
+                "output": "5"
+            },
+            {
+                "input": "{ \"beginWord\": \"hit\", \"endWord\": \"cog\", \"wordList\": [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"] }",
+                "output": "0"
+            }
+        ],
+        "sample_code": "var ladderLength = function(beginWord, endWord, wordList) {\n  const wordSet = new Set(wordList);\n  if (!wordSet.has(endWord)) return 0;\n  const visited = new Set();\n  visited.add(beginWord);\n  let queue = [beginWord];\n  let level = 1;\n  while (queue.length > 0) {\n    const size = queue.length;\n    for (let i = 0; i < size; i++) {\n      const currWord = queue.shift();\n      if (currWord === endWord) return level;\n      for (let j = 0; j < currWord.length; j++) {\n        for (let k = 0; k < 26; k++) {\n          const nextChar = String.fromCharCode(97 + k);\n          const newWord = currWord.slice(0, j) + nextChar + currWord.slice(j + 1);\n          if (wordSet.has(newWord) && !visited.has(newWord)) {\n            visited.add(newWord);\n            queue.push(newWord);\n          }\n        }\n      }\n    }\n    level++;\n  }\n  return 0;\n};"
+    },
+    {
+        "id": 11,
+        "title": "3Sum Closest",
+        "difficulty": "Medium",
+        "acceptance_rate": "39.5%",
+        "description": "Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-1,2,1,-4], \"target\": 1 }",
+                "output": "2"
+            },
+            {
+                "input": "{ \"nums\": [0,0,0], \"target\": 1 }",
+                "output": "0"
+            }
+        ],
+        "sample_code": "var threeSumClosest = function(nums, target) {\n  nums.sort((a, b) => a - b);\n  let closestSum = Infinity;\n  for (let i = 0; i < nums.length - 2; i++) {\n    let left = i + 1, right = nums.length - 1;\n    while (left < right) {\n      const sum = nums[i] + nums[left] + nums[right];\n      if (Math.abs(target - sum) < Math.abs(target - closestSum)) closestSum = sum;\n      if (sum === target) return target;\n      if (sum < target) left++;\n      else right--;\n    }\n  }\n  return closestSum;\n};"
+    },
+    {
+        "id": 12,
+        "title": "Spiral Matrix",
+        "difficulty": "Medium",
+        "acceptance_rate": "37.4%",
+        "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+        "examples": [
+            {
+                "input": "[[1,2,3],[4,5,6],[7,8,9]]",
+                "output": "[1,2,3,6,9,8,7,4,5]"
+            },
+            {
+                "input": "[[1,2],[3,4]]",
+                "output": "[1,2,4,3]"
+            }
+        ],
+        "sample_code": "var spiralOrder = function(matrix) {\n  const result = [];\n  let top = 0, bottom = matrix.length - 1, left = 0, right = matrix[0].length - 1, direction = 'right';\n  while (top <= bottom && left <= right) {\n    if (direction === 'right') {\n      for (let i = left; i <= right; i++) {\n        result.push(matrix[top][i]);\n      }\n      top++;\n      direction = 'down';\n    } else if (direction === 'down') {\n      for (let i = top; i <= bottom; i++) {\n        result.push(matrix[i][right]);\n      }\n      right--;\n      direction = 'left';\n    } else if (direction === 'left') {\n      for (let i = right; i >= left; i--) {\n        result.push(matrix[bottom][i]);\n      }\n      bottom--;\n      direction = 'up';\n    } else if (direction === 'up') {\n      for (let i = bottom; i >= top; i--) {\n        result.push(matrix[i][left]);\n      }\n      left++;\n      direction = 'right';\n    }\n  }\n  return result;\n};"
+    },
+    {
+        "id": 13,
+        "title": "Two Sum",
+        "difficulty": "Easy",
+        "acceptance_rate": "46.4%",
+        "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+        "examples": [
+            {
+                "input": [
+                    2,
+                    7,
+                    11,
+                    15
+                ],
+                "output": [
+                    0,
+                    1
+                ]
+            },
+            {
+                "input": [
+                    3,
+                    2,
+                    4
+                ],
+                "output": [
+                    1,
+                    2
+                ]
+            }
+        ],
+        "sample_code": "var twoSum = function(nums, target) {\n    let map = new Map();\n    for(let i = 0; i < nums.length; i++) {\n        let complement = target - nums[i];\n        if(map.has(complement)) {\n            return [map.get(complement), i];\n        }\n        map.set(nums[i], i);\n    }\n};"
+    },
+    {
+        "id": 14,
+        "title": "Add Two Numbers",
+        "difficulty": "Medium",
+        "acceptance_rate": "35.9%",
+        "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+        "examples": [
+            {
+                "input": [
+                    [
+                        2,
+                        4,
+                        3
+                    ],
+                    [
+                        5,
+                        6,
+                        4
+                    ]
+                ],
+                "output": [
+                    7,
+                    0,
+                    8
+                ]
+            },
+            {
+                "input": [
+                    [
+                        0
+                    ],
+                    [
+                        0
+                    ]
+                ],
+                "output": [
+                    0
+                ]
+            }
+        ],
+        "sample_code": "var addTwoNumbers = function(l1, l2) {\n    let dummyHead = new ListNode(0);\n    let current = dummyHead;\n    let carry = 0;\n    while(l1 !== null || l2 !== null) {\n        let x = (l1 !== null) ? l1.val : 0;\n        let y = (l2 !== null) ? l2.val : 0;\n        let sum = carry + x + y;\n        carry = Math.floor(sum / 10);\n        current.next = new ListNode(sum % 10);\n        current = current.next;\n        if(l1 !== null) l1 = l1.next;\n        if(l2 !== null) l2 = l2.next;\n    }\n    if(carry > 0) {\n        current.next = new ListNode(carry);\n    }\n    return dummyHead.next;\n};"
+    },
+    {
+        "id": 15,
+        "title": "Longest Substring Without Repeating Characters",
+        "difficulty": "Medium",
+        "acceptance_rate": "30.0%",
+        "description": "Given a string s, find the length of the longest substring without repeating characters.",
+        "examples": [
+            {
+                "input": "s = 'abcabcbb'",
+                "output": "3"
+            },
+            {
+                "input": "s = 'bbbbb'",
+                "output": "1"
+            }
+        ],
+        "sample_code": "var lengthOfLongestSubstring = function(s) {\n  let set = new Set(), left = 0, right = 0, maxLen = 0;\n  while (right < s.length) {\n    if (!set.has(s.charAt(right))) {\n      set.add(s.charAt(right));\n      maxLen = Math.max(maxLen, set.size);\n      right++;\n    } else {\n      set.delete(s.charAt(left));\n      left++;\n    }\n  }\n  return maxLen;\n};"
+    },
+    {
+        "id": 16,
+        "title": "Median of Two Sorted Arrays",
+        "difficulty": "Hard",
+        "acceptance_rate": "30.0%",
+        "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\nFollow up: The overall run time complexity should be O(log (m+n)).",
+        "examples": [
+            {
+                "input": "nums1 = [1,3], nums2 = [2]",
+                "output": "2.00000"
+            },
+            {
+                "input": "nums1 = [1,2], nums2 = [3,4]",
+                "output": "2.50000"
+            }
+        ],
+        "sample_code": "var findMedianSortedArrays = function(nums1, nums2) {\n  let len1 = nums1.length, len2 = nums2.length;\n  if (len1 > len2) {\n    [nums1, nums2] = [nums2, nums1];\n    [len1, len2] = [len2, len1];\n  }\n  let low = 0, high = len1;\n  while (low <= high) {\n    let partition1 = Math.floor((low + high) / 2);\n    let partition2 = Math.floor((len1 + len2 + 1) / 2) - partition1;\n    let maxLeft1 = partition1 === 0 ? -Infinity : nums1[partition1 - 1];\n    let maxLeft2 = partition2 === 0 ? -Infinity : nums2[partition2 - 1];\n    let minRight1 = partition1 === len1 ? Infinity : nums1[partition1];\n    let minRight2 = partition2 === len2 ? Infinity : nums2[partition2];\n    if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {\n      if ((len1 + len2) % 2 === 0) {\n        return (Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2)) / 2;\n      } else {\n        return Math.max(maxLeft1, maxLeft2);\n      }\n    }"
+    },
+    {
+        "id": 17,
+        "title": "Longest Palindromic Substring",
+        "difficulty": "Medium",
+        "acceptance_rate": "29.3%",
+        "description": "Given a string s, return the longest palindromic substring in s.",
+        "examples": [
+            {
+                "input": "s = 'babad'",
+                "output": "'bab'"
+            },
+            {
+                "input": "s = 'cbbd'",
+                "output": "'bb'"
+            }
+        ],
+        "sample_code": "var longestPalindrome = function(s) {\n  let start = 0, maxLen = 0;\n  function expandAroundCenter(left, right) {\n    while (left >= 0 && right < s.length && s.charAt(left) === s.charAt(right)) {\n      left--;\n      right++;\n    }\n    if (right - left - 1 > maxLen) {\n      maxLen = right - left - 1;\n      start = left + 1;\n    }\n  }\n  for (let i = 0; i < s.length; i++) {\n    expandAroundCenter(i, i);\n    expandAroundCenter(i, i + 1);\n  }\n  return s.substring(start, start + maxLen);\n};"
+    },
+    {
+        "id": 18,
+        "title": "ZigZag Conversion",
+        "difficulty": "Medium",
+        "acceptance_rate": "38.7%",
+        "description": "The string `s` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\n```\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\nExplanation:\nP   A   H   N\nA P L S I I G\nY   I   R\n```",
+        "examples": [
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 3 }",
+                "output": "\"PAHNAPLSIIGYIR\""
+            },
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 4 }",
+                "output": "\"PINALSIGYAHRPI\""
+            }
+        ],
+        "sample_code": "var convert = function(s, numRows) {\n  if (numRows === 1) return s;\n  const rows = new Array(numRows).fill('');\n  let curRow = 0, goingDown = false;\n  for (const c of s) {\n    rows[curRow] += c;\n    if (curRow === 0 || curRow === numRows - 1) goingDown = !goingDown;\n    curRow += goingDown ? 1 : -1;\n  }\n  return rows.join('');\n};"
+    },
+    {
+        "id": 19,
+        "title": "3Sum",
+        "difficulty": "Medium",
+        "acceptance_rate": "27.9%",
+        "description": "Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.\n\nNotice that the solution set must not contain duplicate triplets.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-1,0,1,2,-1,-4] }",
+                "output": "[[-1,-1,2],[-1,0,1]]"
+            },
+            {
+                "input": "{ \"nums\": [] }",
+                "output": "[]"
+            }
+        ],
+        "sample_code": "var threeSum = function(nums) {\n  const res = [];\n  nums.sort((a, b) => a - b);\n  for (let i = 0; i < nums.length - 2; i++) {\n    if (nums[i] > 0) break;\n    if (i > 0 && nums[i] === nums[i - 1]) continue;\n    let j = i + 1, k = nums.length - 1;\n    while (j < k) {\n      const sum = nums[i] + nums[j] + nums[k];\n      if (sum === 0) {\n        res.push([nums[i], nums[j], nums[k]]);\n        while (j < k && nums[j] === nums[j + 1]) j++;\n        while (j < k && nums[k] === nums[k - 1]) k--;\n        j++, k--;\n      } else if (sum < 0) {\n        j++;\n      } else {\n        k--;\n      }\n    }\n  }\n  return res;\n};"
+    },
+    {
+        "id": 20,
+        "title": "Maximum Subarray",
+        "difficulty": "Easy",
+        "acceptance_rate": "52.5%",
+        "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.\n\nA subarray is a contiguous part of an array.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-2,1,-3,4,-1,2,1,-5,4] }",
+                "output": "6"
+            },
+            {
+                "input": "{ \"nums\": [1] }",
+                "output": "1"
+            }
+        ],
+        "sample_code": "var maxSubArray = function(nums) {\n  let maxSoFar = nums[0];\n  let maxEndingHere = nums[0];\n  for (let i = 1; i < nums.length; i++) {\n    maxEndingHere = Math.max(maxEndingHere + nums[i], nums[i]);\n    maxSoFar = Math.max(maxSoFar, maxEndingHere);\n  }\n  return maxSoFar;\n};"
+    },
+    {
+        "id": 21,
+        "title": "Regular Expression Matching",
+        "difficulty": "Hard",
+        "acceptance_rate": "28.9%",
+        "description": "Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*' where:\n\n'.' Matches any single character.\n'*' Matches zero or more of the preceding element.\nThe matching should cover the entire input string (not partial).\n\nNote:\n\ns could be empty and contains only lowercase letters a-z.\np could be empty and contains only lowercase letters a-z, and characters like . or *.",
+        "examples": [
+            {
+                "input": "{ \"s\": \"aa\", \"p\": \"a\" }",
+                "output": "false"
+            },
+            {
+                "input": "{ \"s\": \"aa\", \"p\": \".*\" }",
+                "output": "true"
+            }
+        ],
+        "sample_code": "var isMatch = function(s, p) {\n  if (p.length === 0) return s.length === 0;\n  const firstMatch = s.length > 0 && (p[0] === s[0] || p[0] === '.');\n  if (p.length >= 2 && p[1] === '*') {\n    return isMatch(s, p.substring(2)) || (firstMatch && isMatch(s.substring(1), p));\n  } else {\n    return firstMatch && isMatch(s.substring(1), p.substring(1));\n  }\n};"
+    },
+    {
+        "id": 22,
+        "title": "Word Ladder",
+        "difficulty": "Medium",
+        "acceptance_rate": "28.5%",
+        "description": "Given two words beginWord and endWord, and a dictionary wordList, return the length of the shortest transformation sequence from beginWord to endWord, such that:\n\nOnly one letter can be changed at a time.\nEach transformed word must exist in the word list. Note that beginWord is not a transformed word.\n\nNote:\n\nReturn 0 if there is no such transformation sequence.\nAll words have the same length.\nAll words contain only lowercase alphabetic characters.\nYou may assume no duplicates in the word list.\nYou may assume beginWord and endWord are non-empty and are not the same.",
+        "examples": [
+            {
+                "input": "{ \"beginWord\": \"hit\", \"endWord\": \"cog\", \"wordList\": [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"] }",
+                "output": "5"
+            },
+            {
+                "input": "{ \"beginWord\": \"hit\", \"endWord\": \"cog\", \"wordList\": [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"] }",
+                "output": "0"
+            }
+        ],
+        "sample_code": "var ladderLength = function(beginWord, endWord, wordList) {\n  const wordSet = new Set(wordList);\n  if (!wordSet.has(endWord)) return 0;\n  const visited = new Set();\n  visited.add(beginWord);\n  let queue = [beginWord];\n  let level = 1;\n  while (queue.length > 0) {\n    const size = queue.length;\n    for (let i = 0; i < size; i++) {\n      const currWord = queue.shift();\n      if (currWord === endWord) return level;\n      for (let j = 0; j < currWord.length; j++) {\n        for (let k = 0; k < 26; k++) {\n          const nextChar = String.fromCharCode(97 + k);\n          const newWord = currWord.slice(0, j) + nextChar + currWord.slice(j + 1);\n          if (wordSet.has(newWord) && !visited.has(newWord)) {\n            visited.add(newWord);\n            queue.push(newWord);\n          }\n        }\n      }\n    }\n    level++;\n  }\n  return 0;\n};"
+    },
+    {
+        "id": 23,
+        "title": "3Sum Closest",
+        "difficulty": "Medium",
+        "acceptance_rate": "39.5%",
+        "description": "Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-1,2,1,-4], \"target\": 1 }",
+                "output": "2"
+            },
+            {
+                "input": "{ \"nums\": [0,0,0], \"target\": 1 }",
+                "output": "0"
+            }
+        ],
+        "sample_code": "var threeSumClosest = function(nums, target) {\n  nums.sort((a, b) => a - b);\n  let closestSum = Infinity;\n  for (let i = 0; i < nums.length - 2; i++) {\n    let left = i + 1, right = nums.length - 1;\n    while (left < right) {\n      const sum = nums[i] + nums[left] + nums[right];\n      if (Math.abs(target - sum) < Math.abs(target - closestSum)) closestSum = sum;\n      if (sum === target) return target;\n      if (sum < target) left++;\n      else right--;\n    }\n  }\n  return closestSum;\n};"
+    },
+    {
+        "id": 24,
+        "title": "Spiral Matrix",
+        "difficulty": "Medium",
+        "acceptance_rate": "37.4%",
+        "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+        "examples": [
+            {
+                "input": "[[1,2,3],[4,5,6],[7,8,9]]",
+                "output": "[1,2,3,6,9,8,7,4,5]"
+            },
+            {
+                "input": "[[1,2],[3,4]]",
+                "output": "[1,2,4,3]"
+            }
+        ],
+        "sample_code": "var spiralOrder = function(matrix) {\n  const result = [];\n  let top = 0, bottom = matrix.length - 1, left = 0, right = matrix[0].length - 1, direction = 'right';\n  while (top <= bottom && left <= right) {\n    if (direction === 'right') {\n      for (let i = left; i <= right; i++) {\n        result.push(matrix[top][i]);\n      }\n      top++;\n      direction = 'down';\n    } else if (direction === 'down') {\n      for (let i = top; i <= bottom; i++) {\n        result.push(matrix[i][right]);\n      }\n      right--;\n      direction = 'left';\n    } else if (direction === 'left') {\n      for (let i = right; i >= left; i--) {\n        result.push(matrix[bottom][i]);\n      }\n      bottom--;\n      direction = 'up';\n    } else if (direction === 'up') {\n      for (let i = bottom; i >= top; i--) {\n        result.push(matrix[i][left]);\n      }\n      left++;\n      direction = 'right';\n    }\n  }\n  return result;\n};"
+    },
+    {
+        "id": 25,
+        "title": "Two Sum",
+        "difficulty": "Easy",
+        "acceptance_rate": "46.4%",
+        "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+        "examples": [
+            {
+                "input": [
+                    2,
+                    7,
+                    11,
+                    15
+                ],
+                "output": [
+                    0,
+                    1
+                ]
+            },
+            {
+                "input": [
+                    3,
+                    2,
+                    4
+                ],
+                "output": [
+                    1,
+                    2
+                ]
+            }
+        ],
+        "sample_code": "var twoSum = function(nums, target) {\n    let map = new Map();\n    for(let i = 0; i < nums.length; i++) {\n        let complement = target - nums[i];\n        if(map.has(complement)) {\n            return [map.get(complement), i];\n        }\n        map.set(nums[i], i);\n    }\n};"
+    },
+    {
+        "id": 26,
+        "title": "Add Two Numbers",
+        "difficulty": "Medium",
+        "acceptance_rate": "35.9%",
+        "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+        "examples": [
+            {
+                "input": [
+                    [
+                        2,
+                        4,
+                        3
+                    ],
+                    [
+                        5,
+                        6,
+                        4
+                    ]
+                ],
+                "output": [
+                    7,
+                    0,
+                    8
+                ]
+            },
+            {
+                "input": [
+                    [
+                        0
+                    ],
+                    [
+                        0
+                    ]
+                ],
+                "output": [
+                    0
+                ]
+            }
+        ],
+        "sample_code": "var addTwoNumbers = function(l1, l2) {\n    let dummyHead = new ListNode(0);\n    let current = dummyHead;\n    let carry = 0;\n    while(l1 !== null || l2 !== null) {\n        let x = (l1 !== null) ? l1.val : 0;\n        let y = (l2 !== null) ? l2.val : 0;\n        let sum = carry + x + y;\n        carry = Math.floor(sum / 10);\n        current.next = new ListNode(sum % 10);\n        current = current.next;\n        if(l1 !== null) l1 = l1.next;\n        if(l2 !== null) l2 = l2.next;\n    }\n    if(carry > 0) {\n        current.next = new ListNode(carry);\n    }\n    return dummyHead.next;\n};"
+    },
+    {
+        "id": 27,
+        "title": "Longest Substring Without Repeating Characters",
+        "difficulty": "Medium",
+        "acceptance_rate": "30.0%",
+        "description": "Given a string s, find the length of the longest substring without repeating characters.",
+        "examples": [
+            {
+                "input": "s = 'abcabcbb'",
+                "output": "3"
+            },
+            {
+                "input": "s = 'bbbbb'",
+                "output": "1"
+            }
+        ],
+        "sample_code": "var lengthOfLongestSubstring = function(s) {\n  let set = new Set(), left = 0, right = 0, maxLen = 0;\n  while (right < s.length) {\n    if (!set.has(s.charAt(right))) {\n      set.add(s.charAt(right));\n      maxLen = Math.max(maxLen, set.size);\n      right++;\n    } else {\n      set.delete(s.charAt(left));\n      left++;\n    }\n  }\n  return maxLen;\n};"
+    },
+    {
+        "id": 28,
+        "title": "Median of Two Sorted Arrays",
+        "difficulty": "Hard",
+        "acceptance_rate": "30.0%",
+        "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\nFollow up: The overall run time complexity should be O(log (m+n)).",
+        "examples": [
+            {
+                "input": "nums1 = [1,3], nums2 = [2]",
+                "output": "2.00000"
+            },
+            {
+                "input": "nums1 = [1,2], nums2 = [3,4]",
+                "output": "2.50000"
+            }
+        ],
+        "sample_code": "var findMedianSortedArrays = function(nums1, nums2) {\n  let len1 = nums1.length, len2 = nums2.length;\n  if (len1 > len2) {\n    [nums1, nums2] = [nums2, nums1];\n    [len1, len2] = [len2, len1];\n  }\n  let low = 0, high = len1;\n  while (low <= high) {\n    let partition1 = Math.floor((low + high) / 2);\n    let partition2 = Math.floor((len1 + len2 + 1) / 2) - partition1;\n    let maxLeft1 = partition1 === 0 ? -Infinity : nums1[partition1 - 1];\n    let maxLeft2 = partition2 === 0 ? -Infinity : nums2[partition2 - 1];\n    let minRight1 = partition1 === len1 ? Infinity : nums1[partition1];\n    let minRight2 = partition2 === len2 ? Infinity : nums2[partition2];\n    if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {\n      if ((len1 + len2) % 2 === 0) {\n        return (Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2)) / 2;\n      } else {\n        return Math.max(maxLeft1, maxLeft2);\n      }\n    }"
+    },
+    {
+        "id": 29,
+        "title": "Longest Palindromic Substring",
+        "difficulty": "Medium",
+        "acceptance_rate": "29.3%",
+        "description": "Given a string s, return the longest palindromic substring in s.",
+        "examples": [
+            {
+                "input": "s = 'babad'",
+                "output": "'bab'"
+            },
+            {
+                "input": "s = 'cbbd'",
+                "output": "'bb'"
+            }
+        ],
+        "sample_code": "var longestPalindrome = function(s) {\n  let start = 0, maxLen = 0;\n  function expandAroundCenter(left, right) {\n    while (left >= 0 && right < s.length && s.charAt(left) === s.charAt(right)) {\n      left--;\n      right++;\n    }\n    if (right - left - 1 > maxLen) {\n      maxLen = right - left - 1;\n      start = left + 1;\n    }\n  }\n  for (let i = 0; i < s.length; i++) {\n    expandAroundCenter(i, i);\n    expandAroundCenter(i, i + 1);\n  }\n  return s.substring(start, start + maxLen);\n};"
+    },
+    {
+        "id": 30,
+        "title": "ZigZag Conversion",
+        "difficulty": "Medium",
+        "acceptance_rate": "38.7%",
+        "description": "The string `s` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\n```\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\nExplanation:\nP   A   H   N\nA P L S I I G\nY   I   R\n```",
+        "examples": [
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 3 }",
+                "output": "\"PAHNAPLSIIGYIR\""
+            },
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 4 }",
+                "output": "\"PINALSIGYAHRPI\""
+            }
+        ],
+        "sample_code": "var convert = function(s, numRows) {\n  if (numRows === 1) return s;\n  const rows = new Array(numRows).fill('');\n  let curRow = 0, goingDown = false;\n  for (const c of s) {\n    rows[curRow] += c;\n    if (curRow === 0 || curRow === numRows - 1) goingDown = !goingDown;\n    curRow += goingDown ? 1 : -1;\n  }\n  return rows.join('');\n};"
+    },
+    {
+        "id": 31,
+        "title": "3Sum",
+        "difficulty": "Medium",
+        "acceptance_rate": "27.9%",
+        "description": "Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.\n\nNotice that the solution set must not contain duplicate triplets.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-1,0,1,2,-1,-4] }",
+                "output": "[[-1,-1,2],[-1,0,1]]"
+            },
+            {
+                "input": "{ \"nums\": [] }",
+                "output": "[]"
+            }
+        ],
+        "sample_code": "var threeSum = function(nums) {\n  const res = [];\n  nums.sort((a, b) => a - b);\n  for (let i = 0; i < nums.length - 2; i++) {\n    if (nums[i] > 0) break;\n    if (i > 0 && nums[i] === nums[i - 1]) continue;\n    let j = i + 1, k = nums.length - 1;\n    while (j < k) {\n      const sum = nums[i] + nums[j] + nums[k];\n      if (sum === 0) {\n        res.push([nums[i], nums[j], nums[k]]);\n        while (j < k && nums[j] === nums[j + 1]) j++;\n        while (j < k && nums[k] === nums[k - 1]) k--;\n        j++, k--;\n      } else if (sum < 0) {\n        j++;\n      } else {\n        k--;\n      }\n    }\n  }\n  return res;\n};"
+    },
+    {
+        "id": 32,
+        "title": "Maximum Subarray",
+        "difficulty": "Easy",
+        "acceptance_rate": "52.5%",
+        "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.\n\nA subarray is a contiguous part of an array.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-2,1,-3,4,-1,2,1,-5,4] }",
+                "output": "6"
+            },
+            {
+                "input": "{ \"nums\": [1] }",
+                "output": "1"
+            }
+        ],
+        "sample_code": "var maxSubArray = function(nums) {\n  let maxSoFar = nums[0];\n  let maxEndingHere = nums[0];\n  for (let i = 1; i < nums.length; i++) {\n    maxEndingHere = Math.max(maxEndingHere + nums[i], nums[i]);\n    maxSoFar = Math.max(maxSoFar, maxEndingHere);\n  }\n  return maxSoFar;\n};"
+    },
+    {
+        "id": 33,
+        "title": "Regular Expression Matching",
+        "difficulty": "Hard",
+        "acceptance_rate": "28.9%",
+        "description": "Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*' where:\n\n'.' Matches any single character.\n'*' Matches zero or more of the preceding element.\nThe matching should cover the entire input string (not partial).\n\nNote:\n\ns could be empty and contains only lowercase letters a-z.\np could be empty and contains only lowercase letters a-z, and characters like . or *.",
+        "examples": [
+            {
+                "input": "{ \"s\": \"aa\", \"p\": \"a\" }",
+                "output": "false"
+            },
+            {
+                "input": "{ \"s\": \"aa\", \"p\": \".*\" }",
+                "output": "true"
+            }
+        ],
+        "sample_code": "var isMatch = function(s, p) {\n  if (p.length === 0) return s.length === 0;\n  const firstMatch = s.length > 0 && (p[0] === s[0] || p[0] === '.');\n  if (p.length >= 2 && p[1] === '*') {\n    return isMatch(s, p.substring(2)) || (firstMatch && isMatch(s.substring(1), p));\n  } else {\n    return firstMatch && isMatch(s.substring(1), p.substring(1));\n  }\n};"
+    },
+    {
+        "id": 34,
+        "title": "Word Ladder",
+        "difficulty": "Medium",
+        "acceptance_rate": "28.5%",
+        "description": "Given two words beginWord and endWord, and a dictionary wordList, return the length of the shortest transformation sequence from beginWord to endWord, such that:\n\nOnly one letter can be changed at a time.\nEach transformed word must exist in the word list. Note that beginWord is not a transformed word.\n\nNote:\n\nReturn 0 if there is no such transformation sequence.\nAll words have the same length.\nAll words contain only lowercase alphabetic characters.\nYou may assume no duplicates in the word list.\nYou may assume beginWord and endWord are non-empty and are not the same.",
+        "examples": [
+            {
+                "input": "{ \"beginWord\": \"hit\", \"endWord\": \"cog\", \"wordList\": [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"] }",
+                "output": "5"
+            },
+            {
+                "input": "{ \"beginWord\": \"hit\", \"endWord\": \"cog\", \"wordList\": [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"] }",
+                "output": "0"
+            }
+        ],
+        "sample_code": "var ladderLength = function(beginWord, endWord, wordList) {\n  const wordSet = new Set(wordList);\n  if (!wordSet.has(endWord)) return 0;\n  const visited = new Set();\n  visited.add(beginWord);\n  let queue = [beginWord];\n  let level = 1;\n  while (queue.length > 0) {\n    const size = queue.length;\n    for (let i = 0; i < size; i++) {\n      const currWord = queue.shift();\n      if (currWord === endWord) return level;\n      for (let j = 0; j < currWord.length; j++) {\n        for (let k = 0; k < 26; k++) {\n          const nextChar = String.fromCharCode(97 + k);\n          const newWord = currWord.slice(0, j) + nextChar + currWord.slice(j + 1);\n          if (wordSet.has(newWord) && !visited.has(newWord)) {\n            visited.add(newWord);\n            queue.push(newWord);\n          }\n        }\n      }\n    }\n    level++;\n  }\n  return 0;\n};"
+    },
+    {
+        "id": 35,
+        "title": "3Sum Closest",
+        "difficulty": "Medium",
+        "acceptance_rate": "39.5%",
+        "description": "Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-1,2,1,-4], \"target\": 1 }",
+                "output": "2"
+            },
+            {
+                "input": "{ \"nums\": [0,0,0], \"target\": 1 }",
+                "output": "0"
+            }
+        ],
+        "sample_code": "var threeSumClosest = function(nums, target) {\n  nums.sort((a, b) => a - b);\n  let closestSum = Infinity;\n  for (let i = 0; i < nums.length - 2; i++) {\n    let left = i + 1, right = nums.length - 1;\n    while (left < right) {\n      const sum = nums[i] + nums[left] + nums[right];\n      if (Math.abs(target - sum) < Math.abs(target - closestSum)) closestSum = sum;\n      if (sum === target) return target;\n      if (sum < target) left++;\n      else right--;\n    }\n  }\n  return closestSum;\n};"
+    },
+    {
+        "id": 36,
+        "title": "Spiral Matrix",
+        "difficulty": "Medium",
+        "acceptance_rate": "37.4%",
+        "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+        "examples": [
+            {
+                "input": "[[1,2,3],[4,5,6],[7,8,9]]",
+                "output": "[1,2,3,6,9,8,7,4,5]"
+            },
+            {
+                "input": "[[1,2],[3,4]]",
+                "output": "[1,2,4,3]"
+            }
+        ],
+        "sample_code": "var spiralOrder = function(matrix) {\n  const result = [];\n  let top = 0, bottom = matrix.length - 1, left = 0, right = matrix[0].length - 1, direction = 'right';\n  while (top <= bottom && left <= right) {\n    if (direction === 'right') {\n      for (let i = left; i <= right; i++) {\n        result.push(matrix[top][i]);\n      }\n      top++;\n      direction = 'down';\n    } else if (direction === 'down') {\n      for (let i = top; i <= bottom; i++) {\n        result.push(matrix[i][right]);\n      }\n      right--;\n      direction = 'left';\n    } else if (direction === 'left') {\n      for (let i = right; i >= left; i--) {\n        result.push(matrix[bottom][i]);\n      }\n      bottom--;\n      direction = 'up';\n    } else if (direction === 'up') {\n      for (let i = bottom; i >= top; i--) {\n        result.push(matrix[i][left]);\n      }\n      left++;\n      direction = 'right';\n    }\n  }\n  return result;\n};"
+    },
+    {
+        "id": 37,
+        "title": "Median of Two Sorted Arrays",
+        "difficulty": "Hard",
+        "acceptance_rate": "30.0%",
+        "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\nFollow up: The overall run time complexity should be O(log (m+n)).",
+        "examples": [
+            {
+                "input": "nums1 = [1,3], nums2 = [2]",
+                "output": "2.00000"
+            },
+            {
+                "input": "nums1 = [1,2], nums2 = [3,4]",
+                "output": "2.50000"
+            }
+        ],
+        "sample_code": "var findMedianSortedArrays = function(nums1, nums2) {\n  let len1 = nums1.length, len2 = nums2.length;\n  if (len1 > len2) {\n    [nums1, nums2] = [nums2, nums1];\n    [len1, len2] = [len2, len1];\n  }\n  let low = 0, high = len1;\n  while (low <= high) {\n    let partition1 = Math.floor((low + high) / 2);\n    let partition2 = Math.floor((len1 + len2 + 1) / 2) - partition1;\n    let maxLeft1 = partition1 === 0 ? -Infinity : nums1[partition1 - 1];\n    let maxLeft2 = partition2 === 0 ? -Infinity : nums2[partition2 - 1];\n    let minRight1 = partition1 === len1 ? Infinity : nums1[partition1];\n    let minRight2 = partition2 === len2 ? Infinity : nums2[partition2];\n    if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {\n      if ((len1 + len2) % 2 === 0) {\n        return (Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2)) / 2;\n      } else {\n        return Math.max(maxLeft1, maxLeft2);\n      }\n    }"
+    },
+    {
+        "id": 38,
+        "title": "Longest Palindromic Substring",
+        "difficulty": "Medium",
+        "acceptance_rate": "29.3%",
+        "description": "Given a string s, return the longest palindromic substring in s.",
+        "examples": [
+            {
+                "input": "s = 'babad'",
+                "output": "'bab'"
+            },
+            {
+                "input": "s = 'cbbd'",
+                "output": "'bb'"
+            }
+        ],
+        "sample_code": "var longestPalindrome = function(s) {\n  let start = 0, maxLen = 0;\n  function expandAroundCenter(left, right) {\n    while (left >= 0 && right < s.length && s.charAt(left) === s.charAt(right)) {\n      left--;\n      right++;\n    }\n    if (right - left - 1 > maxLen) {\n      maxLen = right - left - 1;\n      start = left + 1;\n    }\n  }\n  for (let i = 0; i < s.length; i++) {\n    expandAroundCenter(i, i);\n    expandAroundCenter(i, i + 1);\n  }\n  return s.substring(start, start + maxLen);\n};"
+    },
+    {
+        "id": 39,
+        "title": "ZigZag Conversion",
+        "difficulty": "Medium",
+        "acceptance_rate": "38.7%",
+        "description": "The string `s` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\n```\nInput: s = \"PAYPALISHIRING\", numRows = 3\nOutput: \"PAHNAPLSIIGYIR\"\nExplanation:\nP   A   H   N\nA P L S I I G\nY   I   R\n```",
+        "examples": [
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 3 }",
+                "output": "\"PAHNAPLSIIGYIR\""
+            },
+            {
+                "input": "{ \"s\": \"PAYPALISHIRING\", \"numRows\": 4 }",
+                "output": "\"PINALSIGYAHRPI\""
+            }
+        ],
+        "sample_code": "var convert = function(s, numRows) {\n  if (numRows === 1) return s;\n  const rows = new Array(numRows).fill('');\n  let curRow = 0, goingDown = false;\n  for (const c of s) {\n    rows[curRow] += c;\n    if (curRow === 0 || curRow === numRows - 1) goingDown = !goingDown;\n    curRow += goingDown ? 1 : -1;\n  }\n  return rows.join('');\n};"
+    },
+    {
+        "id": 40,
+        "title": "3Sum",
+        "difficulty": "Medium",
+        "acceptance_rate": "27.9%",
+        "description": "Given an integer array nums, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.\n\nNotice that the solution set must not contain duplicate triplets.",
+        "examples": [
+            {
+                "input": "{ \"nums\": [-1,0,1,2,-1,-4] }",
+                "output": "[[-1,-1,2],[-1,0,1]]"
+            },
+            {
+                "input": "{ \"nums\": [] }",
+                "output": "[]"
+            }
+        ],
+        "sample_code": "var threeSum = function(nums) {\n  const res = [];\n  nums.sort((a, b) => a - b);\n  for (let i = 0; i < nums.length - 2; i++) {\n    if (nums[i] > 0) break;\n    if (i > 0 && nums[i] === nums[i - 1]) continue;\n    let j = i + 1, k = nums.length - 1;\n    while (j < k) {\n      const sum = nums[i] + nums[j] + nums[k];\n      if (sum === 0) {\n        res.push([nums[i], nums[j], nums[k]]);\n        while (j < k && nums[j] === nums[j + 1]) j++;\n        while (j < k && nums[k] === nums[k - 1]) k--;\n        j++, k--;\n      } else if (sum < 0) {\n        j++;\n      } else {\n        k--;\n      }\n    }\n  }\n  return res;\n};"
+    }
+]
