@@ -1,11 +1,14 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
+  const navigate=useNavigate()
   const [password, setPassword] = useState("");
+  const location=useLocation();
+  
 
   const sumbitData = async () => {
     const { data } = await axios.post("http://localhost:3001/signup", {
@@ -14,13 +17,23 @@ const Signup = () => {
     });
 
     return data;
+
+
+
   };
+
+  useEffect(()=>{
+   if(localStorage.getItem("token")){
+     navigate("/problemset/all")
+   }                            
+  },[location.pathname])
 
   const userMutate = useMutation({
     mutationFn: sumbitData,
     onSuccess: (data) => {
       localStorage.setItem("token", data.token);
-      window.location.href = "/problemset/all";
+      navigate("/problemset/all")
+      
     },
     onError: (error) => {
         console.log(error);
@@ -32,8 +45,8 @@ const Signup = () => {
     userMutate.mutate();
   };
   return (
-    <div className="h-screen w-full  flex items-center justify-center mx-auto px-5    ">
-      <div className="w-full md:w-1/5">
+    <div className="h-screen w-full  px-5 flex items-center justify-center mx-auto     ">
+      <div className="w-full md:w-2/5">
         <img
           src="https://leetcode.com/static/images/LeetCode_logo_rvs.png"
           alt="logo"
@@ -85,11 +98,11 @@ const Signup = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Sign up
+            Login
           </button>
         </form>
-        <div className="text-white text-sm text-center p-5">
-        <Link to="/login">Already have an account? Login</Link>
+        <div className="text-white text-sm text-center p-5 hover:underline decoration-white underline-offset-2">
+        <Link to="/login">Already a user? Go to login page!</Link>
         
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Problems from "./pages/Problems";
@@ -6,6 +6,8 @@ import ProblemSlug from "./pages/ProblemSlug";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import RequireAuth from "./components/RequireAuth";
+import Navbar from "./components/Navbar";
 
 /*
  * Temporary problems array schema
@@ -35,22 +37,15 @@ const problems = [
 
 function App() {
   const navigate = useNavigate();
-
-
+  const location=useLocation()
   useEffect(() => {
-const token=localStorage.getItem("token")
-if(!token){
-    navigate("/login") || navigate("/signup")
-
-}
-
+    if(location.pathname==="/"){
+      navigate("/problemset/all")
+    }
+  }, [location.pathname])
 
 
-   if(window.location.pathname==="/"){
-        navigate("/problemset/all")
-   }
  
-  }, [window.location.pathname]);
 
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -67,22 +62,26 @@ if(!token){
      */
 
   return (
+    <>
+    <Navbar/>
     <div className="bg-[#2e2e2e] text-white h-screen ">
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/login" exact element={<Login />} />
           <Route path="/signup" exact element={<Signup />} />
 
-          <Route path="/problemset/all" exact element={<Problems />} />
+
+          <Route path="/problemset/all" exact element={<RequireAuth><Problems /></RequireAuth>} />
           <Route
             path="/problems/:problem_slug"
             exact
-            element={<ProblemSlug />}
+            element={<RequireAuth><ProblemSlug /></RequireAuth>}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </QueryClientProvider>
     </div>
+    </>
   );
 }
 

@@ -1,11 +1,13 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate=useNavigate()
+  const location=useLocation();
 
   const sumbitData = async () => {
     const { data } = await axios.post("http://localhost:3001/login", {
@@ -16,11 +18,21 @@ const Login = () => {
     return data;
   };
 
+  
+  useEffect(()=>{
+    if(localStorage.getItem("token")){
+      navigate("/problemset/all")
+    }                            
+   },[location.pathname])
+
+
+   
+
   const userMutate = useMutation({
     mutationFn: sumbitData,
     onSuccess: (data) => {
       localStorage.setItem("token", data.token);
-      // window.location.href = "/problemset/all";
+      navigate("/problemset/all")
     },
     onError: (error) => {
       console.log(error);
@@ -88,7 +100,7 @@ const Login = () => {
             Login
           </button>
         </form>
-        <div className="text-white text-sm text-center p-5">
+        <div className="text-white text-sm text-center p-5 hover:underline decoration-white underline-offset-2">
         <Link to="/signup">New user? Go to singup page!</Link>
         
         </div>
