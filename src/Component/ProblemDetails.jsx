@@ -1,20 +1,23 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import "./ProblemDetails.css";
+import problems from "./ProblemsList";
 import AceEditor from "react-ace";
+import { useState } from "react";
 import "ace-builds/src-noconflict/mode-javascript"; // Import the mode for the programming language you want to support
 import "ace-builds/src-noconflict/mode-python"; // Import mode for Python
 import "ace-builds/src-noconflict/mode-java"; // Import mode for Java
 import "ace-builds/src-noconflict/mode-csharp"; // Import mode for C#
 import "ace-builds/src-noconflict/theme-monokai"; // Import the theme for the code editor
 
-export default function ProblemDetails({ problems }) {
+export default function ProblemDetails() {
   const { problemId } = useParams();
   const problem = getProblemById(problemId);
 
   const [code, setCode] = useState("");
+  // console.log(problems);
 
   // console.log(code);
   const [language, setLanguage] = useState("javascript");
@@ -70,7 +73,7 @@ export default function ProblemDetails({ problems }) {
         onChange={handleCodeChange}
         name="code-editor"
         editorProps={{ $blockScrolling: Infinity }}
-        style={{ width: "100%", height: "500px" }}
+        // style={{ width: "100%", height: "500px" }}
       />
 
       <div className="button-container">

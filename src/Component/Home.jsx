@@ -10,7 +10,6 @@ export default function Home() {
       <div>
         {/* Content for the Home page */}
         <h1>Welcome to LeetCode</h1>
-        <p>Join the community of developers and sharpen your coding skills.</p>
       </div>
     </div>
   );

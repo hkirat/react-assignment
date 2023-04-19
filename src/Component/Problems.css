@@ -1,5 +1,9 @@
 /* CSS for LeetCodeProblems component */
 
+.body {
+  background-color: aliceblue;
+}
+
 .container {
   margin-top: 20px;
 }
@@ -21,6 +25,7 @@ thead {
 th {
   padding: 10px;
   text-align: left;
+  background-color: antiquewhite;
 }
 
 /* Style for table body (tbody) */
@@ -31,6 +36,7 @@ tbody {
 /* Style for table body rows (tr) */
 tr {
   border-bottom: 1px solid #ddd;
+  background-color: aliceblue;
 }
 
 /* Style for table body cells (td) */
