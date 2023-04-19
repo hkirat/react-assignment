@@ -38,7 +38,7 @@ const Signup = () => {
       
     },
     onError: (error) => {
-        console.log(error);
+      toast.error("Invalid credentials")
         }
   });
 

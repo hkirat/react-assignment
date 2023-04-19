@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -13,6 +13,7 @@ import "ace-builds/src-noconflict/ext-language_tools";
 
 const ProblemSlug = () => {
   const { problem_slug } = useParams();
+  const queryClient = useQueryClient();
   const [code, setCode] = React.useState(`function solution() {
     // Write your code here
     }`);
@@ -21,8 +22,7 @@ const ProblemSlug = () => {
 
   const fetchProblem = async () => {
     const { data } = await axios.get(
-     
-      import.meta.env.VITE_BACKEND+'/questions'+`/${problem_slug}`
+      import.meta.env.VITE_BACKEND + "/questions" + `/${problem_slug}`
     );
     return data;
   };
@@ -42,7 +42,7 @@ const ProblemSlug = () => {
 
   const handleSubmit = async () => {
     const { data } = await axios.post(
-      import.meta.env.VITE_BACKEND+'/submissions',
+      import.meta.env.VITE_BACKEND + "/submissions",
       { code, title: question?.title, questionId: question?.questionId },
       {
         headers: {
@@ -59,12 +59,25 @@ const ProblemSlug = () => {
     onSuccess: (data) => {
       if (data?.success) {
         toast.success("Submitted your code!");
-
-        setSubmission(data?.result);
+        queryClient.invalidateQueries(["submissions", problem_slug]);
       }
     },
     enabled: !!problem_slug || code.length > 25,
   });
+
+  const { data: submissions } = useQuery({
+    queryKey: ["submissions", problem_slug],
+    queryFn: () =>
+      axios.get(import.meta.env.VITE_BACKEND + "/submissions"+`/${question.questionId}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+
+    enabled: !!question,
+  });
+
   return (
     <div className="p-6 h-full flex md:flex-row flex-col space-y-5 md:space-x-5 ">
       <div className="md:flex-[0.4]">
@@ -107,7 +120,7 @@ const ProblemSlug = () => {
         </button>
 
         <Toaster position="top-center" />
-        <Submissions submissions={submission} />
+        <Submissions submissions={submissions?.data?.result} />
       </div>
     </div>
   );

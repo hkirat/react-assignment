@@ -37,7 +37,7 @@ const Login = () => {
       navigate("/problemset/all")
     },
     onError: (error) => {
-      console.log(error);
+      toast.error("Invalid credentials")
       }
   });
 
