@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const [userInfo, setUserInfo] = useState({
@@ -33,9 +34,12 @@ const LoginPage = () => {
           name="password"
           placeholder="Password"
         />
-        <button className="rounded bg-gradient-to-r from-[#546B7A] to-[#37474f] text-white p-4 text-xl">
+        <Link
+          to="/"
+          className="rounded bg-gradient-to-r from-[#546B7A] to-[#37474f] text-white p-4 text-xl"
+        >
           Sign In
-        </button>
+        </Link>
       </form>
     </div>
   );
