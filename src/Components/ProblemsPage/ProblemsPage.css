@@ -1,0 +1,39 @@
+#problempage {
+    min-height: 91vh;
+    display: flex;
+    align-items: flex-start;
+}
+
+.ques , .code {
+    width: 50%;
+    min-height: 65vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.code-form {
+    height: 70vh;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-weight: 900;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#test {
+    background-color: gray;
+}
+#submit {
+    background-color: rgb(68, 207, 68);
+}
