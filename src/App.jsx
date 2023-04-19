@@ -2,89 +2,20 @@
  * Temporary problems array schema
  */
 import React from "react";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Root from "./components/Root";
+import SingleProblem from "./components/SingleProblem";
 
+import AllProblems from "./components/AllProblems";
 import {
     createBrowserRouter,
     RouterProvider,
   } from "react-router-dom";
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
-const AllProblem=()=>{
-    return(
-        problems.map((problem,key)=>{
-            return(
-                <ProblemStatement key={key} title={problem.title} difficulty={problem.difficulty} acceptance={problem.acceptance}/>
-            
-            )
-        }
-    ))
-}
-const ProblemStatement=({title,difficulty,acceptance})=>{
-    return(
-    <table>
-        <tbody>
 
-        <tr>
-            
-            <td>
-                {title}
-            </td>
-            <td>
-                {acceptance}
-            </td>
-            <td>
-                {difficulty}
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    )
-}
-const Root=()=>{
-    return(
-        <div>
-            <h1>Root</h1>
-        </div>
-    )
-}
-const Signup=()=>{
-    return(
-        <div>
-            <h1>Signup</h1>
-        </div>
-    )
-}
-const Login=()=>{
-    return(
-        <div>
-            <h1>Login</h1>
-        </div>
-    )
-}
-const singleProblem=()=>{
-    return(
-        <div>
-            <h1>Single Problem</h1>
-        </div>
-    )
-}
+
+
+//adding routes
 const router = createBrowserRouter([
     {
       path: "/",
@@ -99,10 +30,10 @@ const router = createBrowserRouter([
         element: <Login/>
     },{
         path: "/problems/all",
-        element: <AllProblem/>
+        element: <AllProblems/>
     },{
         path: "/problems/:problem_slug",
-        element: <singleProblem/>
+        element: <SingleProblem/>
     }
   ]);
 
