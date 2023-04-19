@@ -1,6 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Toaster, toast } from 'react-hot-toast';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -31,6 +32,7 @@ const Login = () => {
   const userMutate = useMutation({
     mutationFn: sumbitData,
     onSuccess: (data) => {
+      toast("Successfully logged in!");
       localStorage.setItem("token", data.token);
       navigate("/problemset/all")
     },
@@ -105,6 +107,7 @@ const Login = () => {
         
         </div>
       </div>
+      <Toaster position='top-center'/>
     </div>
   );
 }

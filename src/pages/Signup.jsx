@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Signup = () => {
@@ -31,6 +32,7 @@ const Signup = () => {
   const userMutate = useMutation({
     mutationFn: sumbitData,
     onSuccess: (data) => {
+      toast("Successfully signed up!");
       localStorage.setItem("token", data.token);
       navigate("/problemset/all")
       
@@ -98,7 +100,7 @@ const Signup = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Login
+            Create Account
           </button>
         </form>
         <div className="text-white text-sm text-center p-5 hover:underline decoration-white underline-offset-2">
@@ -106,6 +108,7 @@ const Signup = () => {
         
         </div>
       </div>
+      <Toaster position="top-center"/>
     </div>
   );
 };
