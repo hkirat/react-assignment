@@ -1,59 +1,38 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
-
+import React, { useState,useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import { NavBar, DarkNavBar } from "./components/NavBar";
+import { ProblemList, DarkProblemList } from "./Components/ProblemList";
+import { ProblemStatement } from "./Components/ProblemStatement";
+import problems from "./data/problemList";
+import {SignUpView,DarkSignUpView} from "./Components/SignUpView";
 
 function App() {
-
-    /* Add routing here, routes look like -
+  /* Add routing here, routes look like -
        /login - Login page
        /signup - Signup page
        /problemset/all/ - All problems (see problems array above)
        /problems/:problem_slug - A single problem page
      */
+  const [theme, setTheme] = useState(false);
 
-    return (
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTheme((prevTheme) => !prevTheme);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
     <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
+      {theme ? <NavBar /> : <DarkNavBar />}
+      <Routes>
+        <Route exact path="/" element={theme? <DarkProblemList problems={problems}/> : <ProblemList problems={problems} />} />
+        <Route path="/login" element={theme? <DarkSignUpView /> : <SignUpView />} />
+        <Route path="/problems/:_id" element={<ProblemStatement />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+export default App;
