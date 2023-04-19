@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Layouts/Header.jsx";
 import Footer from "./components/Layouts/Footer.jsx";
 
+import Home from "./components/Pages/Home.jsx";
 import Register from "./components/Pages/Register.jsx";
 import Login from "./components/Pages/Login.jsx";
 
@@ -19,7 +20,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Register />} />
+        <Route path="/" element={<Home />} />
 
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />

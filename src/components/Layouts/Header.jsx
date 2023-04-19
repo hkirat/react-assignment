@@ -1,4 +1,5 @@
 //
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -21,28 +22,28 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to={"/"}>
                 <b>Home</b>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Login">
+              <Link className="nav-link" to={"/Login"}>
                 <b>Login</b>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Register">
+              <Link className="nav-link" to={"/Register"}>
                 <b>Register</b>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
-                href="https://manthan-mk-web.onrender.com/"
+                to={"https://manthan-mk-website.vercel.app/"}
                 target="_blank"
               >
                 <b>My Website</b>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

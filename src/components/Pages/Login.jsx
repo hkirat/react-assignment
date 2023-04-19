@@ -1,5 +1,6 @@
 //
-import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   MDBBtn,
   MDBContainer,
@@ -13,7 +14,7 @@ import {
 
 function Login() {
   return (
-    <form action="/Questions">
+    <form action="/Questions" method="post">
       <MDBContainer fluid>
         <MDBRow className="d-flex justify-content-center align-items-center h-100">
           <MDBCol col="12">
@@ -49,9 +50,11 @@ function Login() {
                   label="Remember password"
                 />
 
-                <MDBBtn type="submit" size="lg">
-                  Login
-                </MDBBtn>
+                <Link to={"/Questions"}>
+                  <MDBBtn type="submit" size="lg">
+                    Login
+                  </MDBBtn>
+                </Link>
 
                 <hr className="my-4" />
               </MDBCardBody>

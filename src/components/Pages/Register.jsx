@@ -1,5 +1,6 @@
 //
-import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   MDBBtn,
   MDBContainer,
@@ -13,7 +14,7 @@ import {
 
 function Register() {
   return (
-    <form action="/Login">
+    <form action="/Login" method="post">
       <MDBContainer fluid>
         <MDBRow className="justify-content-center align-items-center m-5">
           <MDBCard>
@@ -125,9 +126,11 @@ function Register() {
                 </MDBCol>
               </MDBRow>
 
-              <MDBBtn type="submit" className="mb-4" size="lg">
-                Register
-              </MDBBtn>
+              <Link to={"/Login"}>
+                <MDBBtn type="submit" className="mb-4" size="lg">
+                  Register
+                </MDBBtn>
+              </Link>
             </MDBCardBody>
           </MDBCard>
         </MDBRow>
