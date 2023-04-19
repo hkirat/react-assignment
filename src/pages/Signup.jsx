@@ -12,7 +12,7 @@ const Signup = () => {
   
 
   const sumbitData = async () => {
-    const { data } = await axios.post("http://localhost:3001/signup", {
+    const { data } = await axios.post(import.meta.env.VITE_BACKEND+'/signup', {
       email,
       password,
     });

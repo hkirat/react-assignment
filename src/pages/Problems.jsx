@@ -5,7 +5,7 @@ import Problem from "../components/Problem";
 
 const Problems = () => {
   const getQuestions = async () => {
-    const { data } = await axios.get("http://localhost:3001/questions");
+    const { data } = await axios.get(import.meta.env.VITE_BACKEND+'/questions');
     return data;
   };
   const { data } = useQuery({

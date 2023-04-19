@@ -11,7 +11,7 @@ const Login = () => {
   const location=useLocation();
 
   const sumbitData = async () => {
-    const { data } = await axios.post("http://localhost:3001/login", {
+    const { data } = await axios.post(import.meta.env.VITE_BACKEND+'/login', {
       email,
       password,
     });

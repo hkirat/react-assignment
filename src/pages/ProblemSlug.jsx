@@ -21,7 +21,8 @@ const ProblemSlug = () => {
 
   const fetchProblem = async () => {
     const { data } = await axios.get(
-      `http://localhost:3001/questions/${problem_slug}/`
+     
+      import.meta.env.VITE_BACKEND+'/questions'+`/${problem_slug}`
     );
     return data;
   };
