@@ -64,7 +64,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <div className="bg-[#2e2e2e] text-white h-screen ">
+    <div className="bg-[#2e2e2e] text-white min-h-screen ">
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/login" exact element={<Login />} />

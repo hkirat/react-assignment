@@ -1,25 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useState } from "react";
-import Porblem from "../components/Problem";
+import Problem from "../components/Problem";
 
 const Problems = () => {
-  const [questions, setQuestions] = useState([]);
   const getQuestions = async () => {
     const { data } = await axios.get("http://localhost:3001/questions");
     return data;
   };
-  const questionQuery = useQuery({
+  const { data } = useQuery({
     queryKey: ["questions"],
     queryFn: getQuestions,
-    onSuccess: (data) => {
-      console.log(data);
-      setQuestions(data);
-    },
+    onSuccess: (data) => {},
   });
   return (
     <div>
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="-my-2 overflow-hidden">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6  ">
             <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg ">
@@ -52,8 +48,8 @@ const Problems = () => {
                     </th>
                   </tr>
                 </thead>
-                {questions.map((question) => (
-                  <Porblem key={question.questionId} question={question} />
+                {data?.map((question) => (
+                  <Problem key={question.questionId} question={question} />
                 ))}
               </table>
             </div>
