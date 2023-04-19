@@ -42,7 +42,7 @@ const ProblemSlug = () => {
 
   const handleSubmit = async () => {
     const { data } = await axios.post(
-      "http://localhost:3001/submissions",
+      import.meta.env.VITE_BACKEND+'/submissions',
       { code, title: question?.title, questionId: question?.questionId },
       {
         headers: {
