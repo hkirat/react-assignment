@@ -7,7 +7,6 @@ function Home() {
   const navigate = useNavigate();
   const { isLoggedIn,authState } = useContext(AuthContext);
   const [problems, setProblems] = useState([]);
-  const [questions, setQuestions] = useState([])
 
   const handleProblemClick = (problem) => {
     navigate(`/questions/${problem.id}`);
@@ -20,7 +19,7 @@ function Home() {
     else {
         console.log(authState+ " priniting token")
         const config = {
-          headers: { Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTk4Nzc2NywiZXhwIjoxNjgxOTkxMzY3fQ.tXj8Sixxresoi7JaX4qIdcZ0iGTnlK3np_CDnlf7QPE' }
+          headers: { Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTk5MzU4NywiZXhwIjoxNjgxOTk3MTg3fQ.bdjDLDE-KU76CsZjOhak0xvMqdRZ6gs81UKQjQZRhAk' }
         };
         axios.get('http://localhost:3001/questions', config
         ).then(response => {
