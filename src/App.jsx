@@ -1,30 +1,36 @@
 import React from "react";
 import "./index.css";
-import {Link}from 'react-router-dom';
+import { Routes, Route, Outlet, Link } from 'react-router-dom';
+import Signup from "./components/signup/Signup";
+import Login from "./components/login/login";
+import Problems from "./components/problemset/all/problems";
+import Problemslug from "./components/problemset/problem_slug/problem-slug";
+import Navbar from "./components/navbar/Navbar";
 const Landingpage = () => {
   return (
     <>
-      <div className="landingPage-buttons">
-        <Link to="/signup">
-          <button id="button">Signup</button>
-        </Link>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="login" element={<Login />} />
+        <Route path="problems/all" element={<Problems />} />
+        <Route path="problems/slug" element={<Problemslug />} />
+      </Routes>
 
-        <Link to="/login">
-          <button id="button">Login</button>
-        </Link>
-      
-         <Link to="/problems/all">
-          <button id="button">Problems</button>
-        </Link>
-      
-         <Link to="/problem-slug">
-          <button id="button">Problem :slug</button>
-        </Link>
-      
-      </div>
-      <div className="shitcode"><p>SHIT-CODE</p></div>
+
+
     </>
-  );
+  )
 };
+
+const Home = () =>{
+  return (
+    <>
+    <Navbar/>
+    <div className="shitcode"><p>SHITCODE</p></div>
+    </>
+  )
+}
+
 
 export default Landingpage;

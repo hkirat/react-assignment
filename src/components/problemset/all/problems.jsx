@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./../../../index.css"
 import ReactDOM, { createRoot } from 'react-dom/client'
-
+import Navbar from "../../navbar/Navbar";
 const problems = [
  {
     title: "201. Bitwise AND of Numbers Range",
@@ -47,6 +47,7 @@ const Problems = () => {
   const [problems1, setProblems] = useState(problems)
   return (
     <>
+    <Navbar/>
       <h2>Problems</h2>
       <br/>
       <button id="problembutton" onClick={() => { console.log('hello'), setProblems(problems) }}>1</button>

@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import Navbar from "../../navbar/Navbar"
 const Problemslug = () => {
 
 const [problem, setProblem] = useState({
@@ -20,6 +20,7 @@ const [problem, setProblem] = useState({
 })
 return(
     <>
+    <Navbar/>
     Desription:  {problem.description}
     <br/>
     Title: {problem.title}
