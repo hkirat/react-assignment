@@ -6,6 +6,7 @@ import Home from './components/Home';
 import AuthContext from './AuthContext';
 import Layout from './components/Layout';
 import Login from './components/Login'
+import Question from './components/Question'
 
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
@@ -47,7 +48,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
-                    {/* <Route path="/login" element={<Login />} /> */}
+                    <Route path="/question/:id" element={<Question />} />
                     <Route path="/signup" element={<Signup />} />
                 </Routes>
             </Layout>
