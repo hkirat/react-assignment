@@ -14,7 +14,6 @@ function Home() {
 
   const handleLogout = () => {
     // Perform logout logic here (e.g. make API call to backend)
-    // ...
     // Update auth state
     setAuthState({ isLoggedIn: false, token: null });
     console.log("User log out successful")

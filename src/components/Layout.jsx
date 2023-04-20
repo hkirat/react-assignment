@@ -33,6 +33,10 @@ const Layout = (props) => {
         <button type="button" className="btn btn-secondary" onClick={handleLoginClick} >Login</button>
       );
       
+    } else if (pathname === "/login"){
+      return(
+        <button type="button" className="btn btn-warning" onClick={handleSignupClick}>Signup</button> 
+      );
     } else if (pathname === "/"){
       return(
         <button type="button" className="btn btn-warning" onClick={handleLogoutClick}>Logout</button> 
