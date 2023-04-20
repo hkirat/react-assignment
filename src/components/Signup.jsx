@@ -3,10 +3,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import config from '../config';
 
 function Signup(){
 
-    const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -16,7 +16,7 @@ function Signup(){
     event.preventDefault();
 
     // Perform validation on name, email, password, and confirmPassword
-    if (!name || !email || !password || !confirmPassword) {
+    if (!email || !password || !confirmPassword) {
       alert('Please enter all required fields.');
       return;
     }
@@ -29,13 +29,12 @@ function Signup(){
     try {
       // Make signup API call
       const response = await axios.post(config.SIGNUP_API_URL, {
-        name,
         email,
         password,
       });
 
       // Check if response status is 201 and token is returned in the response body
-      if (response.status === 201 && response.data.token) {
+      if (response.status === 200 && response.data.message=== "User signed up successfully") {
         // Handle successful signup
         // You can store the token in local storage, Redux store, or a cookie for further use
         console.log('Signup successful:', response.data.token);
@@ -52,7 +51,6 @@ function Signup(){
     }
 
     // Reset form fields after submission
-    setName('');
     setEmail('');
     setPassword('');
     setConfirmPassword('');
@@ -82,7 +80,7 @@ function Signup(){
                                         id='floatingEmail'
                                         placeholder='name@example.com'
                                         value={email}
-                                        onChange={(e) => setName(e.target.value)}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         />
                                         <label htmlFor='floatingEmail'>Email address</label>
                                     </div>
