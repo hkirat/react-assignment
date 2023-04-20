@@ -5,9 +5,8 @@ import axios from 'axios';
 
 function Home() {
   const navigate = useNavigate();
-  const { isLoggedIn,authState } = useContext(AuthContext);
+  const { isLoggedIn,token } = useContext(AuthContext);
   const [problems, setProblems] = useState([]);
-
   const handleProblemClick = (problem) => {
     navigate(`/questions/${problem.id}`);
   };
@@ -17,9 +16,9 @@ function Home() {
       navigate('/login');
     }
     else {
-        console.log(authState+ " priniting token")
+        console.log(token+ " priniting token")
         const config = {
-          headers: { Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTk5MzU4NywiZXhwIjoxNjgxOTk3MTg3fQ.bdjDLDE-KU76CsZjOhak0xvMqdRZ6gs81UKQjQZRhAk' }
+          headers: { Authorization: `Bearer ${token}` }
         };
         axios.get('http://localhost:3001/questions', config
         ).then(response => {
@@ -29,7 +28,7 @@ function Home() {
             console.error(error);
           });
       }
-    }, [isLoggedIn, navigate, authState]);
+    }, [isLoggedIn, navigate, token]);
 
   return isLoggedIn ? (
     <div className='container'>
