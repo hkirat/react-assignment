@@ -34,7 +34,7 @@ function LoginPage() {
         // Handle successful login
         // You can store the token in local storage, Redux store, or a cookie for further use
         console.log('Login successful:', response.data.token);
-        setAuthState({ isLoggedIn: true, token: response.data.token });
+        setAuthState({ isLoggedIn: true, token: response.data.token });                                     
         navigate('/')
       } else {
         // Handle login error
