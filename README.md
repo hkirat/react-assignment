@@ -10,7 +10,7 @@
 <br/>
 /problems/all -> all the problems 
 <br/> 
-/problem-slug -> description of one problem
+/problems/slug -> description of one problem
 
 ### Favour
 
