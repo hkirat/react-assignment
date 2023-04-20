@@ -9,6 +9,10 @@ function Home() {
   const [problems, setProblems] = useState([]);
   const [questions, setQuestions] = useState([])
 
+  const handleProblemClick = (problem) => {
+    navigate(`/questions/${problem.id}`);
+  };
+
   useEffect(() => {
     if (!isLoggedIn) {
       navigate('/login');
@@ -47,13 +51,9 @@ function Home() {
                 </thead>
                 <tbody>
                   {problems.map((problem, index) => (
-                    <tr key={problem.id}>
+                    <tr key={problem.id} onClick={() => handleProblemClick(problem)}>
                       <th scope='row'>{index + 1}</th>
-                      <td>
-                        <a onClick={() => handleProblemClick(problem)}>
-                        {problem.title}
-                        </a>
-                      </td>
+                      <td>{problem.title}</td>
                       <td>{problem.description}</td>
                       <td>{problem.solution}</td>
                       <td>{problem.acceptance}</td>
