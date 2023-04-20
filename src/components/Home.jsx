@@ -1,59 +1,71 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../AuthContext';
+import axios from 'axios';
 
 function Home() {
   const navigate = useNavigate();
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn,authState } = useContext(AuthContext);
+  const [problems, setProblems] = useState([]);
+  const [questions, setQuestions] = useState([])
 
   useEffect(() => {
     if (!isLoggedIn) {
       navigate('/login');
     }
-  }, [isLoggedIn, navigate]);
-
-  
+    else {
+        console.log(authState+ " priniting token")
+        const config = {
+          headers: { Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4MTk4Nzc2NywiZXhwIjoxNjgxOTkxMzY3fQ.tXj8Sixxresoi7JaX4qIdcZ0iGTnlK3np_CDnlf7QPE' }
+        };
+        axios.get('http://localhost:3001/questions', config
+        ).then(response => {
+            setProblems(response.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
+    }, [isLoggedIn, navigate, authState]);
 
   return isLoggedIn ? (
     <div className='container'>
-        <div className='container mt-5'>
-            <div className='row justify-content-center'>
-                <div className='col-md-10'>
-                <div>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                            <th className="col">#</th>
-                            <th className="col">Title</th>
-                            <th className="col">Description</th>
-                            <th className="col">Solution</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
+      <div className='container mt-5'>
+        <div className='row justify-content-center'>
+          <div className='col-md-10'>
+            <div>
+              <table className='table'>
+                <thead>
+                  <tr>
+                    <th className='col'>#</th>
+                    <th className='col'>Title</th>
+                    <th className='col'>Description</th>
+                    <th className='col'>Solution</th>
+                    <th className='col'>Acceptance</th>
+                    <th className='col'>Difficulty</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {problems.map((problem, index) => (
+                    <tr key={problem.id}>
+                      <th scope='row'>{index + 1}</th>
+                      <td>
+                        <a onClick={() => handleProblemClick(problem)}>
+                        {problem.title}
+                        </a>
+                      </td>
+                      <td>{problem.description}</td>
+                      <td>{problem.solution}</td>
+                      <td>{problem.acceptance}</td>
+                      <td>{problem.difficulty}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+          </div>
         </div>
+      </div>
     </div>
   ) : null;
 }
