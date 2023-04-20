@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-
+import Navbar from "./Navbar";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -39,6 +39,8 @@ const Signup = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container">
       <form onSubmit={handleSubmit}>
         <h1>Sign up</h1>
@@ -53,7 +55,7 @@ const Signup = () => {
             id="email"
             value={email}
             onChange={handleChange}
-          />
+            />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
@@ -62,11 +64,12 @@ const Signup = () => {
             id="password"
             value={password}
             onChange={handleChange}
-          />
+            />
         </div>
         <button type="submit">Sign up</button>
       </form>
     </div>
+            </>
   );
 };
 
