@@ -1,6 +1,13 @@
-/*
- * Temporary problems array schema
- */
+import React,{ useEffect,useState } from 'react';
+import { BrowserRouter as Router, Routes,Route,useNavigate } from 'react-router-dom';
+//import Login from './Login'; 
+import Signup from './components/Signup'; 
+import Home from './components/Home';
+import AuthContext from './AuthContext';
+import Layout from './components/Layout';
+import Login from './components/Login'
+import Question from './components/Question'
+
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
@@ -21,7 +28,6 @@ const problems = [{
         acceptance: "42%"
     }];
 
-
 function App() {
 
     /* Add routing here, routes look like -
@@ -30,12 +36,26 @@ function App() {
        /problemset/all/ - All problems (see problems array above)
        /problems/:problem_slug - A single problem page
      */
-
+    const [authState, setAuthState] = useState({
+    isLoggedIn: false,
+    token: null
+    });
+       
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+    <AuthContext.Provider value={{ ...authState, setAuthState }}>
+        <Router>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/questions/:id" element={<Question />} />
+                    <Route path="/signup" element={<Signup />} />
+                </Routes>
+            </Layout>
+        </Router>
+    </AuthContext.Provider>
+         
+    );
 }
 
 // A demo component
