@@ -27,7 +27,7 @@ const Home = () =>{
   return (
     <>
     <Navbar/>
-    <div className="shitcode"><p>SHITCODE</p></div>
+    <div className="shitcode"><p>SHIITCODE</p></div>
     </>
   )
 }
