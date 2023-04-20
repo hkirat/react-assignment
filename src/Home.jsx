@@ -25,7 +25,7 @@ function Home() {
   return isLoggedIn ? (
     <div>
       <div>Welcome to the home page!</div>
-      <button onClick={handleLogout}>Log Out</button>
+      
     </div>
   ) : null;
 }

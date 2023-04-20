@@ -1,13 +1,15 @@
 // Layout.jsx
 
-import React from 'react';
+import React,{ useState,useContext } from 'react';
 import { Link, useLocation,useNavigate } from "react-router-dom";
+import AuthContext from '../AuthContext';
 
 const Layout = (props) => {
   // Get the current location
   const location = useLocation();
   // Extract the pathname from the location object
   const { pathname } = location;
+  const { setAuthState } = useContext(AuthContext);
    // Conditionally render login button
    const renderHeaderButtons = () => {
     const navigate = useNavigate(); // Get the navigate function
@@ -18,17 +20,23 @@ const Layout = (props) => {
     const handleSignupClick = () => {
       // Handle signup button click
       navigate("/signup"); // Redirect to /signup page
-  };
+    };
+    const handleLogoutClick = () => {
+      // Update auth state
+        setAuthState({ isLoggedIn: false, token: null });
+        console.log("User log out successful")
+        // Navigate to login page
+        navigate('/login');
+    };
     if (pathname === "/signup") {
       return (
         <button type="button" className="btn btn-secondary" onClick={handleLoginClick} >Login</button>
       );
       
-    } else if (pathname === "/login"){
+    } else if (pathname === "/"){
       return(
-        <button type="button" className="btn btn-secondary" onClick={handleSignupClick}>Sign-up</button> 
+        <button type="button" className="btn btn-warning" onClick={handleLogoutClick}>Logout</button> 
       );
-      
     }
   };
   // You can define the layout structure here
