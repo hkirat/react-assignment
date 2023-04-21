@@ -5,13 +5,32 @@
 @layer components {
     .sidebar-icon{
         @apply relative flex font-bold items-center justify-center h-12 w-12 mt-2 mb-2 
-        mx-auto shadow-lg bg-gray-800 rounded-3xl text-green-500 
-        hover:bg-green-600 hover:text-orange-500 hover:rounded-xl  
+        mx-auto shadow-lg  bg-violet-400 rounded-3xl  text-white  
+        hover:bg-yellow-300 hover:text-white hover:rounded-xl  
         transition-all duration-300 ease-linear cursor-pointer;
 
     }
-     .sidebar-tooltip {
-         @apply absolute w-auto p-3 m-3 min-w-max left-14 rounded-md shadow-md text-white 
-         bg-gray-900  font-bold transition-all duration-100 scale-0 origin-left;
+    .sidebar-tooltip {
+        @apply absolute w-auto p-3 m-3 min-w-max left-14 rounded-md shadow-md text-white 
+        bg-gray-900  font-bold transition-all duration-100 scale-0 origin-left;
     }
 }
+
+.box {
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+
+body{
+
+
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  background: black;
+  border-radius: 30px;
+}
+

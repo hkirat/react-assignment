@@ -2,7 +2,7 @@ import { Routes, Route, Outlet, Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <>
-    <div className="flex fixed top-0 left-0 h-screen w-16 m-0 flex-col text-white shadow-lg bg-indigo-500 justify-evenly">   
+    <div className="flex fixed top-0 left-0 h-screen w-16 m-0 flex-col text-white shadow-lg  bg-violet-600 justify-evenly">   
     <Link to="/">
     <SideBarIcon letter="H" text="Home" />
     </Link>
@@ -38,7 +38,7 @@ const SideBarIcon = ({letter , text }) => {
   <div className='sidebar-icon group'>
     {letter} 
    
-    <span className='sidebar-tooltip group-hover:scale-100'>
+    <span className=' bg-indigo-500 sidebar-tooltip group-hover:scale-100'>
     {text}
     </span>
     </div>
