@@ -1,0 +1,13 @@
+/* Style for Home component */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #007bff;
+}

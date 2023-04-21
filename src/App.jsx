@@ -1,59 +1,52 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+import React, { useState } from "react";
+import Home from "./Component/Home";
+import Login from "./Component/Login";
+import Problems from "./Component/Problems";
+import Signup from "./Component/Signup";
+import ProblemDetails from "./Component/ProblemDetails";
 
+import { Routes, Route } from "react-router-dom";
+import Logout from "./Component/Logout";
 
-function App() {
+export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+  const [loginDetails, setLoginDetails] = useState({});
+  const [signUpDetails, setSignUpDetails] = useState({});
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
+  const getLoginDetails = (loginData) => {
+    setLoginDetails(loginData);
+    setIsLoggedIn(true);
+  };
+
+  const getSignUpDetails = (signUpData) => {
+    setSignUpDetails(signUpData);
+    setIsLoggedIn(true);
+  };
+
+  // console.log(isLoggedIn);
+
+  return (
+    <div className="container">
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route
+          path="/login"
+          element={<Login getLoginDetails={getLoginDetails} />}
+        ></Route>
+        <Route path="/logout" element={<Logout />}></Route>
+        <Route
+          path="/signup"
+          element={<Signup getSignUpDetails={getSignUpDetails} />}
+        ></Route>
+        <Route
+          path="/problems"
+          element={
+            <Problems signUpDetails={signUpDetails} isLoggedIn={isLoggedIn} />
+          }
+        ></Route>
+        <Route path="/problem/:problemId" element={<ProblemDetails />}></Route>
+      </Routes>
     </div>
-  )
+  );
 }
-
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
