@@ -46,11 +46,11 @@ const problems = [
     examples: [
       {
         Input: "n = 19",
-        Output: true,
+        Output: "true",
       },
       {
         Input: "n = 2",
-        Output: false,
+        Output: "false",
       },
     ],
   },
@@ -59,18 +59,62 @@ const problems = [
     title: "Remove Linked List Elements",
     difficulty: "Easy",
     acceptance: "42%",
+    question:
+      "Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.",
+    examples: [
+      {
+        Input: "head = [1,2,6,3,4,5,6], val = 6",
+        Output: "[1,2,3,4,5]",
+      },
+      {
+        Input: "head = [], val = 1",
+        Output: "[]",
+      },
+      {
+        Input: "head = [7,7,7,7], val = 7",
+        Output: "[]",
+      },
+    ],
   },
   {
     problemId: "204",
     title: "Count Primes",
     difficulty: "Medium",
     acceptance: "33.1%",
+    question:
+      "Given an integer n, return the number of prime numbers that are strictly less than n.",
+    examples: [
+      {
+        Input: "n = 10",
+        Output: "4",
+      },
+      {
+        Input: "n = 0",
+        Output: "0",
+      },
+      {
+        Input: "n = 1",
+        Output: "0",
+      },
+    ],
   },
   {
     problemId: "212",
     title: "Word Search II",
     difficulty: "Hard",
     acceptance: "36.4%",
+    question:
+      "Given an m x n board of characters and a list of strings words, return all words on the board.\n Each word must be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.",
+    examples: [
+      {
+        Input: `board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], words = ["oath","pea","eat","rain"]`,
+        Output: `["eat","oath"]`,
+      },
+      {
+        Input: `board = [["a","b"],["c","d"]], words = ["abcb"]`,
+        Output: "[]",
+      },
+    ],
   },
 ];
 
