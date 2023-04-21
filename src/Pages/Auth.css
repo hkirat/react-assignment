@@ -1,0 +1,28 @@
+/* .auth-body{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+.auth-container{
+    position: absolute;
+    top: 20%;
+    color: white;
+    left: 30%;
+    background-color: #474ff4;
+    padding: 40px;
+    border-radius: 20px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    line-height: 40px;
+}
+.auth-container > button{
+    margin: 15px 0px;
+    width: 15%;
+    background-color: white;
+    color: black;
+
+}
+
+
