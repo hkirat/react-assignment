@@ -11,25 +11,3 @@ h1 {
   font-weight: bold;
   color: #007bff;
 }
-
-p {
-  font-size: 18px;
-  color: #333;
-  margin-top: 10px;
-  /* text-align: center; */
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}

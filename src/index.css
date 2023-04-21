@@ -1,9 +1,9 @@
 body {
-  background-color: black;
+  background-color: bisque;
   font-family: Arial, sans-serif;
   display: block;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* height: 100vh; */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   scroll-behavior: auto;
 }

@@ -4,9 +4,37 @@ import problems from "./ProblemsList";
 
 import "./Problems.css";
 
-export default function Problems() {
+export default function Problems(props) {
+  const { firstName } = props.signUpDetails;
+
+  // console.log(firstName);
+
   return (
     <div>
+      <nav>
+        <ul>
+          {!props.isLoggedIn ? (
+            <li>
+              <a href="/login">Sign In</a>
+            </li>
+          ) : (
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          )}
+
+          {/* <li>
+            <a href="/logout">Logout</a>
+          </li> */}
+
+          {props.isLoggedIn ? (
+            <h4 className="h4">Welcome: {firstName}</h4>
+          ) : (
+            " "
+          )}
+        </ul>
+      </nav>
+
       <div className="container">
         <table>
           <thead>
