@@ -1,32 +1,47 @@
-import {Routes, Route , Outlet , Link}from 'react-router-dom';
+import { Routes, Route, Outlet, Link } from 'react-router-dom';
 const Navbar = () => {
-  return(
+  return (
     <>
-    <div className="landingPage-buttons">
+    <div className="flex fixed top-0 left-0 h-screen w-16 m-0 flex-col text-white shadow-lg bg-indigo-500 justify-evenly">   
+    <Link to="/">
+    <SideBarIcon letter="H" text="Home" />
+    </Link>
     
-	<Link to="/">
-    <button id="button">Home</button>
+     <Link to="/problems/all">
+    <SideBarIcon letter="P"  text="All Problems" />
     </Link>
 
-		<Link to="/signup">
-    <button id="button">Signup</button>
+    <Link to="/signup">
+    <SideBarIcon letter="S"  text="Signup"/>
     </Link>
 
-    <Link to="/login">
-    <button id="button">Login</button>
-    </Link>
-
-    <Link to="/problems/all">
-    <button id="button">Problems</button>
+    <Link to="/Login">
+    <SideBarIcon letter="L" text="Login"/>
     </Link>
 
     <Link to="/problems/slug">
-    <button id="button">Problem :slug</button>
+    <SideBarIcon letter="Sp" text="Single Problem" />
     </Link>
 
+
     </div>
-		
-    </>
-  )}
+   </>
+  )
+}
 
 export default Navbar
+
+
+const SideBarIcon = ({letter , text }) => {
+  return (
+<>
+  <div className='sidebar-icon group'>
+    {letter} 
+   
+    <span className='sidebar-tooltip group-hover:scale-100'>
+    {text}
+    </span>
+    </div>
+  </>
+  )
+} 

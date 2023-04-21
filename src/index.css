@@ -1,57 +1,17 @@
-*{
-    padding: 0;
-    top: 0;
-    margin: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@layer components {
+    .sidebar-icon{
+        @apply relative flex font-bold items-center justify-center h-12 w-12 mt-2 mb-2 
+        mx-auto shadow-lg bg-gray-800 rounded-3xl text-green-500 
+        hover:bg-green-600 hover:text-orange-500 hover:rounded-xl  
+        transition-all duration-300 ease-linear cursor-pointer;
 
-.landingPage-buttons{
-   
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: #E5BEEC;
-}
-
-#button{
-    font-size: 13px;
-    color: #2A2F4F;
-   background-color: #E5BEEC;
-    padding: 10px;
-    border-radius: 5px;
- outline: none;
-    border: none;
-}
-
-#button:hover{
-    color: white;
-}
-
-div.shitcode   {
-    height: 10em;
-    position: relative;
-}
-div.shitcode p{
-       margin: 0;
-    background: yellow;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) 
-}
-
-
-
-.signup{
-    padding: 10px;
-    height: 20px;
-    width: 100px;
-    justify-content: space-between;
-}
-
-#problembutton{
-
-    padding: 10px ;
+    }
+     .sidebar-tooltip {
+         @apply absolute w-auto p-3 m-3 min-w-max left-14 rounded-md shadow-md text-white 
+         bg-gray-900  font-bold transition-all duration-100 scale-0 origin-left;
+    }
 }
