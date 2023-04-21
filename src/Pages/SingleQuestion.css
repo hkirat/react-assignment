@@ -1,0 +1,5 @@
+main{
+    display: flex;
+    flex-basis: 0;
+    padding: 20px;
+}
