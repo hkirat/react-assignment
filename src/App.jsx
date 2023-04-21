@@ -1,34 +1,15 @@
 import React from "react";
-  import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
-//  import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// import { Switch } from 'react-router-dom';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import LoginPage from "./components/LoginPage";
-import ProblemsPage from "./components/ProblemsPage";
-import ProblemDescriptionPage from "./components/ProblemDescriptionPage";
 
-function Menu() {
-  return (
-    <div>
-      <h1>hi</h1>
-    </div>
-  );
-}
 
 function App() {
   return (
     <>
-      <div className="App">
-       <Router>
-      <Routes>
-        <Route exact path="/" element={<LoginPage/>} />
-        <Route exact path="/problems/all" element={<ProblemsPage/>} />
-        <Route exact path="/problems/:description" element={<ProblemDescriptionPage/>} />
-      </Routes>
-    </Router>
-
-      </div>
+      <Header />
+      <Footer />
     </>
   );
 }

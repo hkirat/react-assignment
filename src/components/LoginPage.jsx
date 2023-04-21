@@ -1,30 +1,35 @@
- import React from 'react';
-
-function LoginPage() {
+import React from "react";
+import "../assets/Login.css"
+function LoginForm() {
   return (
-    <div>
-      <h1>Login Page</h1>
- <header className="App-header">
-
-        <p>
-          Welcome to jeetcode
-        </p>
-        <form>
-          <label>
-            Username:
-            <input type="text" name="username" />
-          </label>
-          <br />
-          <label>
-            Password:
-            <input type="password" name="password" />
-          </label>
-          <br />
-          <button type="submit">Login</button>
-        </form>
-      </header>
+    <div className="vid-container">
+ 
+  <div className="inner-container">
+   
+    <div className="box">
+{/* <img src="jeet.png"></img> */}
+      <h1>Jeetcode</h1>
+      <input type="text" placeholder="Username"/>
+      <input type="text" placeholder="Password"/>
+      <button className="login--btn">Login</button>
+      <p>Not a member? <span>Sign Up</span></p>
     </div>
+  </div>
+</div>
   );
 }
 
-export default LoginPage; 
+function LoginPage() {
+  return (
+<>
+  
+    <div className="container" >
+      <h1>Login</h1>
+        <LoginForm />
+     
+    </div>
+</>
+  );
+}
+
+export default LoginPage
