@@ -1,41 +1,71 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import AllProblems from "./components/AllProblems";
+import Problem from "./components/Problem";
+
 /*
  * Temporary problems array schema
  */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
+const problems = [
     {
+        problemId: "1",
+        title: "201. Bitwise AND of Numbers Range",
+        difficulty: "Medium",
+        acceptance: "42%"
+    },
+    {
+        problemId: "2",
+        title: "201. Bitwise AND of Numbers Range",
+        difficulty: "Medium",
+        acceptance: "41.2%"
+    },
+    {
+        problemId: "3",
         title: "202. Happy Number",
         difficulty: "Easy",
         acceptance: "54.9%"
     },
     {
+        problemId: "4",
         title: "203. Remove Linked List Elements",
         difficulty: "Hard",
         acceptance: "42%"
-    }];
+    }
+];
 
 
 function App() {
 
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Home />,
+        },
+        {
+            path: "/login",
+            element: <Login />,
+        },
+        {
+            path: "/signup",
+            element: <Signup />,
+        },
+        {
+            path: "/problemset/all",
+            element: <AllProblems problems={problems} />,
+        },
+        {
+            path: "problems/:id",
+            element: <Problem problems={problems} />,
+        },
+    ]);
 
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+        <div>
+            <RouterProvider router={router} />
+        </div>
+    )
 }
 
 // A demo component
