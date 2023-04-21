@@ -14,7 +14,7 @@ const AllProblems = ({ problems }) => {
           {problems.map((problem) => (
             <tr key={problem.problemId}>
               <Link to={`/problems/${problem.problemId}`}>
-                <td>
+                <td className="problem-link">
                   {problem.problemId}.{problem.title}
                 </td>
               </Link>

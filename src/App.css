@@ -132,6 +132,12 @@ button {
   color: gray;
 }
 
+table {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  padding: 32px;
+}
+
 .table__header {
   border-bottom: 1px solid #969696;
 }
@@ -155,4 +161,33 @@ td {
 
 .Hard {
   color: #dd2d2a;
+}
+
+.problem-link:hover {
+  color: #1da09c;
+}
+
+.problem__set_page {
+  display: flex;
+}
+
+.problem__section {
+  width: 50%;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.solution__section {
+  width: 50%;
+}
+
+textarea {
+  width: 100%;
+  height: calc(100vh - 70px);
+  border-left: 1px solid lightgray;
+  background: transparent;
+  outline: none;
 }

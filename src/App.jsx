@@ -12,32 +12,62 @@ import Header from "./components/Header";
  */
 const problems = [
   {
-    problemId: 201,
+    problemId: "201",
     title: "Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "42%",
+    question:
+      "Given two integers left and right that represent the range [left, right], return the bitwise AND of all numbers in this range, inclusive",
+    examples: [
+      {
+        title: "example 1",
+        Input: "left = 5, right = 7",
+        Output: "4",
+      },
+      {
+        title: "example 2",
+        Input: "left = 0, right = 0",
+        Output: "0",
+      },
+      {
+        title: "example 3",
+        Input: "left = 1, right = 2147483647",
+        Output: "0",
+      },
+    ],
   },
 
   {
-    problemId: 202,
+    problemId: "202",
     title: "Happy Number",
     difficulty: "Easy",
     acceptance: "54.9%",
+    question: "Write an algorithm to determine if a number n is happy.",
+    examples: [
+      {
+        Input: "n = 19",
+        Output: true,
+      },
+      {
+        Input: "n = 2",
+        Output: false,
+      },
+    ],
   },
   {
-    problemId: 203,
+    problemId: "203",
     title: "Remove Linked List Elements",
     difficulty: "Easy",
     acceptance: "42%",
   },
   {
-    problemId: 204,
+    problemId: "204",
     title: "Count Primes",
     difficulty: "Medium",
     acceptance: "33.1%",
   },
   {
-    problemId: 212,
+    problemId: "212",
     title: "Word Search II",
     difficulty: "Hard",
     acceptance: "36.4%",
