@@ -1,25 +1,42 @@
 /*
  * Temporary problems array schema
  */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
+import React from "react";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Root from "./components/Root";
+import SingleProblem from "./components/SingleProblem";
+
+import AllProblems from "./components/AllProblems";
+import {
+    createBrowserRouter,
+    RouterProvider,
+  } from "react-router-dom";
+
+
+
+//adding routes
+const router = createBrowserRouter([
     {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
+      path: "/",
+      element: <Root/>,
     },
     {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+        path: "/signup",
+        element: <Signup/>
+    },
+    {
+        path: "/login",
+        element: <Login/>
+    },{
+        path: "/problems/all",
+        element: <AllProblems/>
+    },{
+        path: "/problems/:problem_slug",
+        element: <SingleProblem/>
+    }
+  ]);
+
 
 
 function App() {
@@ -30,30 +47,11 @@ function App() {
        /problemset/all/ - All problems (see problems array above)
        /problems/:problem_slug - A single problem page
      */
-
+    
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
+        <div>
+        <RouterProvider router={router} />
     </div>
   )
-}
-
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
 }
 export default App
