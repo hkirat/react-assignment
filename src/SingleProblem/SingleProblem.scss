@@ -1,0 +1,31 @@
+.single-problem-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #eaeaea;
+  border-radius: 0.5rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .difficulty {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    background-color: #4a5568;
+  }
+
+  .acceptance {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: #4a5568;
+    margin-top: 0.5rem;
+  }
+}
