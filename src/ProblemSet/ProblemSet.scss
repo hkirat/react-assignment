@@ -1,0 +1,80 @@
+// Set up font sizes and colors
+$font-size-regular: 14px;
+$font-size-small: 12px;
+$color-black: #333;
+$color-white: #fff;
+$color-gray: #ccc;
+$color-green: #5cb85c;
+$color-yellow: #f0ad4e;
+$color-red: #d9534f;
+
+// Define styles for the container
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Define styles for the page title
+.page-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+// Define styles for the problem table
+.problem-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: $font-size-regular;
+  color: $color-black;
+  thead {
+    background-color: $color-white;
+    th {
+      text-align: left;
+      padding: 10px 15px;
+    }
+  }
+  tbody {
+    tr {
+      &:hover {
+        background-color: $color-gray;
+        td {
+          color: $color-white;
+        }
+      }
+      td {
+        padding: 10px 15px;
+        border-bottom: 1px solid $color-gray;
+        a {
+          color: $color-black;
+          text-decoration: none;
+          &:hover {
+            color: $color-black;
+            text-decoration: underline;
+          }
+        }
+        &.difficulty {
+          font-size: $font-size-small;
+          font-weight: bold;
+          text-transform: uppercase;
+          &.difficulty-easy {
+            color: $color-green;
+          }
+          &.difficulty-medium {
+            color: $color-yellow;
+          }
+          &.difficulty-hard {
+            color: $color-red;
+          }
+        }
+        &.acceptance {
+          font-size: $font-size-small;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
