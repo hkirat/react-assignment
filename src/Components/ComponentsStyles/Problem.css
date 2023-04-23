@@ -1,0 +1,17 @@
+.float-container {
+  display: flex;
+}
+
+.float-child {
+  flex: 1;
+  width: auto;
+  height: 100vh;
+}
+
+.float-child:first-child {
+  margin-right: 20px;
+}
+
+h1:hover {
+  color: #fea50e;
+}

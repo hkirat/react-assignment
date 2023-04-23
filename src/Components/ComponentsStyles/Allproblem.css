@@ -1,0 +1,36 @@
+#root {
+  justify-content: left;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  height: 100vh;
+  width: 100vw;
+}
+
+.problem-heading {
+  width: 50%;
+  text-align: left;
+}
+
+.problem-heading:hover {
+  color: #fea50e;
+}
+
+td {
+  display: table-cell;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  width: 100%;
+  margin: 10px 0;
+}

@@ -1,0 +1,16 @@
+.DogeCode-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 6px;
+  cursor: pointer;
+}
+
+.DogeCode-title:hover {
+    color: #FEA50E;
+}
