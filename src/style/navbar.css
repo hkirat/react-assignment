@@ -1,0 +1,31 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem;
+    background-color: #fff;
+    color: #000;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    border-bottom: #ccc 1px solid;
+}
+  
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+  
+nav ul li {
+    margin: 0 1rem;
+}
+ 
+.logo{
+    height: 22px;
+    width: 19px;
+}
+a{
+    color: #000;
+}

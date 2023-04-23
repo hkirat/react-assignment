@@ -1,0 +1,51 @@
+.header{
+    background-color: inherit;
+    height: 2.5rem;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    resize: horizontal;
+    box-sizing:border-box;
+}
+.problem-statement{
+    padding: 1rem;
+}
+.editor{
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+textarea{
+    height: 80vh;
+    resize:none;
+    width: 100vh;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.btn-console{
+    background-color: #F6FBF4;
+    width: 6rem;
+    color: gray;
+    height: 2rem;
+    text-align: center;
+}
+.btn-run{
+    background-color: #F6FBF4;
+    width: 4rem;
+    color: gray;
+    padding: 0;
+    height: 2rem;
+}
+.btn-submit{
+    background-color: green;
+    width: 5rem;
+    text-align: center;
+    height: 2rem;
+    padding: 0;
+}
