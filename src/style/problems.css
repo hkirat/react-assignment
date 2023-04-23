@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.title{
+    cursor: pointer;
+}
+
+.title:hover{
+    color: blue;
+}
+
+th,td{
+    padding: 10px;
+    text-align: left;
+}
+
+table tr:nth-child(even){
+    background-color:aliceblue;
+}
