@@ -41,6 +41,17 @@ const problems =
         </table>
     }
     function ProblemStatement(props) {
+        function changeColor(difficulty){
+            if(difficulty==='Hard'){
+                return {color: 'red'};
+            }
+            else if(difficulty==='Medium'){
+                return {color: 'orange'};
+            }
+            else{
+                return {color: 'green'}
+            }
+        }
         const id = props.id;
         const title = props.title;
         const acceptance = props.acceptance;
@@ -56,7 +67,7 @@ const problems =
                 <td>
                     {acceptance}
                 </td>
-                <td>
+                <td style={changeColor(difficulty)}>
                     {difficulty}
                 </td>
             </tr>
