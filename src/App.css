@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.problem-Easy {
+  color: green;
+}
+.problem-Medium {
+  color: orange;
+}
+.problem-Hard {
+  color: red;
+}
