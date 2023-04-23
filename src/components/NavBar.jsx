@@ -12,6 +12,9 @@ const NavBar = () => {
 
     const handleLinkClick = (event) => {
         setActiveLink(event.target.text);
+        setProblems(false);
+        setShowSignUp(false);
+        setShowSignIn(false);
     };
     const handleProblemsClick = (event) => {
         setActiveLink(event.target.text);
@@ -19,11 +22,13 @@ const NavBar = () => {
         setShowSignUp(false);
         setShowSignIn(false);
     };
-    const handleSignInClick = () => {
+    const handleSignInClick = (event) => {
+        setActiveLink(event.target.text);
         setShowSignIn(true);
         setShowSignUp(false);
     };
-    const handleSignUpClick = () => {
+    const handleSignUpClick = (event) => {
+        setActiveLink(event.target.text);
         setShowSignUp(true);
         setShowSignIn(false);
     };
@@ -59,10 +64,10 @@ const NavBar = () => {
                         </ul>
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="#"  onClick={handleSignUpClick}>Register</a>
+                                <a className={`nav-link ${activeLink === "Register" ? "active" : ""}`} href="#"  onClick={handleSignUpClick}>Register</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" onClick={handleSignInClick}>Sign In</a>
+                                <a className={`nav-link ${activeLink === "Sign In" ? "active" : ""}`} href="#" onClick={handleSignInClick}>Sign In</a>
                             </li>
                         </ul>
                     </div>
