@@ -8,17 +8,17 @@ const NavBar = () => {
     const [activeLink, setActiveLink] = useState("");
     const [showSignIn, setShowSignIn] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
-    // const [showProblems, setProblems] = useState(false)
+    const [showProblems, setProblems] = useState(false)
 
     const handleLinkClick = (event) => {
         setActiveLink(event.target.text);
     };
-    // const handleProblemsClick = (event) => {
-    //     setActiveLink(event.target.text);
-    //     setProblems(true);
-    //     setShowSignUp(false);
-    //     setShowSignIn(false);
-    // };
+    const handleProblemsClick = (event) => {
+        setActiveLink(event.target.text);
+        setProblems(true);
+        setShowSignUp(false);
+        setShowSignIn(false);
+    };
     const handleSignInClick = () => {
         setShowSignIn(true);
         setShowSignUp(false);
@@ -45,7 +45,7 @@ const NavBar = () => {
                                 <a className={`nav-link ${activeLink === "Explore" ? "active" : ""}`} href="#" onClick={handleLinkClick}>Explore</a>
                             </li>
                             <li className="nav-item">
-                                <a className={`nav-link ${activeLink === "Problems" ? "active" : ""}`} href="#" >Problems</a>
+                                <a className={`nav-link ${activeLink === "Problems" ? "active" : ""}`} href="#" onClick={handleProblemsClick}>Problems</a>
                             </li>
                             <li className="nav-item">
                                 <a className={`nav-link ${activeLink === "Interview" ? "active" : ""}`} href="#" onClick={handleLinkClick}>Interview</a>
@@ -70,7 +70,7 @@ const NavBar = () => {
             </nav>
             {showSignIn && <SignIn/>}
             {showSignUp && <SignUp/>}
-            {/*{showProblems && <Problems />}*/}
+            {showProblems && <Problems />}
         </>
     )
 };
