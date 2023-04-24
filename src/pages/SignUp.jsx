@@ -1,5 +1,5 @@
 import './../index.css'
-import { FaHome, FaKey, FaIdBadge } from 'react-icons/fa';
+import { FaHome, FaKey, FaIdBadge, FaQuestion } from 'react-icons/fa';
 
 export default function SignUp() {
 
@@ -10,6 +10,7 @@ export default function SignUp() {
         <span className="  cursor-pointer flex flex-row text-white hover:text-red-500 font-mono text-xl space-x-2 "><FaHome size="1.5rem" /><a href='/'>Home</a></span>
         <span className=" cursor-pointer flex flex-row text-white hover:text-green-500 font-mono  transition ease-in-out duration-300 text-xl  space-x-2"><FaKey size="1.3rem"/><a href='/login'>Login</a></span>
         <span className=" cursor-pointer flex flex-row text-orange-500 font-mono transition ease-in-out duration-300 text-xl  space-x-2"><FaIdBadge size="1.3rem"/><a href='#'>SignUp</a></span>
+        <span className=" cursor-pointer flex flex-row text-white font-mono hover:text-purple-500 transition ease-in-out duration-300 text-xl  space-x-1"><FaQuestion size="1.4rem"/><a href='/problems/all'>Problems</a></span>
     </nav>
 
 
