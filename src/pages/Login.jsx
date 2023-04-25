@@ -4,7 +4,7 @@ import { FaHome, FaKey, FaIdBadge, FaQuestion } from 'react-icons/fa';
 export default function Login() {
 
     return (
-        <div className='bg-slate-800 h-screen w-screen'>
+        <div className='bg-slate-800 h-[90rem] w-[40rem] sm:h-screen sm:w-screen'>
             <nav className='flex flex-row justify-center place-items-center text-sm sm:text-md  w-full h-8 transition ease-in-out duration-300 bg-slate-900/40 hover:bg-slate-900/25 shadow-2xl shadow-sky-400/75 space-x-6 sm:space-x-14 md:space-x-16 lg:space-x-20'>
                 <span className="  mx-4 cursor-pointer flex flex-row text-white hover:text-red-500 font-mono  space-x-2 "><FaHome size="1.5rem" /><a href='/'>Home</a></span>
                 <span className=" cursor-pointer flex flex-row text-green-500 font-mono  transition ease-in-out duration-300   space-x-2"><FaKey size="1.3rem"/><a href='#'>Login</a></span>
