@@ -1,0 +1,18 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px 20px;
+    background-color: #1d26c9;
+    color: white;
+}
+.navlink{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+.navbar img{
+    height: 50px; 
+    border-radius: 50%;
+}
