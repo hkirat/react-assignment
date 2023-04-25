@@ -1,0 +1,6 @@
+.home-container {
+  padding: 3rem 5rem;
+  height: calc(100vh - 5rem);
+  background-color: #000000e7;
+  color: #fff;
+}
