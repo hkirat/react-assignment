@@ -1,0 +1,22 @@
+table{
+    margin: 10px auto;
+    width: 1000px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+/* table > th{
+    padding: 20px;
+    background-color: rgb(188, 85, 85);
+} */
+.table--header{
+    outline: none;
+    border-radius: 10px;
+}
+.table--header > th{
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #474ff4;
+
+
+}
