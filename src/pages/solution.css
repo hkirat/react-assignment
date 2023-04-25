@@ -1,0 +1,48 @@
+.solution-span {
+  color: #888;
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.solution-select {
+  border: none;
+  outline: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  background-color: #999;
+  color: #000;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.solution-select:hover {
+  box-shadow: inset 1px 1px 1px coral;
+}
+
+.solution-solution {
+  background-color: #999;
+  border: none;
+  outline: none;
+  border-radius: 9px;
+  padding: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.solution-action {
+  text-align: end;
+}
+
+.solution-cancel,
+.solution-submit {
+  padding: 1rem 1.4rem;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.solution-submit {
+  background-color: coral;
+  margin-left: 1rem;
+}

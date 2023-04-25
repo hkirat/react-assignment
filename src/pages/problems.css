@@ -1,0 +1,39 @@
+.problems-container {
+  background-color: #000000e7;
+  height: calc(100vh - 5rem);
+  padding: 3rem 5rem;
+}
+
+.problems-table {
+  width: 60vw;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.problems-head {
+  background-color: chocolate;
+}
+
+.problems-body {
+  background-color: green;
+  cursor: pointer;
+}
+
+.problems-body:hover {
+  color: #ffffffca;
+}
+
+.problems-row,
+.problems-headRow {
+  height: 3rem;
+}
+
+.problem-dataLink {
+  color: #000;
+  text-decoration: none;
+}
+
+.problem-dataLink:hover {
+  color: #fff;
+}

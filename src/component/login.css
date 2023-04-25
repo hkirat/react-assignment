@@ -1,0 +1,6 @@
+.login-container {
+  background-color: #000000e7;
+  height: calc(100vh - 5rem);
+  color: #fff;
+  padding: 3rem 5rem;
+}

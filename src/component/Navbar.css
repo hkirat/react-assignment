@@ -1,0 +1,25 @@
+.navbar-nav {
+  height: 5rem;
+  background-color: #000000eb;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: end;
+}
+
+.navbar-lists {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-listItem {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: all 0.5s;
+}
+
+.navbar-listItem:hover {
+  color: coral;
+}
