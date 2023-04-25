@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+tr {
+    border: 2px solid grey;
+}
+.problem-Easy {
+    color: green;
+}
+.problem-Medium {
+    color: orange;
+}
+.problem-Hard {
+    color: red;
+}
