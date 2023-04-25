@@ -1,5 +1,7 @@
+import {useState} from "react";
+
 // demo array
-const problems = [{
+const problems1 = [{
     id: 1,
     title: "Auto Complete Suggestions",
     difficulty: "Medium",
@@ -23,14 +25,66 @@ const problems = [{
         acceptance: "42%"
     }];
 
+// demo array
+const problems2 = [{
+    id: 5,
+    title: "Auto Complete Suggestions",
+    difficulty: "Medium",
+    acceptance: "12%"
+},{
+    id:6,
+    title: "Bitwise AND of Numbers Range",
+    difficulty: "Medium",
+    acceptance: "63%"
+},
+    {
+        id:7,
+        title: "Happy Number",
+        difficulty: "Easy",
+        acceptance: "54.9%"
+    },
+    {
+        id:8,
+        title: "Remove Linked List Elements",
+        difficulty: "Hard",
+        acceptance: "42%"
+    }];
+const problems3 = [{
+    id: 9,
+    title: "Auto Complete Suggestions",
+    difficulty: "Easy",
+    acceptance: "12%"
+},{
+    id:10,
+    title: "Bitwise AND of Numbers Range",
+    difficulty: "Hard",
+    acceptance: "63%"
+},
+    {
+        id:11,
+        title: "Happy Number",
+        difficulty: "Medium",
+        acceptance: "54.9%"
+    },
+    {
+        id:12,
+        title: "Remove Linked List Elements",
+        difficulty: "Easy",
+        acceptance: "42%"
+    }];
+
+
+
 
 export default function Problems(props) {
+    const [problems, setProblems] = useState(problems1);
     const id = props.id;
     const title = props.title;
     const difficulty = props.difficulty;
     const acceptance = props.acceptance;
     return (
-        <table className={"w-full items-center"}>
+        <div className={"flex-col align-center text-center space-y-4"}>
+        <table className={"w-4/5 mx-auto my-4"}>
             <thead>
             <tr>
                 <th>ID</th>
@@ -52,5 +106,19 @@ export default function Problems(props) {
             ))}
             </tbody>
         </table>
+            <div className={"btn-group"}>
+                <button className={"btn"} onClick={() => {
+                    setProblems(problems => problems1)
+                    clasName
+                }}>0</button>
+                <button className={"btn"} onClick={() => {
+                setProblems(problems => problems2)
+                clasName
+            }}>1</button>
+            <button className={"btn"} onClick={() => {
+                setProblems(problems => problems3)
+            }}>2</button>
+            </div>
+        </div>
     )
 }
