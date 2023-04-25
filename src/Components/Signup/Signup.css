@@ -25,4 +25,5 @@
 .subform > input {
     position: absolute;
     right: 100px;
+    padding: 0.3rem;
 }

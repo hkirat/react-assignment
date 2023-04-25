@@ -18,15 +18,19 @@
     height: 70vh;
 }
 
-textarea {
+textarea , pre {
     width: 100%;
     height: 100%;
+    font-size: 1.3rem;
+    -moz-tab-size : 4;
+      -o-tab-size : 4;
+         tab-size : 4;
 }
 
 button {
     padding: 0.5rem 1rem;
     margin-right: 1rem;
-    font-weight: 900;
+    font-weight: 800;
     border-radius: 0.5rem;
     cursor: pointer;
 }

@@ -3,8 +3,9 @@ import React from 'react'
 import "./Signup.css"
 const Signup = () => {
   return (
-    <div id="signup" className='flex-row'>
-      <form className='signup-form' method="post">
+    <div id="signup" className='flex-col'>
+      <h1>Signup</h1>
+      <form className='signup-form' method="post" action='/signup' >
 
         <div className='subform'>
           <label htmlFor="name">Name: </label>

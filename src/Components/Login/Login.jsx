@@ -4,8 +4,9 @@ import "./Login.css"
 
 const Login = () => {
   return (
-    <div id="login" className='flex-row'>
-      <form className='signup-form' method="post">
+    <div id="login" className='flex-col'>
+      <h1>Login</h1>
+      <form className='signup-form' method="post" action='/login'>
 
         <div className='subform'>
           <label htmlFor="name">Name: </label>
