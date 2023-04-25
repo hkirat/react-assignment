@@ -28,7 +28,7 @@ export default function Login() {
 
         </div>
 
-    <div className=' justify-center flex flex-row mx-auto'><button className=' mb-8 transition duration-300 text-slate-300 bg-slate-600 focus:bg-red-400/50 max-w-fit p-0.5 px-3 font-semibold  rounded-md hover:ring-red-500 hover:ring-2'>SignUp</button></div>
+    <div className=' justify-center flex flex-row mx-auto'><button className=' mb-8 transition duration-300 text-slate-300 bg-slate-600 focus:bg-red-400/50 max-w-fit p-0.5 px-3 font-semibold  rounded-md hover:ring-red-500 hover:ring-2'>Login</button></div>
     </div>
 
 
