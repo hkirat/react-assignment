@@ -1,0 +1,21 @@
+#explorePage{
+    width: 100vw;
+    height: fit-content;
+    min-height: 100vh;
+    background-color: #c5c5c5;
+}
+#explore-hero{
+    font-family: sans-serif;
+    margin: 50px 10%;
+}
+#explore-hero h4{
+    font-size: 1.1rem;
+    font-weight: 4 ;
+    color: rgb(255, 255, 255);
+}
+#explore-hero h1{
+    font-size: 2rem;
+    letter-spacing:2px;
+    /* font-weight: 4 ; */
+    color: rgb(67, 67, 67);
+}

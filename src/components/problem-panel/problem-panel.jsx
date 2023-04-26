@@ -14,7 +14,7 @@ const ProblemPanel = ({ problem }) => {
                 problem.examples.map((example, index) => {
 
                     return (
-                        <div className='example'>
+                        <div className='example' key={index}>
                             <h3>Example {index + 1}:</h3>
                             <div className='example-container'><p><b>Input: </b>{example.input}</p>
                                 <p><b>Output: </b>{example.output}</p>

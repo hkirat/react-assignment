@@ -13,7 +13,7 @@ const SignUp = () => {
                 <input type="email" id="inputEmail" placeholder="Email address" required autoFocus />
 
                 <input type="password" id="inputPassword" placeholder="Password" required />
-                <input type="password" id="inputPassword" placeholder=" Confirm Password" required />
+                {/* <input type="password" id="inputPassword" placeholder=" Confirm Password" required /> */}
 
                 <button id="btn-signup" type="submit">Sign up</button>
             </form>

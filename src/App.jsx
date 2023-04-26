@@ -4,6 +4,8 @@ import ProblemPage from "./pages/problemPage/problemPage"
 import ProblemsListPage from "./pages/problemsListPage/problemsListPage"
 import SignInPage from "./pages/signinpage/signinPage"
 import SignUpPage from "./pages/signupPage/signupPage"
+import ExplorePage from "./pages/explorePage/explorePage"
+
 import {
     createBrowserRouter,
     RouterProvider,
@@ -12,6 +14,10 @@ import {
 const router = createBrowserRouter([
     {
         path: ("/"),
+        element: <ExplorePage />,
+    },
+    {
+        path: ("/signin"),
         element: <SignInPage />,
     },
     {
@@ -23,7 +29,7 @@ const router = createBrowserRouter([
         element: <ProblemsListPage />,
     },
     {
-        path: "/problems/:id",
+        path: "/:id",
         element: <ProblemPage />,
     },
 

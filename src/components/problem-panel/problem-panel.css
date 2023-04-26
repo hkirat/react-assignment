@@ -4,7 +4,9 @@
     box-sizing: border-box;
     background-color: #232323;
     width: 50%;
-    height: 100vh;
+    min-width: 300px;
+    height: fit-content;
+    min-height: 100vh;
     padding: 20px;
     display: flex;
     flex-direction: column;

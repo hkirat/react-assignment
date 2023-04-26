@@ -15,6 +15,8 @@
     height: 10vh;
     box-sizing: border-box;
     background-color: #2e3235;
+    /* background-color: #1b7fcb; */
+
     margin-top: 2px;
     display: flex;
     flex-direction: row;
