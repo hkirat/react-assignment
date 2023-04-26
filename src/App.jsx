@@ -1,59 +1,48 @@
 /*
  * Temporary problems array schema
  */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+
+
+
+import NavBar from "./components/NavBar.jsx";
+import {Route, Routes} from "react-router-dom";
+import Explore from './components/Explore.jsx';
+import SingIn from './components/SignIn.jsx';
+import SignUp from './components/SignUp.jsx';
+import Problems from './components/Problems.jsx';
+import Problem from './components/Problem.jsx';
+import Contest from './components/Contest.jsx';
+import Interview from './components/Interview.jsx';
+import Discuss from './components/Discuss.jsx';
+
 
 
 function App() {
 
     /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+    /login - Login page
+    /signup - Signup page
+    /problem set/all/ - All problems (see problems array above)
+    /problems/:problem_slug - A single problem page
+    */
 
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+        <>
+            <NavBar/>
+            <Routes>
+                <Route path='/' element={<Explore/>} />
+                <Route path='/login' element={<SingIn/>} />
+                <Route path='/signup' element={<SignUp/>} />
+                <Route path='/problems' element={<Problems/>} />
+                <Route path='/problems/:id' element={<Problem />} />
+                <Route path='/contest' element={<Contest/>} />
+                <Route path='/interview' element={<Interview/>} />
+                <Route path='/discuss' element={<Discuss/>} />
+            </Routes>
+        </>
+    )
 }
 
 // A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
 export default App
