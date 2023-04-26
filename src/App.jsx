@@ -5,6 +5,16 @@
 
 
 import NavBar from "./components/NavBar.jsx";
+import {Route, Routes} from "react-router-dom";
+import Explore from './components/Explore.jsx';
+import SingIn from './components/SignIn.jsx';
+import SignUp from './components/SignUp.jsx';
+import Problems from './components/Problems.jsx';
+import Problem from './components/Problem.jsx';
+import Contest from './components/Contest.jsx';
+import Interview from './components/Interview.jsx';
+import Discuss from './components/Discuss.jsx';
+
 
 
 function App() {
@@ -17,7 +27,19 @@ function App() {
     */
 
     return (
-        <NavBar/>
+        <>
+            <NavBar/>
+            <Routes>
+                <Route path='/' element={<Explore/>} />
+                <Route path='/login' element={<SingIn/>} />
+                <Route path='/signup' element={<SignUp/>} />
+                <Route path='/problems' element={<Problems/>} />
+                <Route path='/problems/:id' element={<Problem />} />
+                <Route path='/contest' element={<Contest/>} />
+                <Route path='/interview' element={<Interview/>} />
+                <Route path='/discuss' element={<Discuss/>} />
+            </Routes>
+        </>
     )
 }
 

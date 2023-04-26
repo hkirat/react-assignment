@@ -13,7 +13,7 @@ import {
 } from 'mdb-react-ui-kit';
 
 
-function SignIn() {
+function SignUp() {
 
     const [justifyActive, setJustifyActive] = useState('tab2');
 
@@ -127,4 +127,4 @@ function SignIn() {
     );
 }
 
-export default SignIn;
+export default SignUp;

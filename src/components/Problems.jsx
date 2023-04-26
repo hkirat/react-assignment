@@ -1,19 +1,21 @@
+import {Link} from "react-router-dom";
+
 const problems =
     [
         {
-            id:'201.',
+            id:'201',
             title: " Bitwise AND of Numbers Range",
             difficulty: "Medium",
             acceptance: "42%"
         },
         {
-            id:'202.',
+            id:'202',
             title: "Happy Number",
             difficulty: "Easy",
             acceptance: "54.9%"
         },
         {
-            id:'203.',
+            id:'203',
             title: "Remove Linked List Elements",
             difficulty: "Hard",
             acceptance: "42%"
@@ -45,19 +47,36 @@ const problems =
         const title = props.title;
         const acceptance = props.acceptance;
         const difficulty = props.difficulty;
+        function difficultyColor(difficulty){
+            if(difficulty === 'Hard'){
+                return 'red';
+            }
+            else if(difficulty ==='Medium'){
+                return 'orange';
+            }
+            else return 'green';
+        }
         return (
             <tr>
                 <td scope="row">
+                    <Link to={`/problems/${id}`} style={{ textDecoration: 'none', color: '#212529' }}>
                     {id}
+                    </Link>
                 </td>
                 <td>
+                    <Link to={`/problems/${id}`} style={{ textDecoration: 'none', color: '#212529' }}>
                     {title}
+                    </Link>
                 </td>
                 <td>
+                    <Link to={`/problems/${id}`} style={{ textDecoration: 'none', color: '#212529' }}>
                     {acceptance}
+                    </Link>
                 </td>
                 <td>
+                    <Link to={`problems/${id}`} style={{ textDecoration: 'none', color: difficultyColor(difficulty) }}>
                     {difficulty}
+                    </Link>
                 </td>
             </tr>
         )
