@@ -26,11 +26,13 @@ const NavBar = () => {
         setActiveLink(event.target.text);
         setShowSignIn(true);
         setShowSignUp(false);
+        setProblems(false);
     };
     const handleSignUpClick = (event) => {
         setActiveLink(event.target.text);
         setShowSignUp(true);
         setShowSignIn(false);
+        setProblems(false);
     };
 
     return (

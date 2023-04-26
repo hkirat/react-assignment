@@ -7,8 +7,6 @@
 import NavBar from "./components/NavBar.jsx";
 
 
-
-
 function App() {
 
     /* Add routing here, routes look like -
@@ -19,8 +17,7 @@ function App() {
     */
 
     return (
-        <NavBar />
-
+        <NavBar/>
     )
 }
 
