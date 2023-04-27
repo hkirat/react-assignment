@@ -1,0 +1,29 @@
+#signup {
+    min-height: 100%;
+}
+
+.subform {
+    margin: 1rem;
+    font-family: 'Prompt', sans-serif;;
+}
+
+.signup-form {
+    height: 200px;
+    width: 70%;
+    max-width: 550px;
+    border: 1px solid grey;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: #fffdfd;
+    box-shadow: 0 8px 8px -4px lightblue;
+}
+
+.subform > input {
+    position: absolute;
+    right: 100px;
+    padding: 0.3rem;
+}

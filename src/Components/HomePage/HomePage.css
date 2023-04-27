@@ -1,0 +1,17 @@
+.blog-box {
+    border: 1px solid grey;
+    padding: 1rem;
+}
+.date {
+    font-weight: 100;
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+.title {
+    margin: 10px 0;
+}
+
+.content {
+    margin: 5px 0;
+}

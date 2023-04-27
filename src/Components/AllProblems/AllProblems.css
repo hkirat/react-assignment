@@ -1,0 +1,37 @@
+table {
+    margin-top: 2rem;
+    width: 95%;
+    border-collapse: collapse;
+}
+
+
+tr {
+    color: rgb(0, 0, 156);
+    border: 2px solid grey;
+}
+
+th {
+    border: 2px solid black;
+    text-align: start;
+    padding: 0.5rem 0 0.5rem 0.3rem;
+    color: black;
+    font-family: 'Merriweather', serif;
+}
+
+td {
+    font-family: 'Merriweather', serif;
+    padding: 1rem;
+}
+
+.Easy {
+    color: green;
+    font-weight: 900;
+}
+.Medium {
+    color: rgb(255, 166, 0);
+    font-weight: 900;
+}
+.Hard {
+    color: red;
+    font-weight: 900;
+}
