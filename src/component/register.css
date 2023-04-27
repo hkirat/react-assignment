@@ -1,0 +1,60 @@
+.register-container {
+  background-color: #000000e7;
+  height: calc(100vh - 5rem);
+  color: #fff;
+  padding: 3rem 5rem;
+}
+
+.register-form {
+  border: 1px solid #999;
+  width: 30vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.register-form > h2 {
+  padding-bottom: 2rem;
+  font-size: 2.8rem;
+  font-weight: 300;
+}
+
+.register-controller {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+}
+
+.register-label {
+  font-size: 1.6rem;
+}
+
+.register-input {
+  padding: 0.5rem;
+  outline: none;
+}
+
+.register-actions {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.register-btn-login,
+.register-btn-register {
+  padding: 0.6rem 1rem;
+  border: none;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-btn-register:hover {
+  background-color: teal;
+}
+
+.register-btn-login:hover {
+  background-color: coral;
+}

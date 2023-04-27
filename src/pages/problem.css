@@ -1,0 +1,63 @@
+.problem-container {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 5rem;
+  background-color: #000000e7;
+  height: calc(100vh - 5rem);
+}
+
+.problem-left {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: 1px solid #444;
+}
+
+.problem-number {
+  color: #777;
+  font-size: 4rem;
+  margin-bottom: 1.6rem;
+}
+
+.problem-title {
+  font-size: 1.8rem;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.problem-difficulty {
+  padding: 0.7rem 2rem;
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(155, 155, 90);
+  color: yellow;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1.6rem;
+}
+
+.problem-question {
+  font-size: 1.4rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.problem-goBack {
+  padding: 0.7rem 2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(151, 217, 120);
+  color: green;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1.6rem;
+}
+
+.problem-right {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: 1px solid #444;
+}
