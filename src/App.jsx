@@ -28,15 +28,8 @@ const Home = () =>{
   return (
     <>
     <Navbar/>
-    <motion.div
-    className="container"
-    initial={{ scale: 0 }}
-    animate={{ 
-        
-    }}
-    transition={{
-    }}
-    /> 
+    <div className="w-screen h-screen bg-teal-400"> 
+    </div>
 
     </>
   )

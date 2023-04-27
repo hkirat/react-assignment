@@ -16,21 +16,11 @@
     }
 }
 
-.box {
-    width: 200px;
-    height: 200px;
-    background: red;
-}
+
 
 body{
-
+background: #F5F5DC;
 
 }
 
-.container {
-  width: 150px;
-  height: 150px;
-  background: black;
-  border-radius: 30px;
-}
 
