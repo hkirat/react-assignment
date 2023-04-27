@@ -1,0 +1,10 @@
+#signUpPage{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(161, 161, 161);
+
+}

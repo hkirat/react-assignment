@@ -1,0 +1,10 @@
+#problemsListPage{
+    background-color: #1d1d1d;
+
+    width: 100vw;
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

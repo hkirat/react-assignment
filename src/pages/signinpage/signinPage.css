@@ -1,0 +1,9 @@
+#signInPage{
+    box-sizing: border-box;
+    background-color: #9f9f9f;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

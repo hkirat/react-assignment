@@ -1,0 +1,112 @@
+#problems{
+    display: flex;
+    flex-direction: column;
+    width: 860px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+}
+.problems-header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    padding: 0 20px;
+    background-color: #1d1d1d;
+
+    color: rgb(169, 169, 169);
+    font-weight: lighter;
+    border-bottom:  0.5px solid rgba(193, 193, 193,0.5); 
+    
+    
+}
+.problems-header .title{
+    width: 50%;
+}
+.problems-header .acceptance{
+    width: 20%;
+}
+.problems-header .difficulty{
+    width: 30%;
+}
+
+.problem-container{
+    
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+}
+.even {
+    background-color: #1d1d1d;
+   
+  }
+  
+.odd {
+    background-color: #303030;
+  }
+   
+.problem-container .title{
+    
+    width: 50%;
+}
+.problem-container .title #problem-link{
+    color: rgb(223, 223, 223);
+    text-decoration: none;
+}
+
+
+.problem-container .title p{
+    
+    cursor: pointer;
+    transition: color 0.1s ease-in;
+}
+.problem-container .title p:hover{
+    color: rgb(57, 121, 231);
+}
+.problem-container .acceptance{
+    width: 20%;
+}
+.problem-container .difficulty{
+    width: 30%;
+}
+.difficulty p.red{
+  color: rgb(201, 54, 54);
+}
+.difficulty p.green{
+    color: rgb(92, 188, 116);
+  }
+.difficulty p.yellow{
+    color: rgb(195, 195, 0);
+  }
+/* .pagination-limit{
+    
+   
+} */
+.pagination-limit select{
+    margin-top: 14.4px;
+    cursor: pointer;
+    background-color: #303030;
+    color: rgb(213, 213, 213);
+    outline: none;
+    padding: 0 12px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    height: 32px;
+    
+}
+.pagination-limit select:hover{
+
+    background-color: #4b4b4b;
+
+}
+  .pagination-box{
+   margin-top: 20px;
+    /* width: fit-content; */
+    width:900px;
+    display: flex;
+    /* background-color: #9a4545; */
+    justify-content: space-between;
+  }

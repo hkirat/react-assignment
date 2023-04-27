@@ -1,0 +1,27 @@
+#problem-panel{
+    /* margin-top: 0; */
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background-color: #232323;
+    width: 50%;
+    min-width: 300px;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(208, 208, 208);
+}
+.prob-desc{
+    line-height: 1.4rem;
+}
+#problem-panel .prob-title h2{
+    margin: 0;
+    
+}
+.example-container{
+   font-size: 0.9rem;
+    background-color: #454545;
+    padding:10px;
+    border-radius: 10px;
+}
