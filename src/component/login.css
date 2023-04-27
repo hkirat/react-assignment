@@ -4,3 +4,57 @@
   color: #fff;
   padding: 3rem 5rem;
 }
+
+.login-form {
+  border: 1px solid #999;
+  width: 30vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.login-form > h2 {
+  padding-bottom: 2rem;
+  font-size: 2.8rem;
+  font-weight: 300;
+}
+
+.login-controller {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+}
+
+.login-label {
+  font-size: 1.6rem;
+}
+
+.login-input {
+  padding: 0.5rem;
+  outline: none;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.login-btn-register,
+.login-btn-login {
+  padding: 0.6rem 1rem;
+  border: none;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn-login:hover {
+  background-color: teal;
+}
+
+.login-btn-register:hover {
+  background-color: coral;
+}
