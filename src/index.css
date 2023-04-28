@@ -2,25 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .sidebar-icon{
-        @apply relative flex font-bold items-center justify-center h-12 w-12 mt-2 mb-2 
-        mx-auto shadow-lg  bg-violet-400 rounded-3xl  text-white  
-        hover:bg-yellow-300 hover:text-white hover:rounded-xl  
-        transition-all duration-300 ease-linear cursor-pointer;
-
-    }
-    .sidebar-tooltip {
-        @apply absolute w-auto p-3 m-3 min-w-max left-14 rounded-md shadow-md text-white 
-        bg-gray-900  font-bold transition-all duration-100 scale-0 origin-left;
-    }
-}
-
 
 
 body{
-background: #F5F5DC;
-
+background: rgb(59 130 246);
 }
 
+table , th , td {
+	padding: 10px;
+}
 

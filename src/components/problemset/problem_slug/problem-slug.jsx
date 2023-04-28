@@ -2,6 +2,14 @@ import { useState } from "react"
 import Navbar from "../../navbar/Navbar"
 const Problemslug = () => {
 
+const [initial , setInitial] = useState(`print(Hello world)`)
+
+
+const handlechange = (e) => {
+ setInitial(e.target.value)
+}
+
+
 const [problem, setProblem] = useState({
     description : "This is description ",
     title : "with the largest sum, and return its sum.\n",
@@ -20,13 +28,18 @@ const [problem, setProblem] = useState({
 })
 return(
     <>
-    <Navbar/>
+     <Navbar/> 
+   <div className="px-20">
     Desription:  {problem.description}
     <br/>
     Title: {problem.title}
     <br/>
     {problem.examples.map(el => <ol key={el.input}> <br/><hr/> Input : {el.input} <br/> Output : {el.output} <br/> Explaination : {el.explaination} </ol>)}
     <hr/>
+    </div>
+    <div className="px-20">
+    <input  className= "h-40 w-40" value={initial} onChange={handlechange}/>
+    </div>
     </>
 )
 }

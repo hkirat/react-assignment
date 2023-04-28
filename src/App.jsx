@@ -28,9 +28,13 @@ const Home = () =>{
   return (
     <>
     <Navbar/>
-    <div className="w-screen h-screen bg-teal-400"> 
-    </div>
 
+    <div className=" p-10 text-4xl text-white justify-content-center">
+    Welcome to,
+    <br/>
+    <span className=" font-serif bold text-6xl"> Shitcode</span>
+
+    </div>
     </>
   )
 }
