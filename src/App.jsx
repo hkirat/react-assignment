@@ -6,7 +6,6 @@ import Login from "./components/login/login";
 import Problems from "./components/problemset/all/problems";
 import Problemslug from "./components/problemset/problem_slug/problem-slug";
 import Navbar from "./components/navbar/Navbar";
-import { motion } from "framer-motion";
 
 const Landingpage = () => {
   return (

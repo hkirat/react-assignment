@@ -45,6 +45,10 @@ const problems2 = [
 
 const Problems = () => {
   const [problems1, setProblems] = useState(problems)
+  
+ 
+
+
   return (
     <>
     <Navbar/>
@@ -67,7 +71,8 @@ const Problems = () => {
     </thead>
     <tbody>
 
-    {problems1.map(el => 
+    {
+      problems1.map(el => 
      <tr key={el.title}>
       <td >{el.title}</td>
       <td>{el.difficulty}</td>

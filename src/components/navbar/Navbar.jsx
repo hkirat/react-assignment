@@ -21,7 +21,7 @@ const Navbar = () => {
     </li>
 
     <li className='mx-5 italic'>
-    <Link to='/signup' className='text-xl hover:text-black duration-500'>signup</Link>
+    <Link to='/problems/all' className='text-xl hover:text-black duration-500'>problems</Link>
     </li>
 
     </ul>
@@ -32,12 +32,14 @@ const Navbar = () => {
     <Link to='/login' className='text-xl hover:text-black duration-500'>login</Link>
     </li>
 
-    <li className='mx-5'>
-    <Link to='/problems/all' className='text-xl hover:text-black duration-500'>all problems</Link>
-    </li>
+
 
     <li className='mx-5'>
     <Link to='/problems/slug' className='text-xl hover:text-black duration-500'>single problem</Link>
+    </li>
+
+    <li className='mx-5'>
+    <a href='https://github.com/KaKashi1210/react-assignment' target='_blank' className='text-xl hover:text-black duration-500'>contribute</a>
     </li>
 
     </ul>

@@ -6,9 +6,34 @@
 
 body{
 background: rgb(59 130 246);
+
 }
 
-table , th , td {
+th{
 	padding: 10px;
 }
+td {
+  padding: 20px;
+}
 
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.ControlsBox {
+  height: 20px;
+  width: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.PanelsBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  resize: none;
+}
