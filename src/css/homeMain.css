@@ -1,0 +1,21 @@
+/* Home Main Section  */
+#homeMain {
+    
+    margin: 3rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+
+}
+#homeLink {
+    text-decoration: none;
+    background: #12c2c2;
+    color: #023535;
+    width: 8rem;
+    height: 4rem;
+    border-radius: .6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

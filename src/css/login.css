@@ -1,0 +1,57 @@
+h2 {
+    text-align: center;
+}
+
+#loginMain {
+    margin: 3rem;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 45%;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.label {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container {
+    padding: 16px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+p{
+    margin-top: 8px;
+}
+@media screen and (max-width: 800px) {
+    .login {
+        width: 100%;
+    }
+}
