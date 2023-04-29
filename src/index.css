@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #d34;
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+
+}
+
+
+
+.home-page{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+    margin-top: 12rem;
+}
+
+
+
+label{
+padding: 1rem;    
+font-size: 1.4rem;
+}
+input {
+    padding: 0.6rem 1rem;
+    width: 50%;
+    border-radius: 1rem;
+    border: 1px solid #d34;
+}
+button{
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    width: 200px;
+    background-color: #d34;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+.single-problem{
+    background-color: grey;
+    width: 50%;
+    padding-top: 4rem;
+}
+
+.single-problem h1{
+    margin-bottom: 2rem;
+}
+
+.problem-output{
+    background-color: gainsboro;
+    width: 50%;
+    padding-top: 1rem;
+}
+
+.single-problem-content{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+
+textarea{
+    width: 80%;
+    height: 60vh;
+}
+
+.button button{
+    margin-left: 1rem;
+}
+
+table{
+    border: 1px solid;
+    text-align: center;
+    width: 60%;
+    border-collapse: collapse;
+}
+tr{
+    margin: 0;
+}
+
+td{
+    padding: 1rem 3rem;
+    border: 1px solid;
+   
+    width: 30px;
+}
