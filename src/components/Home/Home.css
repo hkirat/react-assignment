@@ -1,0 +1,60 @@
+.container{
+    background: #7d7d9899;
+    width: 100%;
+    height: 750px;
+}
+
+.nav{
+    display: flex;
+    margin-left: 10px;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.nav-btn{
+    margin-left: 75%;
+    width: 13vh;
+    height:3vh;
+    border-radius: 5px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+}
+.nav-btn:hover{
+    transform: scale(1.1);
+}
+
+.home-body{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-top: 20vh;
+}
+.des{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    color: white;
+    margin-right: 60px;
+
+}
+.create-acc{
+    margin-top: 20px;
+    width: 30vh;
+    height: 6vh;
+    background: rgb(30, 161, 153);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.create-acc:hover{
+    transform:scale(1.1);
+}
