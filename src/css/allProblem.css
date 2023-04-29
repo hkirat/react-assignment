@@ -1,0 +1,40 @@
+#allProblemMain {
+    margin: 3rem;
+    padding: 2rem;
+}
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tRow {
+    background-color: #a4eded;
+}
+
+th,
+#tRow>td {
+    border: 1px solid #5ee0d7;
+    padding: 8px;
+}
+
+#tRow>td {
+    background: transparent;
+}
+
+#tRow:nth-child(even) {
+    background-color: #85e6df;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2fb7b7;
+    color: white;
+}
+#solveLink {
+    text-decoration: none;
+    background-color: transparent;
+}
