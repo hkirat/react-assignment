@@ -1,0 +1,41 @@
+.table-container{
+  background: #7d7d9899;
+  width: 100%;
+  height: 730px;
+  color: aliceblue;
+  padding-top: 30px;
+}
+
+.problems-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 10vh;
+    
+    
+  }
+  
+  .problems-table th,
+  .problems-table td {
+   
+    padding: 8px;
+    text-align: left;
+    
+  }
+  
+  .problems-table th {
+   
+    color: #0b0b0d99;
+    margin-bottom: 20px;
+  }
+  
+  .problems-table tr:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .data{
+    color: #0b0b0d99;
+    cursor: pointer;
+
+  }
+  .data:hover{
+    color: blue;
+  }

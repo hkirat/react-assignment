@@ -1,0 +1,30 @@
+.container-login{
+    background: #7d7d9899;
+    width: 100%;
+    height: 750px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.log
+{
+    margin: auto auto;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out; 
+    background: white;
+    border-radius: 5px;
+    padding-top: 20px;
+    
+    
+    
+}
+.log:hover{
+    transform: scale(1.1);
+}

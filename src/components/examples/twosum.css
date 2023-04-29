@@ -1,0 +1,62 @@
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .ex-head{
+    margin-bottom: 30px;
+  }
+  .ex-body{
+    margin-left: 10px;
+    max-width: 120vh;
+  }
+.ex-container{
+    background: rgb(40 40 40);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    gap: 20vh;
+   
+}
+.ex-box{
+    
+    max-width: 63vh;
+    max-height: 700px;
+    padding-left: 10px;
+    background-color: #ffffff12;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    
+}
+.toggle-button{
+  margin-top: 20px;
+    width: 20vh;
+    height: 3.8vh;
+    color: white;
+    background: #ffffff12;
+    border: 1px solid white;
+    font-size:large;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.code-runner{
+  width: 200vh;
+  height: 90vh;
+  background: #ffffff12;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 10px;
+ 
+ 
+}
+.drop-ul{
+  width: 20vh;
+  color: white;
+  background: #ffffff12;
+  border-radius: 5px;
+}
