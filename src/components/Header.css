@@ -1,0 +1,58 @@
+.header{
+    width: 100vw;
+    position: sticky;
+    padding-bottom: 0.5rem;
+    top: 0px;
+    background-color: white;
+    border-bottom: 0.5px solid whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.header-logo{
+    width: 6rem;
+}
+
+.header-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+
+.header-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+}
+
+.header-links{
+    text-decoration: none;
+    color: gray;
+}
+
+.question-streak{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#streak{
+    width: 1.5rem;
+    height: 1.5rem;
+  
+}
+
+#bell-icon{
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    
+}
+
+#signin-header{
+    text-decoration: none;
+    color: gray;
+}
