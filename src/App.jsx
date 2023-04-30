@@ -1,59 +1,26 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
 
-
-function App() {
-
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
-
+import Loginpage from "./loginpage.jsx";
+import Navbar from "./Navbar.jsx"
+import {Routes, Route} from "react-router-dom";
+import Homepage from "./Homepage.jsx";
+import Problems from "./Problems.jsx";
+import Problem from "./Problem.jsx";
+import React from "react";
+import LoginPage from "./loginpage.jsx";
+function App(){
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
-}
+        <><Navbar/>
+            <Routes>
+                <Route path="/" element={<Problems/>}/>
+                <Route path="/loginpage" element={<Loginpage/>}/>
+                <Route path="/Problems/*" element={<Problems/>}/>
+                {/*<Route path="/Contest" element={<Contest/>}/>*/}
+                <Route path="/Problem" element={<Problem/>}/>
+                <Route path="/login" element={<LoginPage/>}/>
+            </Routes>
+        </>
+    );
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
 }
-export default App
+ export default App
