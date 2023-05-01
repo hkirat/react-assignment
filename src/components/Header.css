@@ -49,10 +49,15 @@
 #bell-icon{
     width: 1.5rem !important;
     height: 1.5rem !important;
-    
+    color: gray;
 }
 
 #signin-header{
     text-decoration: none;
+    color: gray;
+}
+
+
+#streak{
     color: gray;
 }
