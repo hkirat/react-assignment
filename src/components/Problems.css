@@ -1,0 +1,65 @@
+.problems{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+table{
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+}
+
+tr{
+    height: 2.5rem;
+}
+#header-row{
+    background-color: white;
+}
+
+
+tr:first-child, tr:nth-child(2n+1)
+{
+    background-color: whitesmoke;
+}
+.title{
+    text-align: start;
+    width: 30rem;
+}
+
+.title-text{
+color: #5BA4E3;
+}
+
+.acceptance{
+    text-align: start;
+    width: 10rem;
+}
+
+.difficulty{
+    text-align: start;
+    width: 10rem;
+}
+
+.diff{
+   border-radius: 10px;
+   padding: 0.25rem; 
+   width: fit-content;
+   height: fit-content;
+   color: white;
+   font-size: 0.8rem;
+   font-weight: bold;
+}
+
+.number{
+    text-align: start;
+    width: 4rem;
+}
+
+td{
+    color: gray;
+    font-weight: 400;
+    margin: 0;
+}

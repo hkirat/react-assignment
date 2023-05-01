@@ -1,0 +1,14 @@
+.signup-card-bottom-top{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+    align-items: center;
+    color: #4b6073;
+    
+}
+
+
+#signup{
+    color: lightgray;
+}

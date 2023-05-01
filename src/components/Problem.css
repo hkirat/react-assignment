@@ -1,0 +1,182 @@
+body{
+    overflow: hidden;
+}
+.problem{
+    background-color: #242323;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    
+}
+
+
+.problem-left{
+background-color: #2B2727;
+border-radius: 10px;
+width: 40%;
+height: 40rem;
+overflow-y: auto;
+}
+.problem-right{
+    
+    border-radius: 10px;
+    width: 60%;
+   
+}
+.problem-header{
+    background-color: #302F2F;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: gray;
+}
+
+.problem-right-header{
+    display: flex;
+    gap: 2rem;
+}
+.problem-left-header{
+    display: flex;
+    gap: 2rem;
+}
+
+.problem-title{
+   font-size: 1.25rem;
+}
+
+.image{
+    width: 17px !important;
+    height: 17px !important;
+    color: gray !important;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 5px;
+}
+
+.icon:hover{
+    background-color: rgba(90, 88, 90,0.5);
+    
+}
+
+.problem-stats{
+    display: flex;
+    gap: 1rem;
+}
+
+.problem-difficulty{
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+}
+
+.active{
+    color: white;
+}
+
+.problem-left-heading{
+cursor: pointer;
+}
+
+.problem-left-heading:hover{
+ color: white;
+}
+
+.problem-right-heading{
+cursor: pointer;
+}
+
+.problem-right-heading:hover{
+    color: white;
+}
+
+.problem-body{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.problem-description{
+    line-height: 25px;
+}
+
+.problem-right-upper{
+    height: 92%;
+    margin-bottom: 0.5rem;
+    background-color: #2B2727;
+}
+
+
+.problem-right-down{
+    background-color: #302F2F;
+    padding: 0.5rem;
+    border-radius: 10px;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.down-icons{
+    display:flex;
+    width: 18%;
+    cursor: pointer;
+    gap: 0.5rem;
+}
+.console{
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: gray;
+    cursor: pointer;
+}
+
+.console:hover{
+    color: white;
+}
+.menu{
+    position: relative;
+    top: 2px;
+}
+
+.code-btn{
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#run{
+    background-color: #534F50;
+}
+
+#submit{
+    background-color: #50AB53;
+}
+
+#run:hover{
+    background-color: #827a7c;;
+}
+
+#submit:hover{
+    background-color: #90d393;
+}
+#bug{
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 5px;
+}
+
+#bug:hover{
+    background-color: #534F50;
+}
