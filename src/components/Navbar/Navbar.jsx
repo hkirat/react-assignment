@@ -9,13 +9,9 @@ const Navbar=()=>{
             </div>
             <div className='menu'>
                 <ul>
+                    <a href="/problemset/all"><li >problems </li></a>
                     <a href="/login"><li >login </li></a>
                     <a href="/signup"><li >signup </li></a>
-                    <a href="/problemset/all"><li >problems </li></a>
-                    {/* <a href="/problemset/1"><li >signup </li></a> */}
-                    
-                    <button href="/login">Login</button>
-                    <button href="/signup">Signup</button>
                     
                 </ul>
              </div>

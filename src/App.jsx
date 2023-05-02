@@ -121,7 +121,7 @@ function App() {
 
         </div>
 
-        Finish the assignment! Look at the comments in App.jsx as a starting point
+        {/* Finish the assignment! Look at the comments in App.jsx as a starting point */}
     </div>
   )
 }
