@@ -1,0 +1,35 @@
+.logo{
+    padding:7px 10px 10px 10px;
+}
+h4{
+    font-size: x-large;
+    margin: 10px;
+}
+
+h4 span{
+    color: gray;    
+}
+
+li{
+    padding: 10px;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    padding: 5px;
+    margin: 10px;
+
+}
+
+.menu{
+    display: flex;
+}
+
+button{
+    margin: 8px;
+}
