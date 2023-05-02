@@ -1,0 +1,7 @@
+.question{
+    margin: 3rem;
+}
+.problem{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}

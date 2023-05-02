@@ -1,0 +1,17 @@
+
+.form-container{
+    text-align: center;
+}
+.input{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.submit{
+    
+    padding: 8px 70px 8px 70px;
+    border-radius: 10px;
+    margin: 10px;
+}
