@@ -39,7 +39,7 @@ const Navbar = () => {
     </li>
 
     <li className='mx-5'>
-    <a href='https://github.com/KaKashi1210/react-assignment' target='_blank' className='text-xl hover:text-black duration-500'>contribute</a>
+    <a href='https://github.com/KaKashi1210/react-assignment' className='text-xl hover:text-black duration-500'>contribute</a>
     </li>
 
     </ul>
