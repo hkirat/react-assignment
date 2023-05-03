@@ -1,0 +1,16 @@
+.prblms table {
+    margin: auto;
+}
+
+.prblms table tr {
+    /* margin: 20rem; */
+}
+
+.prblms table tr th {
+    font-size: 2rem;
+    border: 2px solid black;
+}
+
+.prblms table tr td {
+    border: 2px solid black;
+}

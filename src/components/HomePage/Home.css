@@ -1,0 +1,20 @@
+.homepage_header {
+    font-style: italic;
+    font-weight: 900;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.homepage_toProblems {
+    margin-top: 5rem;
+}
+
+.homepage_toProblems button {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: #c6f3ff;
+    font-size: 1rem;
+    font-weight: 700;
+}
