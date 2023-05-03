@@ -1,8 +1,20 @@
-## Full stack assignment
+## SHITCODE
 
-### Video
+### Routes
 
-Link to video - https://www.youtube.com/watch?v=569YZm0X5-0
+/ -> landing page 
+<br/>
+/signup -> signup page 
+<br/>
+/login -> login page
+<br/>
+/problems/all -> all the problems 
+<br/> 
+/problems/slug -> description of one problem
 
-### Where to start?
-Look at App.jsx inside the src/ folder 
+### Favour
+
+If you find any mistakes, wrong approach or even slow approach it would be big help if you drop a comment or something
+and please feel free to critique or give feedback. 
+<br/>
+Arigato 

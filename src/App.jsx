@@ -1,59 +1,42 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+import React from "react";
+import "./index.css";
+import { Routes, Route, Outlet, Link } from 'react-router-dom';
+import Signup from "./components/signup/Signup";
+import Login from "./components/login/login";
+import Problems from "./components/problemset/all/problems";
+import Problemslug from "./components/problemset/problem_slug/problem-slug";
+import Navbar from "./components/navbar/Navbar";
+
+const Landingpage = () => {
+  return (
+    <>
+    <Routes>
+    <Route path="/" element={<Home/>} />
+    <Route path="signup" element={<Signup />} />
+    <Route path="login" element={<Login />} />
+    <Route path="problems/all" element={<Problems />} />
+    <Route path="problems/slug" element={<Problemslug />} />
+    </Routes>
 
 
-function App() {
+    </>
+  )
+};
 
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+const Home = () =>{
+  return (
+    <>
+    <Navbar/>
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
+    <div className=" p-10 text-4xl text-white justify-content-center">
+    Welcome to,
+    <br/>
+    <span className=" font-serif bold text-6xl"> Shitcode</span>
+
     </div>
+    </>
   )
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+export default Landingpage;
