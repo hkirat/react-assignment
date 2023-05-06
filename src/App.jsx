@@ -1,59 +1,98 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
-
+import React,{ useEffect, useMemo, useState, useTransition } from "react";
+import "./App.css"
+function Allproblems(props){
+    return <>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Difficulty</th>
+                    <th>Acceptance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {props.children}
+            </tbody>
+            
+        </table>
+        
+    </>
+}
+function Problem(props){
+    var {title,acceptance,difficulty}=props.data;
+    return <>
+        <tr>
+            <td>{title}</td>
+            <td>{difficulty}</td>
+            <td>{acceptance}</td>
+        </tr>
+    </>
+}
 
 function App() {
+    const [pagenumber,setpage]=useState(1);
+    const [questions,setquestion]=useState([]);
+    const [ispending,starttransition]=useTransition();
+    const [totalquestions, settotalques]=useState(0);
+    useMemo(()=>
+    {
+        var c=0;
+        fetch(`http://localhost:3001/numberofques`).then((response)=>{
+            return response.text();
+        }).then((data)=>{
+            c=Number(data);
+            settotalques(c);
+        })
+        return c;
+    },[])
 
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+    function Navigatepage(){
+        var arr=[];
+        var totalpages=Math.ceil(totalquestions*1.0/5);
+        for(var i=0;i<totalpages;i++){
+            arr.push(i+1);
+            
+        }
+        return <>
+            <div id="container">
+                {arr.map((item,index)=> {
+                    if(item==pagenumber){
+                        return <button key={index} style={{backgroundColor:"skyblue"}} className="flexbox" onClick={()=>fetchquestions(item)} > {item} </button>
+                    }
+                    return <button key={index} className="flexbox" onClick={()=>fetchquestions(item)} > {item} </button>
+                } )}
+            </div>
+        </>
+    }
+    const fetchquestions=(page=1)=>{
+        starttransition(()=>{
+            fetch(`http://localhost:3001/problems/${page}`).then((response)=>{
+                return response.json();
+            }).then(data=>{
+                setquestion(data);
+                setpage(page);
+            })
+        })
+    }
+
+    useEffect(()=>{
+        fetchquestions();
+    },[])
+    
 
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
+    <>
+        {ispending?<h1>Loading..</h1>:
+        <>
+            <Allproblems>
+                {questions.map((item,index,arr)=> <Problem key={index} data={item}/>)}
+            </Allproblems>
+            <Navigatepage/>
+        </>
+        }
+    </>
   )
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
 export default App
