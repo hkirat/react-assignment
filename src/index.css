@@ -1,0 +1,54 @@
+:root {
+    --primary: #0b0c10;
+    --default: #1f2833;
+    --secondary: #c5c6c7;
+    --button-color: #66fcf1;
+    ---widget: #45a29e;
+  }
+  
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40vw;
+    height: 35vh;
+    box-shadow: 15px 15px 60px rgba(0,0,0,.15);
+    padding: 15px;
+    gap: 25px;
+    /* background-color: var(--secondary); */
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+}
+.email {
+    display: flex;
+    flex-direction: column;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+button {
+    height: 35px;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+}
