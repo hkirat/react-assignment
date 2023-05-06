@@ -1,0 +1,12 @@
+.name {
+    font-size: 1em;
+    color: #2d3436;
+    display: flex;
+    flex: 1;
+    margin: 10% 20px 0;
+  }
+
+.info {
+    padding-right: 10px;
+    color: #1a7e76;
+}
