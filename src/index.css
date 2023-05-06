@@ -1,0 +1,79 @@
+table {width: 100%;border: 2px solid #73AD21;}
+tr:nth-child(odd) {background-color: #f2f2f2;}
+tr:hover {background-color: coral;}
+td {text-align: center;}
+th {text-align: center;}
+
+.problem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh
+}
+
+.question {
+    flex: 1;
+    background-color: #e0e0e0;
+    height: 100vh
+}
+
+.solution {
+    flex: 1;
+    background-color: #f0f0f0;
+    height: 100vh,
+    align: top
+}
+
+textarea {
+    height: 50rem
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #999;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px;
+}
+.button:hover {background-color: coral;}
+
+/* Style the form labels */
+.form-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px;
+    color: red
+}
