@@ -1,5 +1,5 @@
-import React,{ useEffect, useState, useTransition } from "react";
-import "./app.css"
+import React,{ useEffect, useMemo, useState, useTransition } from "react";
+import "./App.css"
 function Allproblems(props){
     return <>
         <table>
@@ -28,24 +28,69 @@ function Problem(props){
         </tr>
     </>
 }
+
 function App() {
-    const [pagenumber,changepage]=useState(1);
+    const [pagenumber,setpage]=useState(1);
     const [questions,setquestion]=useState([]);
-    
-    useEffect(()=>{
-        fetch(`http://localhost:3001/problems/1`).then((response)=>{
-            return response.json();
-        }).then(data=>{
-            setquestion(data);
+    const [ispending,starttransition]=useTransition();
+    const [totalquestions, settotalques]=useState(0);
+    useMemo(()=>
+    {
+        var c=0;
+        fetch(`http://localhost:3001/numberofques`).then((response)=>{
+            return response.text();
+        }).then((data)=>{
+            c=Number(data);
+            settotalques(c);
         })
-    },[]);
+        return c;
+    },[])
+
+    function Navigatepage(){
+        var arr=[];
+        var totalpages=Math.ceil(totalquestions*1.0/5);
+        for(var i=0;i<totalpages;i++){
+            arr.push(i+1);
+            
+        }
+        return <>
+            <div id="container">
+                {arr.map((item,index)=> {
+                    if(item==pagenumber){
+                        return <button key={index} style={{backgroundColor:"skyblue"}} className="flexbox" onClick={()=>fetchquestions(item)} > {item} </button>
+                    }
+                    return <button key={index} className="flexbox" onClick={()=>fetchquestions(item)} > {item} </button>
+                } )}
+            </div>
+        </>
+    }
+    const fetchquestions=(page=1)=>{
+        starttransition(()=>{
+            fetch(`http://localhost:3001/problems/${page}`).then((response)=>{
+                return response.json();
+            }).then(data=>{
+                setquestion(data);
+                setpage(page);
+            })
+        })
+    }
+
+    useEffect(()=>{
+        fetchquestions();
+    },[])
+    
 
     return (
-    <div>
-        <Allproblems pagenumber={pagenumber}>
-            {questions.map((item,index,arr)=> <Problem key={index} data={item}/>)}
-        </Allproblems>
-    </div>
+    <>
+        {ispending?<h1>Loading..</h1>:
+        <>
+            <Allproblems>
+                {questions.map((item,index,arr)=> <Problem key={index} data={item}/>)}
+            </Allproblems>
+            <Navigatepage/>
+        </>
+        }
+    </>
   )
 }
 

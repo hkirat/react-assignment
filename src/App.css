@@ -8,3 +8,19 @@ td{
 
     padding: 30px;
 }
+#container{
+    display: flex;
+    width: fit-content;
+}
+.flexbox{
+    
+    font-size: 1.2em;
+    color: black;
+    width: 30px;
+    text-align: center;
+    border-radius:10px ;
+    background-color: rgb(204, 217, 217);
+    border: 1px solid black;
+    margin:0px 10px ;
+    
+}
