@@ -10,7 +10,7 @@ const problems = [{
     {
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
-    acceptance: "412%"
+    acceptance: "12%"
     },
     {
         title: "202. Happy Number",

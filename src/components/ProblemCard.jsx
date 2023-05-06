@@ -4,15 +4,18 @@ function ProblemStatement(props) {
 
     return (
         <tr>
-            <td>
+            <td className="name">
                 {props.titles}
             </td>
-            <td>
+            
+            <td className="info">
                 {props.acceptances}
             </td>
+            
             <td>
                 {props.difficultys}
             </td>
+            
         </tr>
         );
 }
