@@ -1,26 +1,12 @@
 /*
  * Temporary problems array schema
  */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Login from './components/login';
+import  Main from './components/Main';
+import Signup from './components/Signup';
+import Problem from './components/Problem';
+import Problemset from './components/Problemset';
 
 function App() {
 
@@ -31,29 +17,24 @@ function App() {
        /problems/:problem_slug - A single problem page
      */
 
+
+
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
+        <BrowserRouter>
+        <div>
+
+            <Routes>
+                <Route path="/" element={<Main />}></Route>
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/signup" element={<Signup />}></Route>
+                <Route path="/problem/:title" element={<Problem />}></Route>
+                <Route path="/problemset" element={<Problemset />}></Route>
+            </Routes>
+
+        </div>
+    </BrowserRouter>
   )
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
 export default App
