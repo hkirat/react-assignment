@@ -1,9 +1,23 @@
-.login-div {
-    justify-content: center;
+.signup {
+    display: flex;
     align-items: center;
+    justify-content: center;
   }
   
-  .login-title {
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 74%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 8px;
+  
+  }
+  
+  .signup-title {
     font-size: 2.5em;
     font-weight: 600;
    
@@ -11,23 +25,8 @@
     text-align: center;
   }
   
-  .login-title:hover {
+  .signup-title:hover {
     color: #fea50e;
-  }
-  
-  .login-form {
-    display: flex;
-    
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 74%;
-    max-width: 400px;
-   
-    padding: 2em;
-    border-radius: 8px;
-    
   }
   
   .box {
