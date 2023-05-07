@@ -4,15 +4,19 @@
     --secondary: #c5c6c7;
     --button-color: #66fcf1;
     ---widget: #45a29e;
-  }
+}
   
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .login-form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 40vw;
-    height: 35vh;
+    /* height: 35vh; */
     box-shadow: 15px 15px 60px rgba(0,0,0,.15);
     padding: 15px;
     gap: 25px;
@@ -51,4 +55,56 @@ button {
     background-color: var(--button-color);
     border: none;
     border-radius: 5px;
+}
+.problem-area{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    justify-content: space-around;
+}
+
+.code-area{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+.problem-page {
+    display: flex;
+}
+.code-block {
+    height: 70vw;
+}
+
+.problem-tile {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    height: 50px;
+    align-items: center;
+    box-shadow: 15px 15px 60px rgba(0,0,0,.15);
+    gap: 10px;
+}
+.high {
+    color: red;
+}
+.med {
+    color: orange;
+}
+.low {
+    color: green;
+}
+.title {
+    width: 60%;
+}
+.difficulty {
+    width: 20%;
+}
+.acceptance {
+    width: 20%;
+}
+.dashboard-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

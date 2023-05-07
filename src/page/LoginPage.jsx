@@ -14,6 +14,9 @@ const LoginPage = () => {
         </div>
         
         <button type="submit">Login</button>
+        <div>
+          Do not have an account yet? SignUp
+        </div>
       </form>
     );
   };
