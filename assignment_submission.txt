@@ -1,0 +1,19 @@
+React Flask Leetcode Clone : url : https://github.com/KrishRathor/LeetCodeThree
+
+Description : Currently code submission works only for javascript and for first question test case needs be updated for rest of the 
+              questions. Thanks for the video btw!
+
+SETUP INSTRUCTIONS
+
+1) Frontend :
+    cd frontend
+    run command : npm i
+    then run : npm start
+
+2) Backend : 
+    cd backend
+    active virtual env : by venv/scripts/activate
+    install dependencies : pip install -r requirement.txt
+    run : python app.py
+
+That's it enjoy!
