@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const Signup = () => {
+  const [email,setEmail]=useState('');
+  const [password,setpassword]=useState('');
+
+  const addUser=(email,password)=>{
+    axios.post(`http://127.0.0.1:5000/user/register`,{email,password})
+      .then((resp)=>console.log(resp))
+      .catch((err)=>console.log(err))
+  }
+
   return (
     <div>
       <h1>Signup</h1>
-      <form>
+     
         <div>
           <label htmlFor="username">Username:</label>
-          <input type="text" id="username" />
+          <input type="text" id="username" onChange={(e)=>setEmail(e.target.value)} />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input type="password" id="password" />
+          <input type="password" id="password" onChange={(e)=>setpassword(e.target.value)}/>
         </div>
-        <div>
-          <label htmlFor="confirmPassword">Confirm Password:</label>
-          <input type="password" id="confirmPassword" />
-        </div>
-        <button>Signup</button>
-      </form>
+        <button onClick={()=>addUser(email,password)}>Signup</button>
+     
     </div>
   );
 };
