@@ -1,28 +1,11 @@
+import { Router } from 'react-router-dom';
 import Navbar from './components/Navbar'
-
+import Home from './components/Home';
+import About from './components/About';
+import Problems from './components/Problems';
 /*
  * Temporary problems array schema
  */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
-
 
 function App() {
 
@@ -32,12 +15,26 @@ function App() {
        /problemset/all/ - All problems (see problems array above)
        /problems/:problem_slug - A single problem page
      */
+    let Component;
+    switch (window.location.pathname) {
+        case '/': Component = Home
+            break
+        case '/about': Component = About
+            break
+        case '/problems':Component = Problems
 
+    }
     return (
-    <div>
-        <Navbar/>
-    </div>
-  )
+        <div>
+            <Navbar />
+            <div className="flex justify-center items-center h-[90vh]">
+                <div className="flex md:max-w-5xl">
+                    <Component />
+                </div>
+
+            </div>
+        </div>
+    )
 }
 
 // A demo component
