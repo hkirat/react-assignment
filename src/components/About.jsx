@@ -3,8 +3,8 @@
 const About = ()=>{
     return (
         <div className="flex justify-center">
-            <div>
-                It My ABOUT
+            <div className="text-6xl">
+                My ABOUT
             </div>
         </div>
     )
