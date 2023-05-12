@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation, useParams } from "react-router-dom"
+import axios from 'axios';
 
 const ProblemSet = () => {
-  const id = useParams()
-  const { state } = useLocation()
-  const { problem } = state
+  const {id} = useParams();
+  // const { state } = useLocation();
+  // const { problem } = state;
+
+  // const [problem,setProblem]=useState('');
+  const [problem,setProblem]=useState({});
+
+  const problemAPI=async()=>{
+    const response=await axios.get(`http://127.0.0.1:5000/problem/${id}`);
+    setProblem(response.data.problem)
+  }
+
+  useEffect(()=>{
+    problemAPI();
+    console.log(id)
+  },[])
 
   return (
     <div className="problem_set">
       <div className="problem_set_header">
-        <div className="problem_set_title">{problem.title}</div>
+        <div className="problem_set_title">{problem.question}</div>
         <div className="problem_set_stats">
-          <div>{problem.difficulty}</div>
-          <div>{problem.acceptance}</div>
+          <div>{problem.author}</div>
+          <div>{problem.hints}</div>
         </div>
       </div>
       <div className="code_editor">

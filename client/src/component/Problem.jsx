@@ -1,44 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom"
-
+import { useEffect } from 'react';
+import axios from 'axios';
 const Problem = () => {
-  const problems = [
-    {
-      id: 1,
-      title: "201. Bitwise AND of Numbers Range",
-      difficulty: "Medium",
-      acceptance: "42%"
-    },
-    {
-      id: 2,
-      title: "201. Bitwise AND of Numbers Range",
-      difficulty: "Medium",
-      acceptance: "412%"
-    },
-    {
-      id: 3,
-      title: "202. Happy Number",
-      difficulty: "Easy",
-      acceptance: "54.9%"
-    },
-    {
-      id: 4,
-      title: "203. Remove Linked List Elements",
-      difficulty: "Hard",
-      acceptance: "42%"
-    }
-  ];
+
+  const [problems,setProblems]=useState([]);
+
+  const problemAPI=async()=>{
+    const response=await axios.get(`http://127.0.0.1:5000/problems`);
+    console.log(response.data.problems);
+    setProblems(response.data.problems)
+  }
+
+  useEffect(()=>{
+    problemAPI();
+  },[])
 
   return (
     <div className="problem-page">
       <div className="problems_all">
         {problems.map((p) => (
-          <div key={p.id}>
+          <div key={p._id}>
             <div>
-              <Link to={`/problemset/:${p.id}`} state={{ problem: p }}>
-                <div>{p.title}</div>
-                <div>{p.difficulty}</div>
-                <div>{p.acceptance}</div>
+             <Link to={`/problemset/${p._id}`} state={{ problem: p }}>
+                <div>{p.question}</div>
+                <div>{p.author}</div>
+                <div>{p.hints}</div>
               </Link>
             </div>
             <br />
