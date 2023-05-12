@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* -------Navbar-------- */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    background-color: aquamarine;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.397);
+}
+ul{
+    list-style: none;
+    display: flex;
+    column-gap: 10px;
+}
+.link{
+    color: black;
+     text-decoration: none;
+ 
+}
+.title{
+    color: black;
+     text-decoration: none;
+}
