@@ -1,0 +1,63 @@
+/* .App {
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+} */
+
+.auth-form-container,
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form {
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.auth-form-container {
+    background-color: white;
+    padding: 20px 20px;
+    width: 25%;
+    margin: auto;
+    margin-top: 5em;
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 9px -1px rgb(199 197 197 / 78%);
+    -webkit-box-shadow: 1px 1px 9px -1px rgb(199 197 197 / 78%);
+    -moz-box-shadow: 1px 1px 9px -1px rgb(199 197 197 / 78%);
+}
+
+.auth-form-container h2 {
+    text-align: center;
+    margin: 25px;
+}
+
+input {
+    border: 1px solid #a7a8a9;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 2px;
+    width: 100%;
+}
+
+input[type="submit"] {
+    border: none;
+    background-color: #3c4d56;
+    cursor: pointer;
+    color: white;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 2px;
+    /* width: 110%; */
+}
+
+.link-btn {
+    background: none;
+    color: white;
+    text-decoration: underline;
+}

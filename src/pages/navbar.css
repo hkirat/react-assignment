@@ -1,0 +1,45 @@
+.logo{
+    padding:7px 10px 10px 10px;
+    /* background-color: black; */
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+h4{
+    font-size: 1.7em;
+    margin: 10px;
+}
+
+h4 span{
+    color: gray;    
+}
+
+li{
+    padding: 10px;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    padding: 5px;
+    /* margin: 10px; */
+    width: 100%;
+    background-color: white;
+    align-items: center;
+}
+
+.nav-items{
+    display: flex;
+}
+
+.nav-items .link{
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+}
+
+button{
+    margin: 8px;
+}
