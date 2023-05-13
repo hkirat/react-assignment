@@ -1,0 +1,43 @@
+#problemList {
+    margin: 3rem;
+    padding: 3rem;
+}
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+th,
+#row>td {
+    padding: 15px;
+}
+
+#row>td {
+    background: transparent;
+}
+
+#row:nth-child(even) {
+    background-color: #fff;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /* background-color: #2fb7b7; */
+    color: black;
+    border-bottom: 1px solid #fff;
+}
+#problemLink {
+    text-decoration: none;
+    color: black;
+    transition: color .2s;
+}
+#problemLink:hover {
+    text-decoration: none;
+    color: blue;
+    transition: color .2s;
+}
