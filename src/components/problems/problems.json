@@ -1,0 +1,182 @@
+[
+    {
+      "id": 1,
+      "title": "Two Sum",
+      "description": "Given an array of integers, return indices of the two numbers such that they add up to a specific target.",
+      "difficulty": {
+        "level": 2
+      },
+      "total_acs": 234,
+      "total_submitted": 303,
+      "testCases": [
+        {
+          "input": "[2,7,11,15]\n9",
+          "output": "[0,1]"
+        },
+        {
+          "input": "[3,2,4]\n6",
+          "output": "[1,2]"
+        },
+        {
+          "input": "[3,3]\n6",
+          "output": "[0,1]"
+        }
+      ]
+    },
+    {
+        "id": 2,
+      "title": "Reverse Integer",
+      "description": "Given a 32-bit signed integer, reverse digits of an integer.",
+      "difficulty": {
+        "level": 1
+      },
+      "total_acs": 164,
+      "total_submitted": 307,
+      "testCases": [
+        {
+          "input": "123",
+          "output": "321"
+        },
+        {
+          "input": "-123",
+          "output": "-321"
+        },
+        {
+          "input": "120",
+          "output": "21"
+        }
+      ]
+    },
+    {
+        "id": 3,
+      "title": "Palindrome Number",
+      "description": "Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.",
+      "difficulty": {
+        "level": 1
+      },
+      "total_acs": 179,
+      "total_submitted": 359,
+      "testCases": [
+        {
+          "input": "121",
+          "output": "true"
+        },
+        {
+          "input": "-121",
+          "output": "false"
+        },
+        {
+          "input": "10",
+          "output": "false"
+        }
+      ]
+    },
+    {
+        "id": 4,
+      "title": "Roman to Integer",
+      "description": "Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.",
+      "difficulty": {
+        "level": 2
+      },
+      "total_acs": 408,
+      "total_submitted": 539,
+      "testCases": [
+        {
+          "input": "III",
+          "output": "3"
+        },
+        {
+          "input": "IV",
+          "output": "4"
+        },
+        {
+          "input": "IX",
+          "output": "9"
+        },
+        {
+          "input": "LVIII",
+          "output": "58"
+        },
+        {
+          "input": "MCMXCIV",
+          "output": "1994"
+        }
+      ]
+    },
+    {
+        "id": 5,
+      "title": "Longest Common Prefix",
+      "description": "Write a function to find the longest common prefix string amongst an array of strings.",
+      "difficulty": {
+        "level": 2
+      },
+      "total_acs": 408,
+      "total_submitted": 539,
+      "testCases": [
+        {
+          "input": "[\"flower\",\"flow\",\"flight\"]",
+          "output": "\"fl\""
+        },
+        {
+          "input": "[\"dog\",\"racecar\",\"car\"]",
+          "output": "\"\""
+        }
+      ]
+    },
+    {
+        "id": 6,
+      "title": "Valid Parentheses",
+      "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+      "difficulty": {
+        "level": 2
+      },
+      "total_acs": 408,
+      "total_submitted": 539,
+      "testCases": [
+        {
+          "input": "\"()\"",
+          "output": "true"
+        },
+        {
+          "input": "\"()[]{}\"",
+          "output": "true"
+        },
+        {
+          "input": "\"(]\"",
+          "output": "false"
+        },
+        {
+          "input": "\"([)]\"",
+          "output": "false"
+        },
+        {
+          "input": "\"\"",
+          "output": "true"
+        }
+      ]
+    },
+    {
+        "id": 7,
+      "title": "Merge Two Sorted Lists",
+      "description": "Merge two sorted linked lists and return it as a sorted list. The list should be made by splicing together the nodes of the first two lists.",
+      "difficulty": {
+        "level": 2
+      },
+      "total_acs": 368,
+      "total_submitted": 591,
+      "testCases": [
+        {
+          "input": "[[1,2,4],[1,3,4]]",
+          "output": "[1,1,2,3,4,4]"
+        },
+        {
+          "input": "[[],[]]",
+          "output": "[]"
+        },
+        {
+          "input": "[[1],[2]]",
+          "output": "[1,2]"
+        }
+      ]
+    }
+  ]
