@@ -1,0 +1,46 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #393a3f;
+    color: #fff;
+  }
+  
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: border-bottom 0.2s ease-in-out;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .nav-links a:hover {
+    border-bottom: 2px solid #fff;
+  }
+  
+  .nav-links a.active {
+    border-bottom: 2px solid #fff;
+  }
+  
+  .leetcode-logo {
+    height: 3em;
+    width: 3em;
+    align-self: center;
+  }
