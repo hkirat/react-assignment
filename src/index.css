@@ -27,3 +27,68 @@ ul{
     color: black;
      text-decoration: none;
 }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .button{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 25px;
+    margin: 2px;
+
+    
+  }
+  .btns{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .paganation__selected{
+    background-color: aquamarine;
+  }
+  .login-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50vh;
+  }
+  .login{
+    gap: 10px;
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .login-btn{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:aquamarine;
+    width: 100%;
+    cursor: pointer;
+  }
+  input{
+    padding: 8px;
+    border: none;
+    outline: #dddddd;
+    background-color: rgb(216, 216, 216);
+    border-radius: 10px;
+    width: 100%;
+
+
+  }

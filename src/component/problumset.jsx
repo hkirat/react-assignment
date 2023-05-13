@@ -1,23 +1,19 @@
 import React from 'react'
 import { useContext ,useState} from 'react'
 import { Problumset } from './context'
+import { Link } from 'react-router-dom'
 const problumset = () => {
     const {data} = useContext(Problumset)
-    const [btn,setBtn] = useState(data.length/2)
-    const [initialValue,setInitialValue] = useState(0)
+    const [page,setPage] = useState(1)
+    const [btncolor,setBtncolor] = useState('grey')
    
-    const handelbtn = ()=>{
-        const y = data.length
-        setBtn(y/2)
-        setInitialValue(0)
+    const handelbtn = (x)=>{
+      setPage(x)
     }
-    const handelbtn2 = ()=>{
-        const y = data.length
-        setInitialValue(y/2)
-        setBtn(y)
-    }
+
   return (
-    <div>   <table>
+    <div>  
+     <table>
     <tr>
         <th>Title</th>
         <th>Acceptance</th>
@@ -26,21 +22,34 @@ const problumset = () => {
     
   
  
-        {data.slice(initialValue,btn).map((e,i)=>{
+        {data.slice(page*2-2,page*2).map((e,i)=>{
        const {title,difficulty,acceptance} = e
        return (
         <tr>
+          
+        <Link className='link' to={`/problum/${title}`}>
+        
         <td>{title}</td>
+        </Link>
         <td>{acceptance}</td>
         <td>{difficulty}</td>
-    </tr>
+       
+       </tr>
+       
         
        )
       })}
       </table>
+     <div className="btns">
+      {[...Array(data.length/2)].map((e,i)=>{
+       return <button 
+       className={`${page==i+1?"paganation__selected":''} button`}
+       
+       
+       onClick={()=>handelbtn(i+1)} >{i+1}</button>
+      })}
      
-      <button onClick={handelbtn} >1</button>
-      <button onClick={handelbtn2} >2</button>
+      </div>
     </div>
   )
 }

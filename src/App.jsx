@@ -5,12 +5,14 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Login from './component/login';
 import Navbar from './component/navbar';
 import Problumset from './component/problumset';
+import Singleproblum from './component/Singleproblum';
 import Singup from './component/singup';
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "42%"
-},{
+},
+{
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "412%"
@@ -45,7 +47,7 @@ function App() {
                 <Route path='/login' element={<Login/>} />
                 <Route path='/singup' element={<Singup/>} />
                 <Route path='problumset/all' element={<Problumset/>} />
-                <Route path='problum/:id' element={'singleproblum'} />
+                <Route path='problum/:id' element={<Singleproblum/>} />
 
 
 
