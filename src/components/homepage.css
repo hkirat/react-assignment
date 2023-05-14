@@ -1,0 +1,60 @@
+/* #questions {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #questions td{
+    margin: 0px 8px;
+    padding: 11px 0px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 33.33%;
+  }
+  
+  #questions tr:nth-child(even){background-color: #f2f2f2;} */
+
+  #questions {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  #questions th {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #questions td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 33.33%;
+  }
+  
+  #questions tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #questions tr:hover {
+    background-color: #f5f5f5;
+  }
+  #column-headings {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+  
+  #column-headings tr:hover {background-color: #ddd;}
+  
+  #column-headings th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: gray;
+    color: white;
+    width:33.33% ;
+  }
