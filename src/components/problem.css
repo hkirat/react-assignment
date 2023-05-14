@@ -1,0 +1,32 @@
+.problem-container{
+    display: flex;
+    justify-content: space-between;
+}
+.problem-container-left {
+    width: 50%;
+    border: 9px solid #f2f2f2;;
+    padding: 40px 20px;
+}
+.problem-container-right {
+    width: 50%;
+    border: 9px solid #f2f2f2;;
+    border-left: none;
+    padding: 40px 20px;
+}
+h2, h3 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+select {
+    border: none;
+    font-size: 15px;
+}
+.questions {
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin-top: 10px;
+}
+.font-bold {
+    font-weight: 700;
+    margin-top: 15px;
+}

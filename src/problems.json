@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Bitwise AND of Numbers Range",
+        "difficulty": "Medium",
+        "acceptance": "42%",
+        "id": "1"
+    },
+    {
+        "title": "Reverse Linked List",
+        "difficulty": "Medium",
+        "acceptance": "412%",
+        "id": "2"
+
+    },
+    {
+        "title": "Happy Number",
+        "difficulty": "Easy",
+        "acceptance": "54.9%",
+        "id": "3"
+
+    },
+    {
+        "title": "Remove Linked List Elements",
+        "difficulty": "Hard",
+        "acceptance": "42%",
+        "id": "4"
+
+    }
+]
