@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+td {
+    text-align: center;
+}
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
