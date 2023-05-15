@@ -2,7 +2,6 @@
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import useToken from './hooks/useToken';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import ProblemsPage from './components/ProblemsPage';
