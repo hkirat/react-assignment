@@ -44,7 +44,6 @@ function App() {
        /problems/:problem_slug - A single problem page
      */
 
-    debugger;
     return (
     // <div>
     //     Finish the assignment! Look at the comments in App.jsx as a starting point

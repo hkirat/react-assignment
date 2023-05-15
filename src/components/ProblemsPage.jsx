@@ -62,7 +62,6 @@ const ProblemsPage = () => {
                 type="submit"
                 id="submit"
                 onClick={async () => {
-                    debugger;
                     console.log(localStorage.getItem("token"));
 
                   const response = await fetch(

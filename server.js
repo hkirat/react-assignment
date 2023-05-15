@@ -151,7 +151,6 @@ app.use(function (req, res, next) {
 });
 
 // app.use("/login", (req, res) => {
-//   debugger;
 //   //res.setHeader("Access-Control-Allow-Origin", "*");
 //   res.send({
 //     token: "test123",
@@ -192,7 +191,6 @@ app.get("/problems/:id", (req, res) => {
 });
 
 app.get("/me", auth, (req, res) => {
-  debugger;
   const user = USERS.find((x) => x.id === req.userId);
   res.json({ email: user.email, id: user.id });
 });
@@ -264,7 +262,6 @@ app.post("/signup", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  debugger;
   const email = req.body.loginEmail;
   const password = req.body.loginPassword;
   const user = USERS.find((x) => x.email === email);

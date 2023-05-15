@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
   const auth=props;
-  debugger;
   const [Token, setToken] = useState(props.token); 
   useEffect( () => {
     const getToken = localStorage.token;

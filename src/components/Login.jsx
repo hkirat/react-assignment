@@ -14,7 +14,6 @@ async function loginUser(credentials) {
     body: JSON.stringify(credentials),
   })
     .then((data) => {
-      debugger;
       return data.json();
     })
     .catch((err) => console.log(err));
@@ -35,7 +34,6 @@ const Login = () => {
     //   loginEmail,
     //   loginPassword,
     // });
-    // debugger;
     // if (token) setToken(token);
     const response = await fetch(`http://localhost:9090/login`, {
       method: "POST",
@@ -44,7 +42,6 @@ const Login = () => {
         password: loginPassword,
       }),
     });
-    debugger;
     const json = await response.json();
     if (json) {
       if (json.msg) {
