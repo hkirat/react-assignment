@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import { myContext } from "../context/ContextApi";
 
 const Allproblems = () => {
-  const context = useContext(myContext);
-  // console.log(context);
+  const [data, setData] = useState([]);
   const fetchData = async () => {
     await fetch("http://localhost:3001/user/problems/all")
       .then((info) => info.json())
       .then((json) => {
-        // setData(json.message);
-        context.problems = json.message;
+        setData(json.message);
       });
   };
   useEffect(() => {
@@ -30,40 +28,40 @@ const Allproblems = () => {
   };
 
   function Table(props) {
-    const { title, difficulty, id } = props.info;
+    const { title, difficulty, id, acceptance } = props.info;
 
     return (
-      <tr className={`${props.index % 2 === 0 ? "bg-gray-500" : ""}`}>
-        <td>{props.index}</td>
-        <Link to={`/problem/${id}`}>
-          <td>{title}</td>
-        </Link>
+      <tr className={`${props.index % 2 === 0 ? "bg-gray-700" : ""}`}>
+        <td className="overflow-x-hidden overflow-y-scroll max-h-4 ">
+          <Link to={`/problem/${id}`}>
+            {props.index + 1}.{title}
+          </Link>
+        </td>
         <td className={`${checkDifficulty(difficulty)}`}>{difficulty}</td>
+        <td className={`${checkDifficulty(difficulty)}`}>{acceptance} %</td>
       </tr>
     );
   }
 
   return (
     <div>
-      {context.problems.length === 0 ? (
+      {data.length === 0 ? (
         <p>Loading</p>
       ) : (
         <>
-          <table className="w-[95vw] mx-auto px-3">
+          <table className="sm:w-2/3 mx-auto">
             <thead>
               <tr>
-                <th>Q.No.</th>
                 <th>Title</th>
-                <th>Difficulty</th>
+                <th>Diffulty</th>
+                <th>Acceptance</th>
               </tr>
             </thead>
-            {context.problems.map((question, index) => {
-              return (
-                <tbody key={index}>
-                  <Table info={question} index={index} />
-                </tbody>
-              );
-            })}
+            <tbody>
+              {data.map((question, index) => {
+                return <Table info={question} index={index} key={index} />;
+              })}
+            </tbody>
           </table>
         </>
       )}

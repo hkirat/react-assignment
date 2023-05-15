@@ -5,6 +5,7 @@ const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // signin handler
   const handleSignIn = async () => {
     const data = {
       email: email,
@@ -21,6 +22,7 @@ const Signin = () => {
     const details = await info.json();
     if (info.status === 200) {
       toast.success(details.msg);
+      localStorage.setItem("token", details.token);
       navigate("/problems/all");
     } else {
       toast.error(details.err);

@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 
-td {
-    text-align: center;
+td,
+th {
+    text-align: start;
+    padding-left: 8px;
 }
 
 
