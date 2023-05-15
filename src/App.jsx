@@ -1,11 +1,13 @@
 
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
-import ProblemStatement from './components/ProblemStatement'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import useToken from './hooks/useToken';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
+import ProblemsPage from './components/ProblemsPage';
+import AllProblemsPage from './components/AllProblems';
+import { useState } from 'react';
 /*
  * Temporary problems array schema
  */
@@ -42,12 +44,8 @@ function App() {
        /problemset/all/ - All problems (see problems array above)
        /problems/:problem_slug - A single problem page
      */
-       const { token, setToken } = useToken();
 
-       if(!token) {
-         return <Login setToken={setToken} isloginpage={true}/>
-       }
-
+    debugger;
     return (
     // <div>
     //     Finish the assignment! Look at the comments in App.jsx as a starting point
@@ -61,8 +59,8 @@ function App() {
           <Route path="/" element={<Dashboard />}/>
           <Route path="/login" element={<Login setToken={setToken} />}/>
           <Route path="/signup" element={<Signup setToken={setToken} />}/>
-          <Route path="/problemset/all" element={<ProblemStatement problems={problems}/>}/>
-          <Route path="/problemset/:id" element={<ProblemStatement problems={problems}/>}/>
+          <Route path="/problems" element={<AllProblemsPage/>}/>
+          <Route path="/problems/:id" element={<ProblemsPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>

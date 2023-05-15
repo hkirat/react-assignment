@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.14",
     "@material-tailwind/react": "^1.4.2",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.22",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
