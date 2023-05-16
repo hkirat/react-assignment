@@ -1,0 +1,26 @@
+.problem-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .problem-table th,
+  .problem-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .problem-table th:first-child,
+  .problem-table td:first-child {
+    width: 50%;
+  }
+  
+  .problem-table th:nth-child(2),
+  .problem-table td:nth-child(2) {
+    width: 25%;
+  }
+  
+  .problem-table th:nth-child(3),
+  .problem-table td:nth-child(3) {
+    width: 25%;
+  }
+  

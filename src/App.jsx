@@ -1,59 +1,37 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+  import React from 'react';
+  import { BrowserRouter,Routes,Route,Link} from 'react-router-dom';
+  import LoginPage from './LoginPage';
+  import Problems from './Problems';
+  import ProblemDescription from './problemDescription';
 
-
-function App() {
-
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
-
+  const App = () => {
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
-}
+      <BrowserRouter>
+        <div> 
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<LoginPage />} />
+            <Route path="/problems" element={<Problems />} />
+            <Route path="/problems/:title" element={<ProblemDescription />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    );
+  };
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
+  const Home = () => {
+    return (
+      <div>
+        <h2>Welcome to Leetcode</h2>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/signin">Login</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    );
+  };
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+  export default App;
