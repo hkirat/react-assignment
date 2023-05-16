@@ -11,7 +11,7 @@
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<LoginPage />} />
-            <Route path="/problems" element={<Problems />} />
+            <Route path="/problemset/all/" element={<Problems />} />
             <Route path="/problems/:title" element={<ProblemDescription />} />
           </Routes>
         </div>

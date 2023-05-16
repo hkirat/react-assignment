@@ -10,7 +10,7 @@ const LoginPage = () => {
     // Perform login logic here
 
     // Redirect to the /problems route
-    navigate('/problems');
+    navigate('/problemset/all/');
 
   };
 
