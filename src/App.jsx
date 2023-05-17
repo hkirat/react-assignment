@@ -47,7 +47,7 @@ const problems = [
         exampleOut: "1->3"
     },
     {
-        problemId: "1",
+        problemId: "5",
         title: "201. Bitwise AND of Numbers Range",
         difficulty: "Medium",
         acceptance: "42%",
@@ -56,7 +56,7 @@ const problems = [
         exampleOut: "4"
     },
     {
-        problemId: "2",
+        problemId: "6",
         title: "205. Add two numbers",
         difficulty: "Medium",
         acceptance: "41%",
@@ -65,7 +65,7 @@ const problems = [
         exampleOut: "300"
     },
     {
-        problemId: "3",
+        problemId: "7",
         title: "202. Happy Number",
         difficulty: "Easy",
         acceptance: "54.9%",
@@ -74,7 +74,7 @@ const problems = [
         exampleOut: "true"
     },
     {
-        problemId: "4",
+        problemId: "8",
         title: "203. Remove Linked List Elements",
         difficulty: "Hard",
         acceptance: "42%",
@@ -95,17 +95,17 @@ function App() {
 
     return (
         <BrowserRouter>
-        <Navbar/>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage/>} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/all-problems" element={<ProblemsListPage problems={problems}/>} />
-            <Route path="/problems/:pid" element={<ProblemPage problems={problems}/>} />
-            <Route path="*" element={<div>404 Page Not Found</div>} />
-          </Routes>
-      </BrowserRouter>
-  )
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/all-problems" element={<ProblemsListPage problems={problems} />} />
+                <Route path="/problems/:pid" element={<ProblemPage problems={problems} />} />
+                <Route path="*" element={<div>404 Page Not Found</div>} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 // A demo component

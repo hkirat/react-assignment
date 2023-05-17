@@ -2,7 +2,7 @@
   padding: 0px;
   margin: 0px;
 }
-body{
+body {
   background: #0d1117;
   font-family: "Poppins", sans-serif;
   color: #fff;
@@ -31,18 +31,18 @@ body{
   background-color: #0095ff;
   border: 1px solid transparent;
   border-radius: 3px;
-  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
   font-size: 13px;
   font-weight: 500;
   margin: 1rem 1rem;
-  padding: 8px .8em;
+  padding: 8px 0.8em;
   position: relative;
   text-align: center;
-  
 }
 
 .button-7:hover,
@@ -104,7 +104,7 @@ body{
   color: #adadad;
   cursor: pointer;
 }
-.forgot-password:hover{
+.forgot-password:hover {
   color: #fff;
 }
 .signup-link {
@@ -177,7 +177,7 @@ td:nth-child(4) {
 }
 /* Problem answerig page */
 
-.link{
+.link {
   text-decoration: none;
   color: rgb(140, 110, 250);
 }
@@ -188,25 +188,26 @@ td:nth-child(4) {
   color: #fff;
   flex-direction: row;
 }
-.problem-question{
+.problem-question {
   margin-left: 15px;
   font-size: larger;
 }
 
-.problem-sHead{
+.problem-sHead {
   color: #ccc;
   margin: 20px 0;
   font-size: larger;
 }
 
-.problem-box, .code-box {
+.problem-box,
+.code-box {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 2rem;
 }
-.sol{
+.sol {
   margin-bottom: 20px;
 }
 code {
@@ -215,7 +216,6 @@ code {
   font-size: large;
   margin-left: 15px;
 }
-
 
 .solution-form {
   margin-right: 10px;
@@ -264,13 +264,35 @@ code {
   align-items: center;
   color: white;
 }
-.nav-link{
+.nav-link {
   font-size: large;
   font-weight: 700;
   color: #fff;
 }
-.visited-link{
+.visited-link {
   background-color: blueviolet;
   padding: 10px;
   border-radius: 20px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  padding: 7px 10px;
+  margin: 0 5px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.page-button.active {
+  background-color: blueviolet;
+  color: #fff;
 }
