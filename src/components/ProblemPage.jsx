@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import LanguageSelection from './LanguageSelection';
 
 const ProblemPage = ({ problems }) => {
   const { pid } = useParams();
   const [solution, setSolution] = useState('');
+  const languages = ['Java', 'Python', 'JavaScript', 'c++']; // Available languages
+  const [selectedLanguage, setSelectedLanguage] = useState('');
 
+  const handleLanguageSelect = (language) => {
+    setSelectedLanguage(language);
+  };
   const handleSolutionChange = (event) => {
     setSolution(event.target.value);
   };
@@ -34,6 +40,11 @@ const ProblemPage = ({ problems }) => {
       </div>
       <div className='code-box'>
         <h3 className='sol'>Solution</h3>
+        <LanguageSelection
+            languages={languages}
+            selectedLanguage={selectedLanguage}
+            onLanguageSelect={handleLanguageSelect}
+          />
         <form className="solution-form" onSubmit={handleSubmit}>
           <textarea
             value={solution}
