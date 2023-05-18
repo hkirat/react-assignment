@@ -1,0 +1,41 @@
+.all{
+    position: absolute;
+    top: 0px;
+    bottom: 0; 
+    width: 100%;
+    background-color: #ECEFF1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+
+.problems{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    height: 80%;
+    flex-direction: column;
+}
+
+.each{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+.head{
+    display: flex;
+   margin-left: 210px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.problem{
+    color:  rgb(23, 23, 23);
+    text-decoration: none;
+}
+.problem:hover{
+    color: #28B463;
+}
+
