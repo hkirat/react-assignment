@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+td,
+th {
+    text-align: start;
+    padding-left: 8px;
+}
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
