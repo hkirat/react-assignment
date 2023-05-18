@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import avatar from "../assets/default.jpg";
 
 const Navbar = () => {
   const [active, setActive] = useState(true);
@@ -66,8 +67,8 @@ const Navbar = () => {
       <div className="flex gap-4 max-sm:order-1 text-center justify-between items-center">
         <span className="font-normal text-xl max-sm:hidden">Arif Basha</span>
         <img
-          src={logo}
-          alt="user"
+          src={avatar}
+          alt="avatar"
           className="h-10 w-10 rounded-full bg-no-repeat bg-cover border border-gray-400 mt-2"
         />
       </div>
