@@ -1,0 +1,35 @@
+main{
+    display: flex;
+    height: 94.8vh;
+}
+
+.description{
+    width: 50%;
+    padding-left: 30px;
+}
+
+.code{
+    width: 50%;
+    display: flex;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(199, 199, 199);
+    color: #fafafa;
+    font-size: 30px;
+}
+
+.desc{
+    margin-top: 100px;
+}
+
+.message{
+    display: flex;
+    align-items: center;
+    margin-left: 40%;
+}

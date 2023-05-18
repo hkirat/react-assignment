@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.main{
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav{
+  height: 35px;
+  width: 100%;
+}
+
+.display{
+  position: absolute;
+  top: 35px;
+  bottom: 0; 
+  width: 100%;
+
+}

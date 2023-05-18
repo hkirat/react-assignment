@@ -1,0 +1,73 @@
+.login{
+    position: absolute;
+    top: 0px;
+    /* border: 2px solid red; */
+    bottom: 0; 
+    width: 100%;
+    background-color: #ECEFF1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details{
+    height: 560px;
+    width: 380px;
+    background-color: #FFFFFFff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log-logo{
+    position: relative;
+    margin-top: 30px;
+}
+
+.heading{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.inp{
+    margin-top: 30px;
+    padding: 10px 13px;
+    font-size: 14px;
+    width: 80%;
+    box-sizing: border-box;
+    color: #546e7a;
+    border: 1px solid #cfd8dc;
+    border-radius: 3px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+    transition: 0.4s all;
+    overflow: visible;
+}
+
+.submit{
+    width: 80%;
+    background-color: #455a64;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px 13px;
+    color: #FFFFFFff;
+}
+
+
+/* Signup CSS */
+
+.signup{
+    position: absolute;
+    top: 0px;
+    bottom: 0; 
+    width: 100%;
+    background-color: #ECEFF1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect{
+    margin-top: 20px;
+    
+}

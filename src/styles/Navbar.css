@@ -1,0 +1,21 @@
+.container{
+    width: 100vw;
+    /* border: 2px solid green; */
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    gap: 15px;
+    background-color: #fafafa;
+}
+
+.logo{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.item{
+    color:  rgba(137, 155, 163, 1);
+    text-decoration: none;
+}
