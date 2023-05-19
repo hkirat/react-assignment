@@ -1,3 +1,9 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './pages/layout/Layout.jsx';
+import Home from './pages/home/Home.jsx'; 
+import Login from './pages/login/Login.jsx'; 
+import Signup from './pages/Signup.jsx'; 
+import Problemsets from './pages/Problemsets.jsx'; 
 /*
  * Temporary problems array schema
  */
@@ -32,28 +38,17 @@ function App() {
      */
 
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="problemsets" element={<Problemsets />} />
+        </Route> 
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
 export default App
