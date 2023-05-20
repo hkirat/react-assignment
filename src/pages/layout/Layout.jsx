@@ -21,11 +21,7 @@ export default function Layout() {
   return (
     <>
       <Navbar /> 
-      <div class="body">
-        <div class="container"> 
-          <Outlet /> 
-        </div> 
-      </div>
+      <Outlet /> 
     </>
   )
 }

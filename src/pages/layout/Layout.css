@@ -17,8 +17,17 @@ li {
   list-style: none;
 }
 
+.body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: max-content;
+}
+
 .container {
   width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fill-page {
@@ -59,8 +68,3 @@ li {
   margin: 0 0 0 auto;
 }
 
-.body {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}

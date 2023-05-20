@@ -1,10 +1,30 @@
-export default function Home() {
-  
+import blogData from "./BlogData.jsx";
+import "./Home.css";
+
+function Blogs( {blogData} ) {
+  const blogs = blogData.map((blog, key) => {
+    return (
+      <li key={key}>
+        <p className="date">{blog.date}</p> 
+        <h2 className="title">{blog.title}</h2>
+        <p className="content">{blog.content}</p>
+      </li>
+    )
+  })
+
   return (
-    <div className="body"> 
+    <ol className="blogs">
+      {blogs} 
+    </ol>
+  )
+}
+
+export default function Home() {
+  return (
+    <div className="main"> 
       <div className="container">
-        <h1>Hello</h1>
-      </div> 
+        <Blogs blogData={blogData} /> 
+      </div>
     </div>
   )
 }

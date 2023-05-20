@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './pages/layout/Layout.jsx';
 import Home from './pages/home/Home.jsx'; 
 import Login from './pages/login/Login.jsx'; 
-import Signup from './pages/Signup.jsx'; 
+import Signup from './pages/signup/Signup.jsx'; 
 import Problemsets from './pages/Problemsets.jsx'; 
 /*
  * Temporary problems array schema
