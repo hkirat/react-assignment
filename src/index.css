@@ -1,0 +1,15 @@
+.footer {
+    color: white;
+    padding: 11px;
+    background: #000;
+    background: -webkit-linear-gradient(to right, #4343, #000);
+    background: linear-gradient(to right, #434343, #000);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-small {
+    font-size: smaller;
+}
