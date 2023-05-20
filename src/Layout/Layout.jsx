@@ -6,7 +6,7 @@ import Header from '../containers/Header'
 const Layout = ({ children }) => {
     return (
         <div>
-            <Header />
+            <Header headerVisible={true} />
             <main style={{ minHeight: '77vh' }}>{children}</main>
 
             <Footer />
