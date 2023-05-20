@@ -1,0 +1,41 @@
+[{
+    "id": "1",
+    "index": "200",
+    "title": " Bitwise AND of Numbers Range",
+    "difficulty": "Medium",
+    "acceptance": "42%",
+    "description": "Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise AND of all numbers in this range, inclusive.",
+    "example": "Input: [5,7]\n Output: 4",
+    "note": "For example, given the range [5, 7], you should return 4."
+}, {
+    "id": "2",
+    "index": "201",
+    "title": "Bitwise XOR of Numbers Range",
+    "difficulty": "Medium",
+    "acceptance": "41.2%",
+    "description": "Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise XOR of all numbers in this range, inclusive.",
+    "example": "Input: [5,7]\n Output: 4",
+    "note": "For example, given the range [5, 7], you should return 4."
+},
+{
+    "id": "3",
+    "index": "202",
+    "title": "Happy Number",
+    "difficulty": "Easy",
+    "acceptance": "54.9%",
+    "description": "Write an algorithm to determine if a number is \"happy\".",
+    "example": "Input: 19\n Output: true",
+    "note": "For example, 19 is a happy number. 1^2 + 9^2 = 82 8^2 + 2^2 = 68 6^2 + 8^2 = 100 1^2 + 0^2 + 0^2 = 1"
+},
+{
+    "id": "4", 
+    "index": "203",
+    "title": "Remove Linked List Elements",
+    "difficulty": "Hard",
+    "acceptance": "42%",
+    "description": "Remove all elements from a linked list of integers that have value val.",
+    "example": "Input:  1->2->6->3->4->5->6, val = 6 \nOutput: 1->2->3->4->5",
+    "note": "For example, Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6, return: 1 --> 2 --> 3 --> 4 --> 5"
+    
+
+}]

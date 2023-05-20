@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.CodeBox {
+    align-items: center;
+    background-color: #f5f5f5;
+}
+.input{
+    align-items: start;
+    width: 400px;
+    height: 400px;
+}
