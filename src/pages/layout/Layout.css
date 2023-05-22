@@ -25,9 +25,9 @@ li {
 }
 
 .container {
-  width: 90%;
-  margin-left: auto;
+  margin-left: auto; 
   margin-right: auto;
+  width: 90%;
 }
 
 .fill-page {
@@ -40,7 +40,7 @@ li {
 }
 
 .navbar {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   display: flex;
   justify-content: center;
   width: 100%;
@@ -63,7 +63,7 @@ li {
 .nav-list {
   display: flex;
   justify-content: space-between;
-  width: 15rem;
+  width: 24rem;
   height: 100%;
   margin: 0 0 0 auto;
 }
