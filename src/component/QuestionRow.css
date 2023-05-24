@@ -1,0 +1,7 @@
+/* .t--row{
+    margin: 80px;
+} */
+tr > td{
+    padding: 20px;
+    outline: none;
+} 

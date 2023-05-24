@@ -1,0 +1,14 @@
+.question--cont{
+    margin-right: 10px;
+    line-height: 30px;
+}
+.examples{
+    /* padding: 50px 5px; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(93, 111, 247, 0.3);
+}
+.examples>*{
+    padding: 15px 5px ;
+}
