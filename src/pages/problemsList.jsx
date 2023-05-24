@@ -1,4 +1,4 @@
-export const problems = [
+const problems = [
   {
     id: 1,
     title: "Bitwise AND of Numbers Range",
