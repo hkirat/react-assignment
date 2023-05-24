@@ -27,19 +27,8 @@ const CodeArea = ()=> {
             <MenuItem value="C">C</MenuItem>
         </Select>
         </FormControl>
-        <textarea name="" id="" cols="60" rows="40"></textarea>
+        <textarea name="" className='bg-gray-200 rounded-lg p-3' id="" cols="60" rows="40"></textarea>
     </div>
   );
 }
 export default CodeArea
-// const CodeArea = () =>{
-//     return(
-//         <div>
-//             <select name="Language" id="">
-//                 <option value="C++">C++</option>
-//                 <option value="Java">Java</option>
-//                 <option value=""></option>
-//             </select>
-//         </div>
-//     )
-// }

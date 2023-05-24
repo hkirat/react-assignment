@@ -1,9 +1,9 @@
 table{
-    margin: 10px auto;
-    width: 1000px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
+    /* margin: 10px auto; */
+    /* width: 1000px; */
+    /* text-align: center; */
+    /* background-color: #fff; */
+    /* border-radius: 10px; */
 }
 /* table > th{
     padding: 20px;
@@ -16,7 +16,7 @@ table{
 .table--header > th{
     border-radius: 10px;
     padding: 20px;
-    background-color: #474ff4;
+    /* background-color: #474ff4; */
 
 
 }

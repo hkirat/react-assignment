@@ -1,5 +1,5 @@
 import React from 'react'
-import "./QuestionRow.css"
+// import "./QuestionRow.css"
 import { useNavigate } from 'react-router-dom'
 const QuestionRow = (props)=>{
     const id = props.question.id
@@ -10,11 +10,11 @@ const QuestionRow = (props)=>{
     }
     return(
         
-        <tr className='t--row' onClick={navigateToQues}>
-            <td>{props.index}</td>
-            <td >{props.question.title}</td>
-            <td>{props.question.acceptance}</td>
-            <td>{props.question.difficulty}</td>
+        <tr className='t--row text-white font-thin' onClick={navigateToQues}>
+            <td className='p-4'>{props.index}</td>
+            <td className='p-4' >{props.question.title}</td>
+            <td className='p-4'>{props.question.acceptance}</td>
+            <td className='p-4'>{props.question.difficulty}</td>
             {props.status1===true?<td>Solved</td>:<td>Not Solved</td>}
         </tr>
     )

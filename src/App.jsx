@@ -57,7 +57,7 @@ function App() {
      */
 
     return (
-    <div>
+    <div className="bg-black-600">
         {/* Finish the assignment! Look at the comments in App.jsx as a starting point
          */}
          <RouterProvider router={router}/>
