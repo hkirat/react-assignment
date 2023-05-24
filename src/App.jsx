@@ -4,6 +4,7 @@ import Home from './pages/home/Home.jsx';
 import Login from './pages/login/Login.jsx'; 
 import Signup from './pages/signup/Signup.jsx'; 
 import Problemsets from './pages/problemsets/Problemsets.jsx'; 
+import Problems from './pages/problems/Problems.jsx';
 /*
  * Temporary problems array schema
  */
@@ -26,6 +27,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="problemsets" element={<Problemsets />} />
+          <Route path="/problems/:id" element={<Problems />}/> 
         </Route> 
       </Routes>
     </BrowserRouter>
