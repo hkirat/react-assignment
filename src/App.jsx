@@ -1,59 +1,65 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Problems from './components/Problems';
+import ProblemDetail from './components/ProblemDetail'
 
 
-function App() {
+    const App = () => {
 
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+        const problems = [{
+            name:"bitwiseand",
+            title: "201. Bitwise AND of Numbers Range",
+            difficulty: "Medium",
+            acceptance: "42%"
+        },{
+            name:"bitwisean",
+            title: "201. Bitwise AND of Numbers Range",
+            difficulty: "Medium",
+            acceptance: "412%"
+        },
+            {
+                name:"happy",
+                title: "202. Happy Number",
+                difficulty: "Easy",
+                acceptance: "54.9%"
+            },
+            {
+                name:"removeLinked",
+                title: "203. Remove Linked List Elements",
+                difficulty: "Hard",
+                acceptance: "41%"
+            }];
+        
+        const problemInfo = [
+            {
+              title: "Find the subarray with the largest sum, and return its sum",
+              examples: {
+                input: "[-2, 1, -3, 4, -1, 2, 1, 5, 4]",
+                output: "6",
+                explanation: "The subarray [4, -1, 2, 1] has the largest sum 6"
+              }
+            }
+          ];
+        
+      return (
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<div>This is Home Page</div>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/problems" element={<Problems problems={problems}/>}/>
+          <Route path="/problemDetail" element={<ProblemDetail problemInfo={problemInfo}/>} />
+          
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
-}
+        </Routes>
+      </BrowserRouter>
+      );
+    };
+    
+    export default App;
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+    
+    

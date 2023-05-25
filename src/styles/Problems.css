@@ -1,0 +1,40 @@
+.problems-container {
+    margin: 20px;
+  }
+  
+  body {
+    background-color: rgb(248, 221, 221);
+  }
+  .problems-table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .problems-table th,
+  .problems-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .problems-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .problems-table tr:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .problems-table td:nth-child(1) {
+    width: 50%;
+  }
+  
+  .problems-table td:nth-child(2),
+  .problems-table td:nth-child(3) {
+    width: 20%;
+  }
+
+  .h33{
+    color: rgb(79, 77, 77);
+  }
