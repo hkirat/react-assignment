@@ -1,59 +1,40 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+//
+import "./css/style.css";
+import { Routes, Route } from "react-router-dom";
 
+import Header from "./components/Layouts/Header.jsx";
+import Footer from "./components/Layouts/Footer.jsx";
+
+import Home from "./components/Pages/Home.jsx";
+import Register from "./components/Pages/Register.jsx";
+import Login from "./components/Pages/Login.jsx";
+
+import Questions from "./components/Pages/Questions.jsx";
+import Solution from "./components/Pages/Solution.jsx";
+
+import Quest from "./components/QuestionsDB";
 
 function App() {
+  return (
+    <div className="App">
+      <Header />
 
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+
+        <Route path="/Questions" element={<Questions questions={Quest} />} />
+        <Route
+          path="/questions/:num/"
+          element={<Solution questions={Quest} />}
+        />
+      </Routes>
+
+      <Footer />
     </div>
-  )
+  );
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+export default App;

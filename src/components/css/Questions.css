@@ -1,0 +1,37 @@
+#questionsMK {
+  font-size: larger;
+  font-weight: bolder;
+  background-color: rgb(186, 255, 232);
+}
+
+.Easy {
+  color: rgb(11, 219, 11);
+}
+.Medium {
+  color: rgb(212, 144, 16);
+}
+.Hard {
+  color: rgb(224, 0, 0);
+}
+
+table {
+  margin-top: 2rem;
+  width: 95%;
+  border-collapse: collapse;
+}
+
+tr {
+  color: rgb(0, 0, 156);
+  border: 1px solid grey;
+}
+
+th {
+  border: 1px solid red;
+  text-align: start;
+  padding: 0.5rem 0 0.5rem 0.3rem;
+  color: black;
+}
+
+td {
+  padding: 1rem;
+}
