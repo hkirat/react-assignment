@@ -27,6 +27,7 @@
 form {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Add this line */
 }
 
 input {
