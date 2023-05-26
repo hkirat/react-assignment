@@ -1,6 +1,9 @@
 /*
  * Temporary problems array schema
  */
+import {BrowserRouter, Route,Routes } from "react-router-dom";
+import  {SignUp,LogIn,Problems,Problem}  from "./pages";
+
 const problems = [{
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
@@ -32,28 +35,34 @@ function App() {
      */
 
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
+    <BrowserRouter>
+        <Routes>
+        <Route path = "/" element= { <SignUp/> }  />
+        <Route path = "/signup" element= { <SignUp/> }  />
+        <Route path = "/login" element = { <LogIn /> } />
+        <Route path = "/problems/all" element = { <Problems/> } />
+        <Route path = "/problem/:id" element = { <Problem/> } />
+    </Routes>
+    </BrowserRouter>
   )
 }
 
 // A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
+// function ProblemStatement(props) {
+//     const title = props.title;
+//     const acceptance = props.acceptance;
+//     const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
+//     return <tr>
+//         <td>
+//             {title}
+//         </td>
+//         <td>
+//             {acceptance}
+//         </td>
+//         <td>
+//             {difficulty}
+//         </td>
+//     </tr>
+// }
 export default App
