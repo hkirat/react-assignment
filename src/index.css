@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply h-screen bg-gray-950;
+  }
+  input {
+    @apply focus-visible:outline-indigo-500;
+  }
+  button {
+    @apply hover:bg-indigo-900;
+  }
+  th {
+    @apply text-left p-4;
+  }
+  td {
+    @apply p-3 w-full;
+  }
+  .problem {
+    @apply hover:bg-gray-700 hover:cursor-pointer;
+  }
+  tr {
+    @apply border-b border-indigo-900 w-screen;
+  }
+}
