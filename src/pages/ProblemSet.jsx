@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { problemSet } from "../data/problemSet.js";
 import Tag from "../components/Tag.jsx";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const ProblemSet = () => {
-  const [problems, setProblems] = useState(problemSet);
+  const [page, setPage] = useState(0);
 
   const onProblemClick = (problemId) => () => {
     window.location.href = `/problems/${problemId}`;
   };
+
+  const previousPage = () => setPage((page) => page - 1);
+  const nextPage = () => setPage((page) => page + 1);
+
+  useEffect(() => {
+    console.log(page);
+  }, [page]);
 
   return (
     <div className="m-12 bg-white rounded-md h-full">
@@ -21,12 +28,12 @@ const ProblemSet = () => {
           </tr>
         </thead>
         <tbody className="flex-grow">
-          {problems.length === 0 && (
+          {problemSet[page].length === 0 && (
             <div className="flex items-center justify-center text-slate-500 py-4">
               No Problems Available
             </div>
           )}
-          {problems.map((problem, index) => (
+          {problemSet[page].map((problem, index) => (
             <tr
               key={index}
               onClick={onProblemClick(problem.id)}
@@ -43,13 +50,25 @@ const ProblemSet = () => {
         <tfoot>
           <tr className="flex flex-row-reverse items-center">
             <td className="px-6 py-4">
-              <button className="bg-slate-600 text-white rounded-md p-2 hover:bg-slate-800">
+              <button
+                disabled={page === 1}
+                onClick={nextPage}
+                className={`bg-slate-600 text-white rounded-md p-2 hover:bg-slate-800 ${
+                  page === 1 && "opacity-50 cursor-not-allowed"
+                }`}
+              >
                 <AiOutlineRight />
               </button>
             </td>
-            <td>1</td>
+            <td>{page + 1}</td>
             <td className="px-6 py-4">
-              <button className="bg-slate-600 text-white rounded-md p-2 hover:bg-slate-800">
+              <button
+                disabled={page === 0}
+                className={`bg-slate-600 text-white rounded-md p-2 hover:bg-slate-800 ${
+                  page === 0 && "opacity-50 cursor-not-allowed"
+                }`}
+                onClick={previousPage}
+              >
                 <AiOutlineLeft />
               </button>
             </td>
