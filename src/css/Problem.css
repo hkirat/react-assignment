@@ -1,5 +1,6 @@
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 .problem-form-container {
@@ -15,12 +16,13 @@
 .right-section {
   flex: 1;
   padding-left: 20px;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #eaeaea;
 }
 
 h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333333;
 }
 
 .form-fields {
@@ -29,28 +31,48 @@ h2 {
 }
 
 .form-field {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 label {
   font-weight: bold;
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 1rem;
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333333;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #f5f5f5;
 }
 
 button {
   background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
+  color: #ffffff;
+  padding: 12px 24px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 .preview-content {
@@ -59,17 +81,37 @@ button {
 }
 
 .preview-field {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .preview-field h3 {
-  font-size: 18px;
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 10px;
 }
 
 .preview-field p {
   white-space: pre-line;
   padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: #f5f5f5;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  color: #333333;
+}
+
+button.back-button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button.back-button:hover {
+  background-color: #0056b3;
 }

@@ -13,49 +13,49 @@ const Problem1 = [
     id: 2,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
   {
     id: 3,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
   {
     id: 4,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
   {
     id: 5,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
   {
     id: 6,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
   {
     id: 7,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
   {
     id: 8,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
   {
     id: 9,
     Title: "Two Sum",
     Acceptance: "67.8%",
-    difficulty: "Medium",
+    difficulty: "Easy",
   },
 ];
 
@@ -174,6 +174,7 @@ const ProblemList = () => {
             fontSize: "14px",
             padding: "6px 12px",
             marginRight: "10px",
+            width: "40px",
           }}
         >
           1
@@ -183,6 +184,7 @@ const ProblemList = () => {
           style={{
             fontSize: "14px",
             padding: "6px 12px",
+            width: "40px",
           }}
         >
           2
