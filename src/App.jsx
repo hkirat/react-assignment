@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import ProblemSet from "./pages/ProblemSet";
+import Problem from "./pages/Problem";
 
 /*
  * Temporary problems array schema
@@ -30,25 +32,17 @@ const problems = [
 ];
 
 function App() {
-  /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
   return (
     <BrowserRouter>
       <div className="bg-slate-100 h-screen flex flex-col">
         <Navbar />
-        <div className="flex-grow flex items-center justify-center">
-          <Routes>
-            <Route path="/" element={<Signup />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-            {/*<Route path="/problemset/all" element={<ProblemSet />} />
-        <Route path="/problems/:problem_slug" element={<Problem />} /> */}
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/problems" element={<ProblemSet />} />
+          <Route path="/problems/:problemId" element={<Problem />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
