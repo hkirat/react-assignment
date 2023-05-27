@@ -5,11 +5,13 @@ export default function ProblemStatement(props) {
 
   return (
     <tr>
-      <td>{title}</td>
-      <td>{acceptance}</td>
-      <td>{difficulty}</td>
-      <td>
-        <Link to={`${id}`}>Go to problem</Link>
+      <td className="px-4 py-2">{title}</td>
+      <td className="px-4 py-2">{acceptance}</td>
+      <td className="px-4 py-2">{difficulty}</td>
+      <td className="px-4 py-2">
+        <Link to={`${id}`} className="text-blue-500">
+          Go to problem
+        </Link>
       </td>
     </tr>
   );
