@@ -1,16 +1,23 @@
-import React from "react";
+import React, {useEffect, useState } from "react";
 import ProblemTile from "../components/ProblemTile";
+import axios from 'axios';
+import {BACKEND_URL} from '../constants';
+const DashboardPage = () => {
+    const [problems, setProblems] = useState([]);
 
-const DashboardPage = (props) => {
-    const problems = props.problems;
+    const init = async () => {
+        const resp = await axios.get(`${BACKEND_URL}questions`);
+        setProblems(resp.data.questions);
+    }
+    useEffect(()=>{
+        init();
+    }, [])
     return (
         <div className="dashboard-page">
             <h1>Problem Set</h1>
             <ul>
-                {problems.map((item, i) => (
-                    // <li key={i}>
-                        <ProblemTile  key={i} title={item.title} difficulty={item.difficulty} acceptance={item.acceptance} />
-                    // {/* </li> */}
+                {problems && problems.map((item, i) => (
+                    <ProblemTile  key={i} problemId={item.questionId} title={item.title} difficulty={item.difficulty} acceptance={item.acceptance} />
                 ))}
             </ul>
         </div>
