@@ -1,0 +1,70 @@
+
+.problemsTable {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 0 auto; 
+
+}
+.problemsTable:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+  .problemsTable th,
+  .problemsTable td {
+    padding: 8px;
+  }
+  
+  .problemsTable th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .problemsTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+#Hard{
+    color: red;
+}
+#Medium{
+    color: rgb(145, 145, 25);
+}
+#Easy{
+    color: rgb(11, 232, 107);
+}
+.Pagination{
+    float: right;
+}
+.PageBtn{
+    background-color: rgb(108, 108, 215);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .problemsTable th,
+    .problemsTable td {
+      padding: 4px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .problemsTable th,
+    .problemsTable td {
+      display: block;
+      padding: 4px;
+    }
+    
+    .problemsTable th {
+      text-align: left;
+    }
+    
+    .problemsTable td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+  }
+  

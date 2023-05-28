@@ -1,0 +1,49 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+
+  
+  /* Main styles */
+  .hero {
+    background-color: #f8f9fa;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .featured-problems {
+    padding: 30px;
+  }
+  
+  .problem {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Button styles */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  

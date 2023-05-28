@@ -1,0 +1,25 @@
+  /* Header styles */
+  header {
+    background-color: #2c3946;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    float:right
+  }
+  
+  nav {
+    margin-top: 10px;
+    right:10px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
