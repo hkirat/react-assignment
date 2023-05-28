@@ -1,26 +1,10 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
-
+import React from 'react';
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
+import SignUp from './SignUp';
+import Home from './Home'; // Your other components
+import Header from './Header';
+import Problems from './Problems';
+import ProblemDetails from './ProblemDetails';
 
 function App() {
 
@@ -32,28 +16,17 @@ function App() {
      */
 
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
+        <>
+        <Header></Header>
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+        <Route path="signup" element={<SignUp />} />
+        <Route path="problems" element={<Problems />} />
+        <Route path="/problem/:id" element={<ProblemDetails/>} />
+        </Routes>
+      </BrowserRouter>
+      </>
   )
-}
-
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
 }
 export default App
