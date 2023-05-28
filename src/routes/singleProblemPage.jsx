@@ -42,9 +42,10 @@ export default function SingleProblemPage() {
           editorProps={{ $blockScrolling: true }}
           setOptions={{
             tabSize: 2,
+            fontSize: 18
           }}
           className="flex-grow w-full"
-          style={{ height: "80%", fontSize: "16px", width: "90%" }}
+          style={{ height: "80%", width: "100%" }}
           value={code}
           onChange={handleCodeChange}
         />
