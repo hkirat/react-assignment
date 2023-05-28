@@ -43,7 +43,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<HomePage/>} />
-                <Route exact path="/login" element={<LoginPage/>}/>
+                <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/signup" element={<SignupPage/>} />
                 <Route path="/problemset/all" element={<DashboardPage problems= {problems}/>} />
                 <Route path="/problem/:problem_slug" element={<ProblemPage problem = {problems[0]} />} />
