@@ -1,0 +1,23 @@
+.landingPage {
+    height: 100vh;
+    display: flex;
+    background-image: url('../../assets/bg.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    /* filter: brightness(40%); */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+}
