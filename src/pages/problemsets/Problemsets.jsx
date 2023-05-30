@@ -1,43 +1,7 @@
 import "./Problemsets.css";
-import Problems from "../problems/Problems.jsx"
-const problems = [
-  {
-    id: 1,
-    title: "Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%",
-    content: "Given a number, find another number",
-    testCase: "[1, 2, 3, 4]",
-    output: "3"
-  },
-  {
-    id: 2,
-    title: "Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "41%",
-    content: "Given a number, find another number",
-    testCase: "[1, 2, 3, 4]",
-    output: "3"
-  },
-  { 
-    id: 3,
-    title: "Happy Number",
-    difficulty: "Easy",
-    acceptance: "54.9%",
-    content: "Given a number, find another number",
-    testCase: "[1, 2, 3, 4]",
-    output: "3"
-  },
-  {
-    id: 4, 
-    title: "Remove Linked List Elements",
-    difficulty: "Hard",
-    acceptance: "42%",
-    content: "Given a number, find another number",
-    testCase: "[1, 2, 3, 4]",
-    output: "3"
-  }
-];
+import Problems from "../problems/Problems.jsx";
+import { backendURL } from "../../constants/constants.js";
+import { useState, useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -48,27 +12,23 @@ import {
 function ProblemsTable( {problems} ) {
   let content = [];
 
-  let addTableHeaders = true;
+  content.push(
+    <tr key={-1}>
+      <th>
+        Id
+      </th>
+      <th>
+        Title 
+      </th>
+      <th>
+        Difficulty 
+      </th>
+      <th>
+        Acceptance 
+      </th>
+    </tr>
+  )
   problems.forEach((problem) => {
-    if(addTableHeaders) {
-      content.push(
-        <tr>
-          <th>
-            Id
-          </th>
-          <th>
-            Title 
-          </th>
-          <th>
-            Difficulty 
-          </th>
-          <th>
-            Acceptance 
-          </th>
-        </tr>
-      )
-      addTableHeaders = false;
-    }
     let difficultyColor;
     if(problem.difficulty === "Hard") {
       difficultyColor = {color: "red"};
@@ -80,7 +40,7 @@ function ProblemsTable( {problems} ) {
       difficultyColor = {color: "green"};
     }
     content.push(
-      <tr>
+      <tr key={problem.id}>
         <td>{problem.id}</td>
         <td><Link to={"/problems/" + problem.id}>{problem.title}</Link></td>
         <td style={difficultyColor}>{problem.difficulty}</td>
@@ -103,10 +63,27 @@ function ProblemsTable( {problems} ) {
 }
 
 export default function Problemsets() {
+  const [ problems, setProblems ] = useState([]);
+  useEffect(() => {
+    getProblems();
+  }, [])
+
+  const getProblems = async () => {
+    try {
+      const response = await fetch(`${backendURL}/problemsets`, {
+          method: "GET",
+      })
+      const json = await response.json();
+      setProblems(json.questions);
+    }
+    catch(err) {
+      console.log(err.message);
+    }
+  }
 
   return (
     <>
-      <ProblemsTable problems={problems} /> 
+      <ProblemsTable problems={problems} />
     </>
   )
 } 

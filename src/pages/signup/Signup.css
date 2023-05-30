@@ -46,3 +46,8 @@ input {
   width: 30rem;
   height: 20rem;
 }
+
+.flash-message {
+  text-align: center;
+  margin-top: 20px;
+}

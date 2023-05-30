@@ -45,3 +45,7 @@ input {
   width: 30rem;
   height: 20rem;
 }
+
+.form-type {
+  text-transform: capitalize;
+}
