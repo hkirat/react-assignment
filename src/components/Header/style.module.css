@@ -1,0 +1,25 @@
+.navBar {
+    display: flex;
+    background-color: black;
+    color: aliceblue;
+    justify-content: space-around;
+    align-items: center;
+    height: 6vh;
+}
+.section1 {
+    display: flex;
+    align-items: center;
+}
+.section1 div{
+    margin: 10px;
+}
+
+.section2 {
+    display: flex;
+}
+.section2 div{
+    margin: 10px;
+}
+.userLogo{
+    height: 5vh;
+}

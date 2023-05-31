@@ -1,32 +1,23 @@
 import React from "react";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import styles from './style.module.css';
+import { Link } from "react-router-dom";
 const HomePage = () => {
     return (
-        <div className={styles.landingPage}>
-            <div className={styles.mainContent}>
-                <h1>Welcome to Why2Code?</h1>
-                <p>
-                    Current Routes:
-                    <ul>
-                        <li>path="/login"</li>
-                        <li>path="/signup"</li>
-                        <li>path="/problemset/all"</li>
-                        <li>path="/problem/:problem_slug"</li>
-                    </ul>      
-                </p>
-            </div>
+        <div>
+            <Header />
+            <div className={styles.landingPage}>
             
+                <div className={styles.mainContent}>
+                    <h1>Welcome to Why2Code?</h1>
+                    <h2>Learn to Code and Change the World</h2>
+                    <Link to='/signup'><button className={styles.btn}>Create Account</button></Link>
+                </div>
+            
+            </div>
+            <Footer/>
         </div>
-    //     <div className="landing-page">
-    //         <div className="background">
-    //             <img src="https://www.placecage.com/1920/1080" />
-    //         </div>
-    //         <div className="content">
-    //             <h1>My Landing Page</h1>
-    //             <p>This is my landing page. It uses a dark background and images to create a sense of mystery and intrigue.</p>
-    //             <button>Learn More</button>
-    //         </div>
-    //   </div>
         
     )
 }

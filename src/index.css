@@ -10,6 +10,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 .login-form {
     display: flex;
@@ -50,12 +51,7 @@ input{
     margin-top: 5px;
 }
 
-button {
-    height: 35px;
-    background-color: var(--button-color);
-    border: none;
-    border-radius: 5px;
-}
+
 .problem-area{
     display: flex;
     flex-direction: column;
