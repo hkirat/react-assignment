@@ -1,0 +1,88 @@
+/* @import "//www.envisionus.com/EnvisionUS/Styles/EnvisionUS.less"; */
+
+.link {
+	text-decoration: none;
+	color: inherit;
+}
+
+table {
+	width: 100%;
+}
+table thead tr {
+	background: #dcd5c5 url("/Global/Images/parchment-bkg.jpg") repeat;
+}
+table thead tr h1,
+table thead tr h2,
+table thead tr .h1,
+table thead tr .h2,
+table thead tr h3,
+table thead tr .h3,
+table thead tr h4,
+table thead tr .h4 {
+	color: #151515;
+}
+table thead tr a {
+	color: #0075b0;
+}
+table thead tr a:hover,
+table thead tr a:focus {
+	color: white;
+}
+table tbody tr:nth-of-type(even) {
+	background: #e40000 !important;
+}
+table td,
+table th {
+	padding: 8px 14px;
+	text-align: left;
+	font-size: 0.9rem;
+}
+
+table th {
+	font-weight: 700;
+	font-size: 0.8rem;
+	line-height: 1.4;
+	font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif;
+	text-transform: uppercase;
+	margin: 0;
+	max-width: 800px;
+	line-height: inherit;
+	color: #151515;
+}
+table th.PrimaryFont {
+	text-transform: none;
+}
+
+@media only screen and (max-width: 599px) {
+	table th {
+		display: none;
+	}
+	table td {
+		position: relative;
+		display: block;
+		padding-left: 110px;
+	}
+	table td:before {
+		position: absolute;
+		top: 8px;
+		left: 10px;
+		display: block;
+		content: attr(data-label) ": ";
+		font-weight: 700;
+	}
+	table tbody tr {
+		padding: 20px 0;
+		display: block;
+	}
+	table:nth-of-type(odd) {
+		background: #f3f3f3;
+	}
+}
+
+/* For display in CodePen */
+.problems {
+	padding: 20px;
+}
+table {
+	border-collapse: collapse;
+}
