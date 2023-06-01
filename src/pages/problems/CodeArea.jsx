@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { backendURL, languages } from "../../constants/constants.js"
 import { useParams } from 'react-router-dom'; 
 
+
 async function handleSubmit(id, language, code) {    
   fetch(`${backendURL}/problems/${id}`, {
     method: "POST",
@@ -17,7 +18,7 @@ async function handleSubmit(id, language, code) {
   }) 
 }
 
-export default function CodeArea() {
+export default function CodeArea({ updateData }) {
   const [language, setLanguage] = useState("c")
   const codeRef = useRef(null);
   const { id } = useParams();
@@ -33,7 +34,7 @@ export default function CodeArea() {
      </select>
       <br />
       <textarea ref={codeRef} type="text" className="code-area" />
-      <button onClick={() => handleSubmit(id, language, codeRef.current.value)} type="submit" className="code-submit">Submit</button>
+      <button onClick={() => {handleSubmit(id, language, codeRef.current.value); updateData()}} type="submit" className="code-submit">Submit</button>
     </div>
   )
 }
