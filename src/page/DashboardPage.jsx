@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from "react";
 import ProblemTile from "../components/ProblemTile";
+import Wrapper from "../components/Wrapper/Wrapper";
 import axios from 'axios';
 import {BACKEND_URL} from '../constants';
 const DashboardPage = () => {
@@ -13,17 +14,18 @@ const DashboardPage = () => {
         init();
     }, [])
     return (
-        <div className="dashboard-page">
-            <h1>Problem Set</h1>
-            <ul>
-                {problems && problems.map((item, i) => (
-                    <ProblemTile  key={i} problemId={item.questionId} title={item.title} difficulty={item.difficulty} acceptance={item.acceptance} />
-                ))}
-            </ul>
+        <div className="page-content">
+            <div className="dashboard-page">
+                <h1>Problem Set</h1>
+                <div>
+                    {problems && problems.map((item, i) => (
+                        <ProblemTile  key={i} problemId={item.questionId} title={item.title} difficulty={item.difficulty} acceptance={item.acceptance} />
+                    ))}
+                </div>
+            </div>
         </div>
-
     )
 }
 
-export default DashboardPage;
+export default Wrapper(DashboardPage);
 

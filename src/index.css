@@ -5,7 +5,9 @@
     --button-color: #66fcf1;
     ---widget: #45a29e;
 }
-
+.page-content{
+    height: 90vh;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -38,6 +40,7 @@
 .email {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .password {
@@ -66,9 +69,10 @@ input{
 }
 .problem-page {
     display: flex;
+    height: 100%;
 }
 .code-block {
-    height: 70vw;
+    height: 100%;
 }
 
 .problem-tile {
@@ -103,4 +107,9 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
 }
