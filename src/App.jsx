@@ -1,59 +1,45 @@
 /*
  * Temporary problems array schema
  */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
+import { Routes, Route } from "react-router-dom";
 
+import Login from "./elements/login";
+import SignUp from "./elements/signup";
+import SingleProblem from "./elements/singleproblem";
+import Problems from "./elements/problems";
+import NavBar from "./elements/navbar";
+import Exploler from "./elements/exploler";
 
 function App() {
-
-    /* Add routing here, routes look like -
+  /* Add routing here, routes look like -
        /login - Login page
        /signup - Signup page
        /problemset/all/ - All problems (see problems array above)
        /problems/:problem_slug - A single problem page
      */
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+  return (
+    <>
+      {/* Finish the assignment! Look at the comments in App.jsx as a starting point */}
+
+      <main>
+        <Routes>
+          <Route path="/" element={<NavBar />}>
+            <Route index element={<Exploler />}></Route>
+          </Route>
+          <Route path="/problems/all" element={<NavBar />}>
+            <Route index element={<Problems />}></Route>
+          </Route>
+          {/* <Route path="/problems/all" element={<Problems />}></Route> */}
+          <Route path="/problems/:id" element={<SingleProblem />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+        </Routes>
+      </main>
+    </>
+  );
 }
 
 // A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
 
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+export default App;

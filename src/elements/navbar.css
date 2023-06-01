@@ -1,0 +1,34 @@
+#root {
+    margin: 0;
+    padding: 0;
+  }
+
+header{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  }
+#nav-bar{
+    padding: 0.5em;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    text-align: center;
+    /* border-radius: 5px; */
+  }
+  #logo-beside-explorer{
+    display: inline-block;
+    padding: 0;
+  }
+  #nav-bar li{
+    display: inline-block;
+    padding: 0.8em;
+  }
+  
+  #nav-bar ul{
+    margin: 0;
+    list-style-type: none;
+    display: inline-block;
+  }
+
+  

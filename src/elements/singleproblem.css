@@ -1,0 +1,63 @@
+
+#problem-solving-area{
+    display: flex;
+    /* width: 100vh;
+    height: 100vh; */
+    box-sizing: border-box;
+    
+}
+#left-section{
+    margin: 0.3em 2rem;
+    flex: 1;
+    border: 0.6px double black;
+    height: 100vh;
+    width: 50vh;
+    text-align: left;
+}
+
+#left-section *{
+    margin: 0.5em;
+    padding: 0.5em;
+    font-size: 25px;
+}
+#right-section{
+    margin: 0.3em 1.2rem;
+    flex: 1;
+    border: 0.6px double black;
+    height: 100vh;
+    width: 50vh;
+    padding-left: 50px;
+}
+#right-section *{
+   padding: .5em;
+
+}
+#button-submit{
+    display: block;
+  margin-left: auto;
+  margin-right: 1.8em;
+  padding: 1em 2em;
+  border: 2px solid black;
+  background-color: lightgreen;
+  border-radius: 10px;
+  font-size: medium;
+}
+#button-submit:hover{
+  margin-right: 1.4em;
+  border: 3px solid black;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.examples{
+    display: flex;
+    text-align: left;
+    padding: 0.7em;
+    overflow: scroll;
+}
+
+#solution-area{
+    height: 75%;
+    width: 90%;
+    font-size: large;
+}
