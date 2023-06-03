@@ -9,11 +9,17 @@ const LoginPage = () => {
   const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
     const handleSubmit = async (e) => {
       const body = {
         email, password
       }
       const resp = await axios.post(`${BACKEND_URL}login`, body);
+      if (resp.status === 200) {
+        window.location.href = `/problemset/all`;
+      } else {
+        setMessage('Invalid Credentials');
+      }
       localStorage.setItem("token", resp.data.token);
     };
     return (

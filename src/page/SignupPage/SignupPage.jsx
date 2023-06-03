@@ -9,11 +9,17 @@ const SignupPage = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
     const handleSubmit = async (e) => {
       const body = {
         name, email, password
       };
       const resp = await axios.post(`${BACKEND_URL}signup`, body);
+      if (resp.status === 200) {
+        window.location.href = `/login`;
+      } else {
+        setMessage('Invalid Credentials');
+      }
       console.log(resp, body);
 
     };
@@ -39,6 +45,9 @@ const SignupPage = () => {
         </div>
         <div className={styles.submit}>
           <button className={styles.submitBtn} type="submit" onClick={handleSubmit}>Login</button>
+        </div>
+        <div>
+          {message}
         </div>
       </div>
     );
