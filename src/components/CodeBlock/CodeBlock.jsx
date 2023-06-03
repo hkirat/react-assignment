@@ -1,28 +1,25 @@
-import React from 'react';
+import React, { useState } from "react";
+// import CodeEditor from "react-code-editor";
 
-import { CodeBlock } from '@atlaskit/code';
+const CodeBlock = ({ code, language }) => {
+  const [editorState, setEditorState] = useState({
+    code,
+    language,
+  });
 
-const exampleCodeBlock = `// React Component
-class HelloMessage extends React.Component {
-  render() {
-    return (
-      <div>
-        Hello {this.props.name}
-      </div>
-    );
-  }
-}
+  const handleChange = (editorState) => {
+    setEditorState(editorState);
+  };
 
-ReactDOM.render(
-  <HelloMessage name="Taylor" />,
-  mountNode
-);`;
-
-
-const CustomCodeBlock = (props) => {
-  const {language, text, onChange}= props;
-  const testCode = `fsfsgs${text}`
-  return <CodeBlock language={language} text={testCode} onChange={onChange}/>;
+  return (
+    <div className="code-block">
+      <CodeEditor
+        editorState={editorState}
+        onChange={handleChange}
+        language={language}
+      />
+    </div>
+  );
 };
 
-export default CustomCodeBlock;
+export default CodeBlock;
