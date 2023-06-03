@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import {BACKEND_URL} from '../constants';
-
+import styles from '../page/ProblemPage/styles.module.css';
 const ProblemDescription = (props) => {
     let {title, description, exampleIn, exampleOut, acceptance, constraints, problemId} = props.problem;
     const [submissions, setSubmissions] = useState([]);
@@ -14,36 +14,20 @@ const ProblemDescription = (props) => {
         setSubmissions(resp.data.submissions);
     }
     return (
-        <div className="problem-area">
-            <h2>{title}</h2>
+        <div className={styles.problemDescription}>
+            <div>{title}</div>
             <div className='description'>
-                <h3>Description</h3>
-                <p>{description}</p>
+                <div>Description</div>
+                <div>{description}</div>
             </div>
             <div className='descitption'>
-                <h3>Examples</h3>
-                <p>Sample Input</p>
+                <div>Examples</div>
+                <div>Sample Input</div>
                 <div>{exampleIn}</div>
-                <p>Sample Output</p>
+                <div>Sample Output</div>
                 <div>{exampleOut}</div>
             </div>
-            <div className='descitption'>
-                <h3>Constraints</h3>
-                <div>{constraints}</div>
-            </div>
-            <div>
-                <button onClick={handleViewSubmissions}>
-                    View Submissions
-                </button>
-                <div>
-                    <ul>
-                        {submissions.map(submission=> {
-                            return <li>{submission.status}</li>
-                        })}
-                    </ul>
-                    
-                </div>
-            </div>
+            
         </div>
     );
 }

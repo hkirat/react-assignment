@@ -18,28 +18,6 @@ const SignupPage = () => {
 
     };
     return (
-      // <div className='login-form'>
-      //   <div className='name'>
-      //     <label>Name</label>
-      //     <input type="name" id='name' onChange={(e) => {
-      //       setName(e.target.value);
-      //     }} />
-      //   </div>
-      //   <div className='email'>
-      //     <label>Email</label>
-      //     <input type="email" id='email' onChange={(e) => {
-      //       setEmail(e.target.value);
-      //     }} />
-      //   </div>
-      //   <div className='email'>
-      //     <label>Password</label>
-      //     <input type="password" id='password' onChange={(e) => {
-      //       setPassword(e.target.value);
-      //     }} />
-      //   </div>
-
-      //   <button type="submit" onClick={handleSubmit}>Sign Up</button>
-      // </div>
       <div className={styles.loginForm}>
         <div className={styles.email}>
            <label>Name</label>
@@ -78,7 +56,6 @@ const SignupPage = () => {
           </div>
         </div>
     </div>
-
   )
 }
 

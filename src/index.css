@@ -67,10 +67,6 @@ input{
     flex-direction: column;
     width: 60vw;
 }
-.problem-page {
-    display: flex;
-    height: 100%;
-}
 .code-block {
     height: 100%;
 }
@@ -101,12 +97,6 @@ input{
 }
 .acceptance {
     width: 20%;
-}
-.dashboard-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 a {
     text-decoration: none;

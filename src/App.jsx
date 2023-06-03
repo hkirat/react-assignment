@@ -3,8 +3,8 @@ import React from 'react';
 import LoginPage from './page/LoginPage/LoginPage';
 import HomePage from './page/HomePage/HomePage';
 import SignupPage from './page/SignupPage/SignupPage';
-import DashboardPage from './page/DashboardPage';
-import ProblemPage from './page/ProblemPage';
+import DashboardPage from './page/DashboardPage/DashboardPage';
+import ProblemPage from './page/ProblemPage/ProblemPage';
 
 function App() {
     return (

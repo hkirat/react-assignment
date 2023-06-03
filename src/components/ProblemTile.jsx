@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+
 const ProblemTile = (props) => {
     const {title, difficulty, acceptance, problemId} = props; 
     let acceptanceClass;
@@ -11,13 +12,14 @@ const ProblemTile = (props) => {
     }
 
     return (
-        <Link to={`/problem/${problemId}`}>
-            <div className="problem-tile">
-                    <div className="title"> {title}</div>
-                    <div className={`difficulty ${acceptanceClass}`}>{difficulty}</div>
-                    <div className='acceptance'>{acceptance}</div>
-            </div>
-        </Link>
+            <tr key={problemId} onClick={()=>{
+                console.log('clicked row', problemId)
+                window.location.href = `/problem/${problemId}`;
+            }}>
+                <td>{title}</td>
+                <td className={`${acceptanceClass}`}>{difficulty}</td>
+                <td >{acceptance}</td>
+            </tr>
     );
 }
 
