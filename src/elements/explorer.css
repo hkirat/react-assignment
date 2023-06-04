@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  }
+
+
+h1{
+    font-size: 50px;
+    color: rgba(139, 131, 17, 0.805);
+    text-align: center;
+  }
+  .questions-intro{
+    text-align: left;
+    margin-left: 1em;
+    padding:10px;
+    font-size: 20px;
+  }
+  .questions-intro p{
+    text-align: left;
+    margin-left: 1em;
+    padding:10px;
+    font-size: 20px;
+  }
+  .questions-intro{
+    text-align: left;
+    margin-left: 1em;
+    padding:10px;
+    font-size: 20px;
+  }

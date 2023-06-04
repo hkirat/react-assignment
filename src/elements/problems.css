@@ -1,0 +1,46 @@
+#problems-table table{
+  margin: 2em auto 2em;
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+#problems-table thead th{
+    padding: 0.5em 1em;
+    border: 3px solid black;
+  
+}
+#problems-table tr{
+  border: 0.0009px solid black;
+  
+}
+#problems-table td{
+    padding: 1em;
+    margin: 0.2 auto;
+  
+}
+.Easy{
+  color: rgb(0 184 163);
+}
+.Medium{
+  color: rgb(255 192 30);;
+}
+.Hard{
+  color: rgb(255, 0, 0);
+}
+
+.page{
+  margin: 3px;
+  padding: 1em 2em;
+  border: 0.8px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+.page:hover{
+  margin: 4px;
+  padding: 1.3em 2.6em;
+  border: 1px solid rgb(50, 50, 50);
+}
+#page-buttons{
+  margin: 0 auto;
+  text-align: center;
+}
