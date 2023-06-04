@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   return (
     <div id="login">
       <h2>Login</h2>
@@ -38,6 +39,7 @@ function Login() {
             });
             const json = await responce.json();
             localStorage.setItem("token", json.token);
+            navigate("/problems");
           }}
         >
           Login

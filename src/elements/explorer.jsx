@@ -1,6 +1,6 @@
 import "./explorer.css";
 
-function Exploler() {
+function Explorer() {
   return (
     <>
       {/* Finish the assignment! Look at the comments in App.jsx as a starting point */}
@@ -22,4 +22,4 @@ function Exploler() {
   );
 }
 
-export default Exploler;
+export default Explorer;

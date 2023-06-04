@@ -44,14 +44,7 @@ function SignUp() {
               }),
             });
             const json = await response.json();
-            console.log(json);
-            console.log(
-              JSON.stringify({
-                name: name,
-                email: email,
-                password: password,
-              })
-            );
+            navigate("/login");
           }}
         >
           Signup

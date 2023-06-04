@@ -11,7 +11,7 @@ function NavBar() {
               <img src="./logo.png" alt="logo" />
             </li>
             <li>
-              <Link to="/">Exploler</Link>
+              <Link to="/">Your Submissions</Link>
             </li>
 
             <li>

@@ -34,7 +34,6 @@
 }
 #button-submit{
     display: block;
-  margin-left: auto;
   margin-right: 1.8em;
   padding: 1em 2em;
   border: 2px solid black;
@@ -44,6 +43,22 @@
 }
 #button-submit:hover{
   margin-right: 1.4em;
+  border: 3px solid black;
+  font-size: 17px;
+  font-weight: bold;
+}
+#button-submission{
+    display: block;
+  margin-left: 1.8em;
+  margin-right: 0.3em;
+  padding: 1em 2em;
+  border: 2px solid black;
+  background-color: lightgreen;
+  border-radius: 10px;
+  font-size: medium;
+}
+#button-submission:hover{
+  margin-left: 1.4em;
   border: 3px solid black;
   font-size: 17px;
   font-weight: bold;
@@ -60,4 +75,31 @@
     height: 75%;
     width: 90%;
     font-size: large;
+}
+
+#singleproblem-buttons{
+    display: flex;
+    justify-content: end;
+}
+#submission-display{
+    margin-top: 6em;
+}
+#submission-display table{
+    margin: 2em auto 2em;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#submission-display thead th{
+    padding: 0.5em 1em;
+    border: 3px solid black;
+}
+#submission-display tr{
+    border: 0.0009px solid black;
+}
+
+#submission-display td{
+    padding: 1em;
+    margin: 0.2 auto;
+  
 }
