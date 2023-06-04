@@ -5,19 +5,14 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Add your login logic here, e.g., sending a request to an API
-    console.log("Login:", email, password);
-  };
-
   return (
     <div id="login">
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <div id="form">
         <input
           type="email"
           placeholder="Email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -25,10 +20,29 @@ function Login() {
           type="password"
           placeholder="Password"
           value={password}
+          name="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
-      </form>
+        <button
+          type="submit"
+          onClick={async (e) => {
+            const responce = await fetch("http://localhost:3000/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email: email,
+                password: password,
+              }),
+            });
+            const json = await responce.json();
+            localStorage.setItem("token", json.token);
+          }}
+        >
+          Login
+        </button>
+      </div>
     </div>
   );
 }

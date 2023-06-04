@@ -15,7 +15,7 @@ function NavBar() {
             </li>
 
             <li>
-              <Link to="/problems/all">Problems</Link>
+              <Link to="/problems">Problems</Link>
             </li>
             <li>
               <Link to="/signup">SignUp</Link>

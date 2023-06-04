@@ -27,11 +27,11 @@ function App() {
           <Route path="/" element={<NavBar />}>
             <Route index element={<Exploler />}></Route>
           </Route>
-          <Route path="/problems/all" element={<NavBar />}>
+          <Route path="/problems" element={<NavBar />}>
             <Route index element={<Problems />}></Route>
           </Route>
           {/* <Route path="/problems/all" element={<Problems />}></Route> */}
-          <Route path="/problems/:id" element={<SingleProblem />}></Route>
+          <Route path="/problem/:id" element={<SingleProblem />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
         </Routes>

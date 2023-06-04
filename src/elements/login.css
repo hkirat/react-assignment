@@ -17,7 +17,7 @@
     margin-bottom: 20px;
   }
   
-  #login form {
+  #login #form {
     display: flex;
     flex-direction: column;
   }
