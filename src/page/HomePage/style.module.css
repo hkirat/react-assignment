@@ -1,0 +1,32 @@
+.landingPage {
+    height: 90vh;
+    display: flex;
+    background-image: url('../../assets/bg.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContent {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #66fcf1;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+    background-color: #66fcf1;
+    border: none;
+    border-radius: 35px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+}

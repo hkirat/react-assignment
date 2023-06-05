@@ -1,0 +1,26 @@
+.problemArea {
+    padding: 1%;
+    width: 50%;
+}
+.problemToolbar{
+    display: flex;
+    border-bottom: 1px solid black;
+}
+.problemToolbarButton {
+    padding: 10px;
+    /* border-bottom: 3px solid blue; */
+}
+.problemDescription {
+    padding: 1%;
+    width: 100%;
+}
+.problemDescription div{
+    margin: 1%;
+    /* width: 100%; */
+}
+.problemPage {
+    display: flex;
+    height: 100%;
+    background: rgb(41, 41, 42);
+    color: azure;
+}

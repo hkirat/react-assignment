@@ -1,0 +1,84 @@
+.loginPage {
+    height: 90vh;
+    display: flex;
+    background-image: url('../../assets/bg.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBg {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #66fcf1;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.loginCard {
+    display: flex;
+    height: 65%;
+    width: 35%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #66fcf1;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.webLogo {
+    height: 25%;
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: ; */
+    width: 80%;
+    height: 60%;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+}
+.email {
+    display: flex;
+    flex-direction: column;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+}
+.email input{
+    height: 35px;
+    padding: 10px;
+}
+
+.password input{
+    height: 35px;
+    padding: 10px;
+}
+.submitBtn {
+    width: 100%;
+    height: 35px;
+    background-color: #66fcf1;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginText {
+    padding: 20px;
+}
