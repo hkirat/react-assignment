@@ -1,7 +1,9 @@
 function Login() {
     return(
-        <div>
-            Login
+        <div className='login'>
+            F-leetcode
+            <input type = "text" placeholder="Email"/>
+            <input type = "text" placeholder="Password"/>
         </div>
     )
 }

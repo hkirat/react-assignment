@@ -1,8 +1,12 @@
+import {Route, Routes, Link, BrowserRouter} from "react-router-dom";
 import problems from './problemList.js'
 import Login from "./components/login.jsx";
 import Signup from "./components/signup.jsx";
 import Problem from "./components/problem.jsx";
 import ProblemSet from "./components/problemSet.jsx";
+import "./App.css"
+import Home from "./components/home.jsx";
+import Header from "./components/header.jsx";
 
 function App() {
 
@@ -15,13 +19,26 @@ function App() {
 
     console.log(problems)
     return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-        <Login/>
-        <Signup/>
-        <ProblemSet/>
-        <Problem/>
-    </div>
+    <BrowserRouter>
+        {/*Finish the assignment! Look at the comments in App.jsx as a starting point*/}
+        <header>
+            <Link to = "/"><span id="f-leetcode-header">F-leetcode</span></Link>
+        <ul className="header-list">
+            <li><Link to = "/login" >Login </Link></li>
+            <li><Link to = "/signup" >Signup </Link></li>
+            <li><Link to = "/problems" >ProblemSet </Link></li>
+            <li><Link to = "/problem" >Problem </Link></li>
+        </ul>
+        </header>
+        <Routes>
+            <Route exact path="/" element = {<Home/>}/>
+            <Route exact path ="/login" element = {<Login/>}/>
+            <Route exact path ="/signup" element = {<Signup/>}/>
+            <Route exact path ="/problems" element = {<ProblemSet/>}/>
+            <Route exact path ="/problem" element = {<Problem/>}/>
+
+        </Routes>
+    </BrowserRouter>
   )
 }
 

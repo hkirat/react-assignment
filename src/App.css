@@ -40,3 +40,41 @@
 .read-the-docs {
   color: #888;
 }
+
+#f-leetcode-header {
+  float: left;
+  font-size: x-large;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid red;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  float: right;
+}
+
+header ul li {
+  display: inline-block;
+  color: white;
+  margin: 0;
+  padding: 0 1em;
+}
+
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+.login {
+  border: 1px solid black;
+}
