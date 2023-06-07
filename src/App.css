@@ -47,6 +47,59 @@ header a {
   text-decoration: none;
 }
 
+.login-screen {
+  display: flex;
+  position: relative;
+  inset: 0;
+  justify-content: center;
+}
+
 .login {
   border: 1px solid black;
+  border-radius: 5px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.input-div {
+  width: 60%;
+  margin: 0;
+}
+
+.input-div input {
+  width: 100%;
+  height: 1.75em;
+}
+
+.input-mini-div {
+  padding: 1em 0;
+}
+
+.input-validation-msg {
+  text-align: initial;
+  color: red;
+  font-size: xx-small;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login button {
+  padding: .75em 1.5em;
+  background-color: teal;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin: 1em 0;
+}
+
+.signup-btn {
+  margin: 1em;
 }
