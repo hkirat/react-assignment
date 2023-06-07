@@ -2,7 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -103,4 +103,36 @@ header a {
 
 .signup-btn {
   margin: 1em;
+}
+
+/*Problem Set*/
+
+.problem-set-screen table {
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: dimgrey;
+  padding: 1em;
+}
+
+.problem-set-screen td {
+  outline: 1px solid floralwhite;
+  color: whitesmoke;
+  margin: 0;
+  padding: 1em;
+}
+
+.problem-set-screen tr:hover{
+  background-color: grey;
+}
+
+.problem-set-screen .medium {
+  color: yellow;
+}
+
+.problem-set-screen .hard {
+  color: red;
+}
+
+.problem-set-screen .easy {
+  color: lightgreen;
 }

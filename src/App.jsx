@@ -1,5 +1,4 @@
 import {Route, Routes, Link, BrowserRouter} from "react-router-dom";
-import problems from './problemList.js'
 import Login from "./components/login.jsx";
 import Signup from "./components/signup.jsx";
 import Problem from "./components/problem.jsx";
@@ -17,7 +16,6 @@ function App() {
        /problems/:problem_slug - A single problem page
      */
 
-    console.log(problems)
     return (
     <BrowserRouter>
         {/*Finish the assignment! Look at the comments in App.jsx as a starting point*/}
@@ -26,8 +24,7 @@ function App() {
         <ul className="header-list">
             <li><Link to = "/login" >Login </Link></li>
             <li><Link to = "/signup" >Signup </Link></li>
-            <li><Link to = "/problems" >ProblemSet </Link></li>
-            <li><Link to = "/problem" >Problem </Link></li>
+            <li><Link to = "/problems" >Problems </Link></li>
         </ul>
         </header>
         <Routes>
