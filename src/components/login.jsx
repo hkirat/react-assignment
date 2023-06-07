@@ -6,11 +6,11 @@ function Login() {
                 <div className="input-div">
                     <div className="input-mini-dev">
                         <input type = "text" placeholder="Email"/>
-                        <div className="input-validation-msg">Enter the correct email</div>
+                        <div className="input-validation-msg"></div>
                     </div>
                     <div className="input-mini-div">
                         <input type = "text" placeholder="Password"/>
-                        <div className= "input-validation-msg">Enter the correct password</div>
+                        <div className= "input-validation-msg"> </div>
                     </div>
                     <div className="actions">
                         <button className="signup-btn">Sign Up</button>

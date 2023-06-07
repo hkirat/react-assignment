@@ -83,6 +83,7 @@ header a {
   text-align: initial;
   color: red;
   font-size: xx-small;
+  height: 1em;
 }
 
 .actions {
