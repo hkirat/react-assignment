@@ -1,138 +1,173 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  /*text-align: center;*/
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    /*text-align: center;*/
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
 }
 
 #f-leetcode-header {
-  float: left;
-  font-size: x-large;
+    float: left;
+    font-size: x-large;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: 1px solid red;
 }
 
 header ul {
-  list-style: none;
-  margin: 0;
-  float: right;
+    list-style: none;
+    margin: 0;
+    float: right;
 }
 
 header ul li {
-  display: inline-block;
-  color: white;
-  margin: 0;
-  padding: 0 1em;
+    display: inline-block;
+    color: white;
+    margin: 0;
+    padding: 0 1em;
 }
 
 header a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 .login-screen {
-  display: flex;
-  position: relative;
-  inset: 0;
-  justify-content: center;
+    display: flex;
+    position: relative;
+    inset: 0;
+    justify-content: center;
 }
 
 .login {
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  padding: 1em;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 1em;
 }
 
 .input-div {
-  width: 60%;
-  margin: 0;
+    width: 60%;
+    margin: 0;
 }
 
 .input-div input {
-  width: 100%;
-  height: 1.75em;
+    width: 100%;
+    height: 1.75em;
 }
 
 .input-mini-div {
-  padding: 1em 0;
+    padding: 1em 0;
 }
 
 .input-validation-msg {
-  text-align: initial;
-  color: red;
-  font-size: xx-small;
-  height: 1em;
+    text-align: initial;
+    color: red;
+    font-size: xx-small;
+    height: 1em;
 }
 
 .actions {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .login button {
-  padding: .75em 1.5em;
-  background-color: teal;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  margin: 1em 0;
+    padding: .75em 1.5em;
+    background-color: teal;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 1em 0;
 }
 
 .signup-btn {
-  margin: 1em;
+    margin: 1em;
 }
 
 /*Problem Set*/
 
 .problem-set-screen table {
-  border: 1px solid grey;
-  border-radius: 5px;
-  background-color: dimgrey;
-  padding: 1em;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: dimgrey;
+    padding: 1em;
 }
 
 .problem-set-screen td {
-  outline: 1px solid floralwhite;
-  color: whitesmoke;
-  margin: 0;
-  padding: 1em;
+    outline: 1px solid floralwhite;
+    color: whitesmoke;
+    margin: 0;
+    padding: 1em;
 }
 
-.problem-set-screen tr:hover{
-  background-color: grey;
+.problem-set-screen tr:hover {
+    background-color: grey;
 }
 
 .problem-set-screen .medium {
-  color: yellow;
+    color: yellow;
 }
 
 .problem-set-screen .hard {
-  color: red;
+    color: red;
 }
 
 .problem-set-screen .easy {
-  color: lightgreen;
+    color: green;
+}
+
+.problem {
+    display: flex;
+    width: 100%;
+    border: 1px solid blue;
+    justify-content: space-between;
+}
+
+.problem-details {
+    border: 1px solid black;
+    width: 49%;
+}
+
+.problem-details .problem-level.hard {
+    padding: 0.1em .6em;
+    border-radius: 10em;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.problem-details .problem-level.easy {
+    padding: 0.1em .6em;
+    border-radius: 10em;
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.problem-details .problem-level.medium {
+    padding: 0.1em .6em;
+    border-radius: 10em;
+    background-color: rgba(255, 234, 0, 0.31);
+}
+
+.playground {
+    border: 1px solid red;
+    width: 49%;
 }
