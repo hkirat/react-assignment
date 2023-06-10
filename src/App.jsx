@@ -5,7 +5,6 @@ import Problem from "./components/problem.jsx";
 import ProblemSet from "./components/problemSet.jsx";
 import "./App.css"
 import Home from "./components/home.jsx";
-import Header from "./components/header.jsx";
 
 function App() {
 
@@ -17,26 +16,26 @@ function App() {
      */
 
     return (
-    <BrowserRouter>
-        {/*Finish the assignment! Look at the comments in App.jsx as a starting point*/}
-        <header>
-            <Link to = "/"><span id="f-leetcode-header">F-leetcode</span></Link>
-        <ul className="header-list">
-            <li><Link to = "/login" >Login </Link></li>
-            <li><Link to = "/signup" >Signup </Link></li>
-            <li><Link to = "/problems" >Problems </Link></li>
-        </ul>
-        </header>
-        <Routes>
-            <Route exact path="/" element = {<Home/>}/>
-            <Route exact path ="/login" element = {<Login/>}/>
-            <Route exact path ="/signup" element = {<Signup/>}/>
-            <Route exact path ="/problems" element = {<ProblemSet/>}/>
-            <Route exact path ="/problem" element = {<Problem/>}/>
+        <BrowserRouter>
+            {/*Finish the assignment! Look at the comments in App.jsx as a starting point*/}
+            <header>
+                <Link to="/"><span id="f-leetcode-header">F-leetcode</span></Link>
+                <ul className="header-list">
+                    <li><Link to="/login">Login </Link></li>
+                    <li><Link to="/signup">Signup </Link></li>
+                    <li><Link to="/problems">Problems </Link></li>
+                </ul>
+            </header>
+            <Routes>
+                <Route exact path="/" element={<Home/>}/>
+                <Route exact path="/login" element={<Login/>}/>
+                <Route exact path="/signup" element={<Signup/>}/>
+                <Route exact path="/problems" element={<ProblemSet/>}/>
+                <Route exact path="/problem/:problemId" element={<Problem/>}/>
 
-        </Routes>
-    </BrowserRouter>
-  )
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App

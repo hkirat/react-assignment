@@ -212,3 +212,11 @@ header a {
     height: 90%;
     resize: none;
 }
+
+a {
+    text-decoration: none;
+}
+
+.table-row {
+    display: table-row;
+}

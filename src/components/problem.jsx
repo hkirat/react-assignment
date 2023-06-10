@@ -1,23 +1,26 @@
 import languages from "../languages.js";
+import problems from "../problemList.js";
+import {useParams} from "react-router-dom";
 
-function Problem(props) {
-    console.log("Inside problem")
+function Problem() {
+    const {problemId} = useParams()
+    const problem = problems.find(problem => problemId == problem.id)
 
     function renderExamples() {
         return (
             <div>
                 {
-                    props.examples.map((example, idx) => {
+                    problem.examples.map((example, idx) => {
                         return (
                             <div key={idx} className="question-example">
                                 <h5>{`Example${idx + 1}:`}</h5>
                                 {/*<br/>*/}
                                 <h5>
-                                {`Input: ${example.input}`}
-                                <br/>
-                                {`Output: ${example.output}`}
-                                <br/>
-                                {example.explanation !== undefined ? `Explanation: ${example.explanation}` : null}
+                                    {`Input: ${example.input}`}
+                                    <br/>
+                                    {`Output: ${example.output}`}
+                                    <br/>
+                                    {example.explanation !== undefined ? `Explanation: ${example.explanation}` : null}
                                 </h5>
                             </div>
                         )
@@ -32,50 +35,51 @@ function Problem(props) {
             <div className="constraints">
                 <h5>Constraints:</h5>
                 <ul>
-                {props.constraints.map((constraint, idx) => {
-                    return (
-                        <li key={idx}>{constraint}</li>
-                    )
-                })}
+                    {problem.constraints.map((constraint, idx) => {
+                        return (
+                            <li key={idx}>{constraint}</li>
+                        )
+                    })}
                 </ul>
             </div>
         )
     }
 
     function renderLanguageSelection() {
-        console.log("languages", languages)
         return (
             <div className="languages">
                 <select>
-                {languages.map(language => {
-                    function getLanguageInTitleCase(name) {
-                        return name.replace(
-                            /\w\S*/g,
-                            function(txt) {
-                                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-                            }
-                        );
-                    }
+                    {languages.map(language => {
+                        function getLanguageInTitleCase(name) {
+                            return name.replace(
+                                /\w\S*/g,
+                                function (txt) {
+                                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                                }
+                            );
+                        }
 
-                    return (
-                        <option key={language.id} value={language.name}>{getLanguageInTitleCase(language.name)}</option>
-                    )
-                })}
+                        return (
+                            <option key={language.id}
+                                    value={language.name}>{getLanguageInTitleCase(language.name)}</option>
+                        )
+                    })}
                 </select>
             </div>
         )
     }
 
-    return(
+    return (
         <div className="problem">
             <div className="problem-details">
-                <h2>{`${props.id}. ${props.title}`}</h2>
-                <span className={"problem-level " + props.difficulty.toLowerCase()}>{props.difficulty}</span>
-                <span className="question-stats">{`Accepted: ${props.accepted}`}</span>
-                <span className="question-stats">{`Submitted: ${props.submitted}`}</span>
-                <span className="question-stats">{`Acceptance Rate: ${Math.round(props.accepted / props.submitted * 100)}`}%</span>
+                <h2>{`${problem.id}. ${problem.title}`}</h2>
+                <span className={"problem-level " + problem.difficulty.toLowerCase()}>{problem.difficulty}</span>
+                <span className="question-stats">{`Accepted: ${problem.accepted}`}</span>
+                <span className="question-stats">{`Submitted: ${problem.submitted}`}</span>
+                <span
+                    className="question-stats">{`Acceptance Rate: ${Math.round(problem.accepted / problem.submitted * 100)}`}%</span>
                 <p>
-                    {props.description}
+                    {problem.description}
                 </p>
                 {renderExamples()}
                 {renderConstraints()}
