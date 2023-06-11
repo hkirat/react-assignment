@@ -1,0 +1,46 @@
+.ps-container {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+
+.ps-question {
+  display: flex;
+  flex-direction: column;
+  margin-right: 200px;
+  padding: 30px;
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+.ps-title {
+  font-size: x-large;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.ps-description {
+  font-size: larger;
+  margin-top: 50px;
+}
+
+.ps-input {
+  height: 400px;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.ps-code {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.code-submit {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100px;
+  align-self: center;
+  font-size: large;
+}
