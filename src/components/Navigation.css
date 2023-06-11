@@ -1,0 +1,29 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: aliceblue;
+}
+
+.nav-logo {
+  height: 30px;
+  width: auto;
+  margin-left: 200px;
+  margin-right: 80px;
+}
+
+.nav-inner-container {
+  display: flex;
+  flex-direction: row;
+  font-size: larger;
+}
+
+.item {
+  margin-right: 20px;
+}
+
+#nav-link {
+  text-decoration: none;
+  color: black;
+}
