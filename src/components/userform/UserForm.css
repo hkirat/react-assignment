@@ -1,0 +1,51 @@
+button {
+  width: 10rem;
+  font-size: 1.2rem;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justfiy-content: center;
+  width: 100%;
+}
+
+label {
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+}
+
+input {
+  width: 14rem;
+  font-size: 1.2rem;
+}
+
+.body {
+  height: 720px;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form-box {
+  align-items: center;
+  border-color: black;
+  border-radius: 2rem;
+  border-style: solid;
+  border-width: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+  width: 30rem;
+  height: 20rem;
+}
+
+.form-type {
+  text-transform: capitalize;
+}

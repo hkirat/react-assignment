@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+}
+
+.half {
+  width: 50%
+}
+
+.code-area {
+  display: ;
+  width: 90%;
+  height: 90%;
+  overflow: scroll;
+}
+
+

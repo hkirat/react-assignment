@@ -1,0 +1,29 @@
+.blog {
+  background-color: var(--secondary);
+  border-style: solid solid none solid;
+  border-width: 5px;
+  display: flex;
+  height: 7rem;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+  box-shadow: 10px 10px 8px #888888;
+}
+.blog:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+.blog:last-child {
+  border-style: solid;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.blogs {
+  margin-top: 4rem;
+  margin-bottom: 7rem;
+  
+}
+
+.main {
+  width: 100%;
+}
+
