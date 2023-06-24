@@ -32,28 +32,56 @@ function App() {
      */
 
     return (
+    <Router>
     <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
+       <Route exact path="/login" component={LoginPage}/>
+       <Route exact path="/signup" component={SignupPage}/>
+       <Route exact path="/problemsset/all" component={AllProblemsPage}/>
+       <Route exact path="/problems/:problems_slug" component={SingleProblemPage}/>
     </div>
-  )
+    </Router>
+  );
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
+function LoginPage() {
+  return <div>Login Page</div>;
 }
-export default App
+
+function SignupPage() {
+  return <div>Signup Page</div>;
+}
+
+function AllProblemsPage() {
+  return (
+    <div>
+      <h1>All Problems</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Acceptance</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          {problems.map((problem, index) => (
+            <tr key={index}>
+              <td>
+                <Link to={`/problems/${encodeURIComponent(problem.title)}`}>{problem.title}</Link>
+              </td>
+              <td>{problem.acceptance}</td>
+              <td>{problem.difficulty}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function SingleProblemPage() {
+  return <div>Single Problem Page</div>;
+}
+
+export default App;
+
