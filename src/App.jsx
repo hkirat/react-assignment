@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Problems from "./pages/Problems";
 import Problem from "./components/Problem";
+import Header from "./components/Header";
 
 function App() {
   /* Add routing here, routes look like -
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route
           path="/"
