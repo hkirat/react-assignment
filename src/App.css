@@ -35,7 +35,7 @@ section h1 {
 
 section button {
   margin: 0 10px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 button {
@@ -61,4 +61,43 @@ button:active {
 
 .home__img {
   width: 400px;
+}
+
+
+.login{
+  align-items: center;
+  background-color: white;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-height: 400px;
+  max-width: 350px;
+  height: 98%;
+  width: 98%;
+}
+
+.login form{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  row-gap: 20px;
+}
+
+.login p{
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login span{
+  color: rgb(67, 140, 249);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input{
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 8px;
+  padding: 12px 20px;
 }
