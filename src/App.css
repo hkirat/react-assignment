@@ -64,7 +64,7 @@ button:active {
 }
 
 
-.login{
+.login, .signup{
   align-items: center;
   background-color: white;
   border-radius: 14px;
@@ -77,19 +77,24 @@ button:active {
   width: 98%;
 }
 
-.login form{
+.signup{
+  max-height: 440px;
+  max-width: 360px;
+}
+
+.login form, .signup form {
   display: flex;
   flex-direction: column;
   width: 75%;
   row-gap: 20px;
 }
 
-.login p{
+.login p, .signup p {
   font-size: 14px;
   text-decoration: none;
 }
 
-.login span{
+.login span, .signup span {
   color: rgb(67, 140, 249);
   cursor: pointer;
   font-weight: bold;
