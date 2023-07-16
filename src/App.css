@@ -19,3 +19,46 @@ nav {
   justify-content: center;
   padding: 20px 0;
 }
+
+
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 72px);
+}
+
+section h1 {
+  margin-top: 10px;
+}
+
+section button {
+  margin: 0 10px;
+  margin-top: 40px;
+}
+
+button {
+  border: none;
+  background-color: rgb(67, 140, 249);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  padding: 10px 24px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+.home__img {
+  width: 400px;
+}
