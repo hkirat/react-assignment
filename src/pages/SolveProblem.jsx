@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import Submission from "../components/Submission";
 
 // {
 //     "id": 1432,
@@ -31,7 +32,6 @@ function SolveProblem() {
     getProblem();
   }, []);
 
-  
   async function handleSubmit() {
     const textarea = document.querySelector(".problem__input textarea");
 
@@ -61,26 +61,29 @@ function SolveProblem() {
 
   return (
     <section className="SolveProblem">
-      <div className="problem__statement">
-        <Link to="/problems/all" className="goBack">
-          {"<"} Problems
-        </Link>
-        <div className="problem__head">
-          <p>
-            {problem.id}. {problem.title}
-          </p>
-          <p>{problem.difficulty}</p>
+      <div className="problem__details">
+        <div className="problem__statement">
+          <Link to="/problems/all" className="goBack">
+            {"<"} Problems
+          </Link>
+          <div className="problem__head">
+            <p>
+              {problem.id}. {problem.title}
+            </p>
+            <p>{problem.difficulty}</p>
+          </div>
+          <p className="problem__description">{problem.description}</p>
+          <div className="testcases">
+            <p>Testcases</p>
+            {problem.testCases?.map((testcase, i) => (
+              <div className="testcase" key={i}>
+                <p>Input: {testcase.input}</p>
+                <p>Output: {testcase.output}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <p className="problem__description">{problem.description}</p>
-        <div className="testcases">
-          <p>Testcases</p>
-          {problem.testCases?.map((testcase, i) => (
-            <div className="testcase" key={i}>
-              <p>Input: {testcase.input}</p>
-              <p>Output: {testcase.output}</p>
-            </div>
-          ))}
-        </div>
+        <Submission id={id} />
       </div>
       <div className="problem__input">
         <textarea placeholder="Enter the code"></textarea>

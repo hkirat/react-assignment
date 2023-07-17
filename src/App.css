@@ -160,15 +160,24 @@ input{
   text-decoration: none;
 }
 
-.problem__statement, .problem__input{
+.problem__details{
+  display: flex;
+  flex-direction: column;
+}
+
+.problem__details,
+.problem__input {
   flex: 1;
   height: 80%;
 }
 
-.problem__statement{
+.submissions,
+.problem__statement {
+  flex: 1;
   background-color: rgb(250, 250, 250);
   border-radius: 8px;
   padding: 20px;
+  overflow: auto;
 }
 
 .problem__head{
@@ -209,4 +218,21 @@ input{
   flex: 1;
   padding: 10px;
   width: 100%;
+}
+
+
+.submissions {
+  margin-top: 20px;
+}
+
+.submissions>p {
+  font-weight: bold;
+}
+
+.submission {
+  background-color: white;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 12px 18px;
+  margin: 10px 0;
 }
