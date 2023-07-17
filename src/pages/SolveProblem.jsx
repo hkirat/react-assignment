@@ -31,6 +31,34 @@ function SolveProblem() {
     getProblem();
   }, []);
 
+  
+  async function handleSubmit() {
+    const textarea = document.querySelector(".problem__input textarea");
+
+    if (textarea.value) {
+      const code = {
+        problemId: id,
+        language: "C++",
+        code: textarea.value,
+      };
+      const response = await fetch(
+        `http://127.0.0.1:3001/questions?problemId=${id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            token: localStorage.getItem("token"),
+          },
+          body: JSON.stringify(code),
+        }
+      );
+      const json = await response.json();
+      alert(json.message);
+    } else {
+      alert("Please enter the code");
+    }
+  }
+
   return (
     <section className="SolveProblem">
       <div className="problem__statement">
@@ -56,7 +84,7 @@ function SolveProblem() {
       </div>
       <div className="problem__input">
         <textarea placeholder="Enter the code"></textarea>
-        <button>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </div>
     </section>
   );
