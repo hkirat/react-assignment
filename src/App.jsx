@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Problems from "./pages/Problems";
-import Problem from "./components/Problem";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import SolveProblem from "./pages/SolveProblem";
 
 function App() {
   /* Add routing here, routes look like -
@@ -22,7 +22,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
         <Route path="problems/all" element={<Problems />} />
-        <Route path="problems/:id" element={<Problem />} />
+        <Route path="problems/:id" element={<SolveProblem />} />
       </Routes>
     </BrowserRouter>
   );

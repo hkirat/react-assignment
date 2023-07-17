@@ -108,6 +108,14 @@ input{
 }
 
 
+.problemLink{
+  color: black;
+  text-decoration: none;
+  max-width: 800px;
+  width: 80%;
+  margin-bottom: 16px;
+}
+
 .problem {
   align-items: center;
   background-color: white;
@@ -116,11 +124,8 @@ input{
   display: flex;
   font-size: 15px;
   justify-content: space-between;
-  max-width: 800px;
-  width: 80%;
   padding: 18px 40px;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 16px;
 }
 
 .problem:hover {
@@ -138,4 +143,70 @@ input{
 .acceptance {
   flex: 1;
   text-align: right;
+}
+
+
+.SolveProblem{
+  background-color: white;
+  column-gap: 5%;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 8%;
+}
+
+.goBack{
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.problem__statement, .problem__input{
+  flex: 1;
+  height: 80%;
+}
+
+.problem__statement{
+  background-color: rgb(250, 250, 250);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.problem__head{
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.problem__description{
+  margin: 20px 0;
+}
+
+.testcases > p{
+  font-weight: bold;
+}
+
+.testcase{
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.testcase > p{
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.problem__input{
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem__input textarea{
+  border-radius: 8px;
+  flex: 1;
+  padding: 10px;
+  width: 100%;
 }
