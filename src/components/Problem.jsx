@@ -1,4 +1,4 @@
-function Problem({ title, difficulty, acceptance }) {
+function Problem({ id, title, difficulty, acceptance }) {
   let color = "";
 
   if (difficulty === "Medium") {
@@ -11,7 +11,7 @@ function Problem({ title, difficulty, acceptance }) {
 
   return (
     <div className="problem">
-      <p className="title">{title}</p>
+      <p className="title">{id}. {title}</p>
       <p className="difficulty" style={{ color: color }}>
         {difficulty}
       </p>

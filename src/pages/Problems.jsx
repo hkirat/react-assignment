@@ -1,37 +1,32 @@
 import { Link } from "react-router-dom";
 import Problem from "../components/Problem";
+import { useEffect, useState } from "react";
 
-/*
- * Temporary problems array schema
- */
-const problems = [
-  { 
-    id: 201,
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%",
-  },
-  { 
-    id: 202,
-    title: "202. Happy Number",
-    difficulty: "Easy",
-    acceptance: "54.9%",
-  },
-  { 
-    id: 203,
-    title: "203. Remove Linked List Elements",
-    difficulty: "Hard",
-    acceptance: "42%",
-  },
-];
 
 function Problems() {
+  const [problems, setProblems] = useState([]);
+  
+  useEffect(() => {
+    async function getProblemSet(){
+      const response = await fetch("http://127.0.0.1:3001/questions");
+      const problemSet = await response.json();
+
+      console.log(problemSet);
+      setProblems(problemSet.questions);
+    }
+
+    getProblemSet();
+  }, [])
+
   return (
     <section>
       {problems.map((problem) => (
-        <Link to={`/problems/${problem.id}`} className="problemLink">
+        <Link
+          to={`/problems/${problem.id}`}
+          className="problemLink"
+          key={problem.id}>
           <Problem
-            key={problem.id}
+            id={problem.id}
             title={problem.title}
             difficulty={problem.difficulty}
             acceptance={problem.acceptance}
