@@ -1,42 +1,238 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: rgb(240, 240, 240);
+  font-family: sans-serif;
+}
+
+
+nav {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  column-gap: 12px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 72px);
+}
+
+section h1 {
+  margin-top: 10px;
+}
+
+section button {
+  margin: 0 10px;
+  margin-top: 20px;
+}
+
+button {
+  border: none;
+  background-color: rgb(67, 140, 249);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 15px;
   text-align: center;
+  letter-spacing: 0.5px;
+  padding: 10px 24px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button:hover {
+  opacity: 0.9;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:active {
+  opacity: 0.8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.home__img {
+  width: 400px;
 }
 
-.card {
-  padding: 2em;
+
+.login, .signup{
+  align-items: center;
+  background-color: white;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-height: 400px;
+  max-width: 350px;
+  height: 98%;
+  width: 98%;
 }
 
-.read-the-docs {
-  color: #888;
+.signup{
+  max-height: 440px;
+  max-width: 360px;
+}
+
+.login form, .signup form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  row-gap: 20px;
+}
+
+.login p, .signup p {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login span, .signup span {
+  color: rgb(67, 140, 249);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input{
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 8px;
+  padding: 12px 20px;
+}
+
+
+.problemLink{
+  color: black;
+  text-decoration: none;
+  max-width: 800px;
+  width: 80%;
+  margin-bottom: 16px;
+}
+
+.problem {
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  padding: 18px 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.problem:hover {
+  box-shadow: 0 0 12px rgb(220, 220, 220);
+}
+
+.title {
+  flex: 5;
+}
+
+.difficulty {
+  flex: 2;
+}
+
+.acceptance {
+  flex: 1;
+  text-align: right;
+}
+
+
+.SolveProblem{
+  background-color: white;
+  column-gap: 5%;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 8%;
+}
+
+.goBack{
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.problem__details{
+  display: flex;
+  flex-direction: column;
+}
+
+.problem__details,
+.problem__input {
+  flex: 1;
+  height: 80%;
+}
+
+.submissions,
+.problem__statement {
+  flex: 1;
+  background-color: rgb(250, 250, 250);
+  border-radius: 8px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.problem__head{
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.problem__description{
+  margin: 20px 0;
+}
+
+.testcases > p{
+  font-weight: bold;
+}
+
+.testcase{
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.testcase > p{
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.problem__input{
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem__input textarea{
+  border-radius: 8px;
+  flex: 1;
+  padding: 10px;
+  width: 100%;
+}
+
+
+.submissions {
+  margin-top: 20px;
+}
+
+.submissions>p {
+  font-weight: bold;
+}
+
+.submission {
+  background-color: white;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 12px 18px;
+  margin: 10px 0;
 }
