@@ -106,3 +106,36 @@ input{
   border-radius: 8px;
   padding: 12px 20px;
 }
+
+
+.problem {
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 80%;
+  padding: 18px 40px;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 16px;
+}
+
+.problem:hover {
+  box-shadow: 0 0 12px rgb(220, 220, 220);
+}
+
+.title {
+  flex: 5;
+}
+
+.difficulty {
+  flex: 2;
+}
+
+.acceptance {
+  flex: 1;
+  text-align: right;
+}

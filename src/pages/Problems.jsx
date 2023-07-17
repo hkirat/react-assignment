@@ -1,3 +1,5 @@
+import Problem from "../components/Problem";
+
 /*
  * Temporary problems array schema
  */
@@ -6,11 +8,6 @@ const problems = [
     title: "201. Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "42%",
-  },
-  {
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%",
   },
   {
     title: "202. Happy Number",
@@ -25,7 +22,17 @@ const problems = [
 ];
 
 function Problems() {
-  return <div>Problems</div>;
+  return (
+    <section>
+      {problems.map((problem) => (
+        <Problem
+          title={problem.title}
+          difficulty={problem.difficulty}
+          acceptance={problem.acceptance}
+        />
+      ))}
+    </section>
+  );
 }
 
 // A demo component
