@@ -1,42 +1,53 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: rgb(40, 40, 40);
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.blog-card {
+  border: "1px solid grey";
+  padding: "10px";
+  margin: "10px";
+  background-color: rgb(40, 40, 40);
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  table-layout: fixed;
+}
+
+td {
+  padding: 15px;
+  margin: 15px;
   text-align: center;
+  width: calc(100% / 3);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+tbody tr:nth-child(even) {
+  background-color: rgb(40, 40, 40);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+thead {
+  background-color: rgb(42, 42, 42);
+  color: white;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+th {
+  padding: 10px;
+  text-align: center;
 }
