@@ -3,6 +3,7 @@ import "./App.css";
 
 import Home from "./routes/home";
 import ProblemSet from "./routes/problemset";
+import Problem from "./routes/problem";
 import Login from "./routes/login";
 import SignUp from "./routes/signup";
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/problemset" element={<ProblemSet />} />
+          <Route path="/problem/:id" element={<Problem />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*">"404 Not Found"</Route>

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import Problem from "./problem";
-import nanoid from 'nanoid'
+import { nanoid } from 'nanoid'
 
 /*
  * Temporary problems array schema
@@ -72,7 +71,7 @@ function ProblemSet() {
                     </tr>
                 </thead>
                 <tbody>
-                    { problemStatements }
+                  {problemStatements}
                 </tbody>
             </table>
         </div>
