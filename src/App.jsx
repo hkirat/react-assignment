@@ -21,7 +21,6 @@ const problems = [{
         acceptance: "42%"
     }];
 
-
 function App() {
 
     /* Add routing here, routes look like -
