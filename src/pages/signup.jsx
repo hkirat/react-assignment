@@ -1,17 +1,30 @@
 import React, { useState } from 'react';
 
 const Signup = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     // Implement user registration logic here
-    console.log('First Name:', firstName);
-    console.log('Last Name:', lastName);
+    console.log('User Name:', userName);
     console.log('Email:', email);
     console.log('Password:', password);
+
+    const response = await fetch('http://localhost:3000/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userName,
+        email,
+        password,
+      }),
+    });
+
+    const json = await response.json();
+    console.log(json);
   };
 
   return (
@@ -19,21 +32,12 @@ const Signup = () => {
       <h2>Sign Up</h2>
       <form>
         <div className="form-group">
-          <label>First Name:</label>
+          <label>User Name:</label>
           <input
             type="text"
-            placeholder="Enter your first name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Last Name:</label>
-          <input
-            type="text"
-            placeholder="Enter your last name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            placeholder="Enter your name"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
           />
         </div>
         <div className="form-group">

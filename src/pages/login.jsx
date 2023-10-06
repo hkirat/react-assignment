@@ -4,10 +4,22 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     // Implement authentication logic here
     console.log('Email:', email);
     console.log('Password:', password);
+
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const json = await response.json();
+    localStorage.setItem('token', json.token);
+    console.log(json);
   };
 
   return (
