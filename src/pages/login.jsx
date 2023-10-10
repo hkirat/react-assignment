@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const { onLogin, problemId } = props;
 
   const handleLogin = async () => {
     // Implement authentication logic here
@@ -18,8 +21,17 @@ const Login = () => {
     });
 
     const json = await response.json();
-    localStorage.setItem('token', json.token);
-    console.log(json);
+    const token = json.token;
+    onLogin(token);
+    // console.log(json);
+    const url = `/problem/:${problemId}`;
+    if (problemId) {
+      navigate(url);
+    } else {
+      // Handle the case where problemId is null or undefined
+      // Redirect to a default route or handle accordingly
+      navigate('/problems'); // Redirect to /problems if problemId is not available
+    }
   };
 
   return (
@@ -44,7 +56,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="button" onClick={handleLogin}>
+        <button type="button" onClick={handleLogin} className="btn btn-primary">
           Login
         </button>
       </form>
