@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isWrong, setIsWrong] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignup = async () => {
     // Implement user registration logic here
@@ -23,50 +27,64 @@ const Signup = () => {
       }),
     });
 
-    const json = await response.json();
-    console.log(json);
+    if (response.ok) {
+      const json = await response.json();
+      console.log(json);
+      navigate('/signupsuccess');
+    } else {
+      const json = await response.json();
+      const errorResponse = json.message;
+      setErrorMessage(errorResponse);
+      setIsWrong(true);
+    }
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form>
-        <div className="form-group">
-          <label>User Name:</label>
-          <input
-            type="text"
-            placeholder="Enter your name"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
+    <>
+      {isWrong ? (
+        <h1>{errorMessage}</h1>
+      ) : (
+        <div className="signup-container">
+          <h2>Sign Up</h2>
+          <form>
+            <div className="form-group">
+              <label>User Name:</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <button
+              type="button"
+              onClick={handleSignup}
+              className="btn btn-primary"
+            >
+              Sign Up
+            </button>
+          </form>
         </div>
-        <div className="form-group">
-          <label>Email:</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Password:</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button
-          type="button"
-          onClick={handleSignup}
-          className="btn btn-primary"
-        >
-          Sign Up
-        </button>
-      </form>
-    </div>
+      )}
+    </>
   );
 };
 

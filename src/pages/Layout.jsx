@@ -2,7 +2,8 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import logo from './../assets/logo/logo.jpg';
 
-const Layout = () => {
+const Layout = (props) => {
+  const { isAuthenticated, onLogout } = props;
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,18 +57,28 @@ const Layout = () => {
                 </Link>
               </li>
             </ul>
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  <button className="btn btn-success">Login</button>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/signup">
-                  <button className="btn btn-success">Signup</button>
-                </Link>
-              </li>
-            </ul>
+            {isAuthenticated ? (
+              <ul className="navbar-nav">
+                <li className="nav-item" to="/logout">
+                  <button className="btn btn-success" onClick={onLogout}>
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            ) : (
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    <button className="btn btn-success">Login</button>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signup">
+                    <button className="btn btn-success">Signup</button>
+                  </Link>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       </nav>

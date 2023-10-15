@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Problems = (props) => {
   const [problems, setProblems] = useState([]);
-  const [problemColor, setProblemColor] = useState();
   const { setProblemId } = props;
 
   const init = async () => {
