@@ -1,59 +1,77 @@
-/*
- * Temporary problems array schema
- */
-const problems = [{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "42%"
-},{
-    title: "201. Bitwise AND of Numbers Range",
-    difficulty: "Medium",
-    acceptance: "412%"
-},
-    {
-        title: "202. Happy Number",
-        difficulty: "Easy",
-        acceptance: "54.9%"
-    },
-    {
-        title: "203. Remove Linked List Elements",
-        difficulty: "Hard",
-        acceptance: "42%"
-    }];
-
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
+import Blogs from './pages/Blogs';
+import Contact from './pages/Contact';
+import Layout from './pages/Layout';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import SignupSuccess from './pages/SignupSucess';
+import Problems from './pages/Problems';
+import ProblemDetails from './pages/ProblemDetails';
+import NoPage from './pages/noPage';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [problemId, setProblemId] = useState(null);
+  const [userId, setUserId] = useState(null);
 
-    /* Add routing here, routes look like -
-       /login - Login page
-       /signup - Signup page
-       /problemset/all/ - All problems (see problems array above)
-       /problems/:problem_slug - A single problem page
-     */
+  // Function to simulate a login
+  const login = (token) => {
+    localStorage.setItem('Token', token);
 
-    return (
-    <div>
-        Finish the assignment! Look at the comments in App.jsx as a starting point
-    </div>
-  )
+    setIsAuthenticated(true);
+  };
+
+  // Function to simulate a logout
+  const logout = () => {
+    localStorage.removeItem('Token');
+
+    setIsAuthenticated(false);
+  };
+
+  // A function to handle authentication-based redirection
+  const requireAuth = (component) => {
+    return isAuthenticated ? component : <Navigate to="/login" />;
+  };
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout isAuthenticated={isAuthenticated} onLogout={logout} />
+          }
+        >
+          <Route index element={<Home />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signupsuccess" element={<SignupSuccess />} />
+          <Route
+            path="/login"
+            element={
+              <Login
+                onLogin={login}
+                setUserId={setUserId}
+                problemId={problemId}
+              />
+            }
+          />
+          <Route
+            path="/problems"
+            element={<Problems setProblemId={setProblemId} />}
+          />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+        <Route
+          path="/problem/:pid/"
+          element={requireAuth(<ProblemDetails userId={userId} />)} // Protect this route with requireAuth
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-// A demo component
-function ProblemStatement(props) {
-    const title = props.title;
-    const acceptance = props.acceptance;
-    const difficulty = props.difficulty;
-
-    return <tr>
-        <td>
-            {title}
-        </td>
-        <td>
-            {acceptance}
-        </td>
-        <td>
-            {difficulty}
-        </td>
-    </tr>
-}
-export default App
+export default App;
