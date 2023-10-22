@@ -1,0 +1,51 @@
+.detailspageleftsection{
+    background-color: rgb(243, 248, 248);
+    border: 2px solid black;
+}
+
+.shareimg{
+    height: 20px;
+}
+.sharebtns{
+    width: 100%;
+    /* text-align: end; */
+    margin-top: 50px;
+}
+
+.languagedropdown{
+    margin-left: 4px;
+    background-color: rgb(243, 248, 248);
+    border-radius: 25px;
+    padding:3px;
+    font-size: 12px;
+}
+
+.textbox{
+    width: 100%;
+    background-color: rgb(41, 42, 92);
+    color: rgb(241, 161, 161);
+    min-height:450px ;
+    padding: 8px;
+}
+
+
+.btnsections{
+    margin: 10px;
+
+}
+
+
+.submissionbtn{
+    margin: 05px;
+    border-radius: 12px;
+}
+
+.difficultydiv{
+    /* margin-right: 0px; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.difficulty{
+    text-align: center;
+}

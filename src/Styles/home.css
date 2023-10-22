@@ -1,0 +1,149 @@
+.accountlink{
+    font-size: 15px;
+}
+
+.pageheading{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.questionswindow{
+    background-color: rgb(243, 248, 248);
+/* height: 50px; */
+}
+
+.userwindow{
+    background-color: rgb(243, 248, 248);
+    margin-left: auto;
+}
+
+.userimg{
+    height:400px ;  
+    text-align: center;
+    
+}
+
+.performancephoto{
+    width:-webkit-fill-available;
+}
+
+.adds{
+    /* text-align: center; */
+    /* border: none; */
+    /* background-color: aqua; */
+    border-radius: 10px;
+    /* margin: 10px; */
+    font-size: 10px;
+    
+    
+}
+.addbtndiv{
+    display: flex;
+}
+.addbtn{
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(240, 233, 233);
+    justify-content: start;
+    font-size: 10px;
+}
+
+.addsimg{
+    max-width:270px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .Questionssection{
+/* background-color: gainsboro; */
+
+
+
+.dificultyslectionbtndiv{
+    padding-left: 20px;
+
+}
+.dificultybtns{
+    margin-left: 15px;
+    border-radius: 25px;
+    width: 100px;
+    color: rgb(0, 0, 0);
+    border: none;
+
+}
+.searchbar{
+    width: 500px;
+}
+
+.dropdown{
+    margin-left:35px ;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+table,th,td{
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    padding: 20px;
+    text-align: center;
+    
+}
+th,td{
+   
+    background-color: gainsboro;
+}
+tr{
+    cursor:pointer;
+}
+
+.paginationbtndiv{
+    width: 100%;
+    text-align: center;
+}
+
+.paginationbtn{
+    border-radius: 10px;
+}
+
+.btn-red{
+background-color: red;
+}
+.btn-yellow{
+background-color: yellow;
+
+}
+
+.btn-green{
+    background-color: rgb(81, 255, 0);
+}
+
+.circlegreen{
+   
+    background-color: rgb(81, 255, 0);
+}
+.circleyellow{
+   
+    background-color: rgb(255, 255, 0);
+}
+.circlered{
+ 
+    background-color: rgb(255, 0, 0);
+}
+.circle{
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+ /* body {
+    background-image: url('https://pixabay.com/link/?ua=cd3%3Dimage%26cd7%3Den%253Ahtml%253AIND%26ec%3Dapi_ad%26ea%3Dnavigate%26el%3Dgetty%26tid%3DUA-20223345-1%26dr%3Dhttps%253A%252F%252Fin.search.yahoo.com%252F&sp=%2524%3Dadvertisement_clicked%26media_type%3Dimage%26user_action%3Dnavigate%26ad_partner%3Dgetty%26ad_content%3Dapi_ad&next=https%3A%2F%2Fwww.istockphoto.com%2Fphoto%2Fprogramming-source-code-abstract-background-gm1047259374-280143656%3Futm_source%3Dpixabay%26utm_medium%3Daffiliate%26utm_campaign%3DSRP_image_sponsored%26utm_content%3Dhttps%253A%252F%252Fpixabay.com%252Fimages%252Fsearch%252Fhtml%252F%26utm_term%3Dhtml&hash=a5aab387add5e12778a94f7383895275c641dad6&=');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  } */

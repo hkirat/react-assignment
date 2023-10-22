@@ -1,0 +1,138 @@
+.logintab{
+    text-align: center;
+    margin-top: 50px;
+
+}
+.logincomponent{
+    background-color: rgb(255, 255, 255);
+}
+
+/* .loginheading{ */
+    /* border: none; */
+
+/* } */
+
+/* .react-tabs__tab{
+    /* border-bottom: 2px; */
+    /* border: none; */
+    /* background-color: aqua; */
+    /* padding: 10px;
+    margin: 05px; */
+    /* border-bottom: 2px important; */
+/* } */ 
+
+
+/* .logintabpanel{
+    text-align: center;
+    border:none;
+    /* border-top:2px solid black ; */
+    /* border:50px; */
+/* } */
+
+
+.react-tabs__tab--selected{
+    border-bottom: solid 5px  rgb(114, 200, 244);
+    background: none;
+}
+
+.react-tabs__tab {
+    /* font-family: Poppins; */
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    /* text-align: left; */
+    /* color: #192f60; */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border-bottom: #ce0505 ; */
+
+}
+
+.divs {
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 5px;
+
+    
+}
+
+.maindiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+
+
+.logincomponent{
+    text-align: center;
+    padding: 15px;
+    /* border-radius: 10px; */
+}
+
+.Signupcomponent{
+    text-align: center;
+    padding: 15px; 
+    background-color: rgb(255, 255, 255);
+
+
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(114, 200, 244);
+    /* color: rgb(153, 255, 0); */
+    color: rgb(41, 44, 36);
+    
+    font-size: 25px;
+    font-weight: 700;
+    /* margin-bottom: 3px; */
+    
+}
+.exl{
+    /* font-size: 40px; */
+    font-weight: 700;
+    color: rgb(153, 255, 0);
+    background: rgb(243, 132, 132);
+    border-radius: 5px;
+
+}
+
+.exl2{
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(153, 255, 0);
+    background: rgb(243, 132, 132);
+    border-radius: 8px;
+
+}
+.exl3{
+    font-size: 15px;
+    font-weight: 800;
+    color: rgb(153, 255, 0);
+    background: rgb(243, 132, 132);
+    border-radius: 8px;
+
+}
+
+
+.logoimg{
+    height: 35px;
+    margin-bottom: 5px;
+}
+.userimg{
+    height: 10px;
+}
+
+.submitbuttonsignup{
+    padding: 5px;
+    border: 2px solid black;
+    cursor:progress
+}
