@@ -1,0 +1,243 @@
+1. Two Sum
+Problem:
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+Example:
+Input: nums = [3, 2, 4], target = 6
+Output: [1, 2]
+Explanation: nums[1] + nums[2] = 2 + 4 = 6.
+
+Additional Test Cases:
+Input: nums = [1, 2, 3, 4, 5], target = 9
+Output: [3, 4]
+2. Three Sum
+Problem:
+Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+
+Example:
+Input: nums = [-1, 0, 1, 2, -1, -4]
+Output: [[-1, -1, 2], [-1, 0, 1]]
+Explanation: The solution set must not contain duplicate triplets.
+
+Additional Test Cases:
+Input: nums = [0, 0, 0], target = 0
+Output: [[0, 0, 0]]
+3. Subarray Sum Equals K
+Problem:
+Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
+
+Example:
+Input: nums = [1, 1, 1], k = 2
+Output: 2
+Explanation: Subarrays: [1, 1], [1, 1].
+
+Additional Test Cases:
+Input: nums = [1, 2, 3, 4], k = 5
+Output: 2
+4. Maximum Subarray
+Problem:
+Find the contiguous subarray with the largest sum and return its sum.
+
+Example:
+Input: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+Output: 6
+Explanation: The contiguous subarray [4,-1,2,1] has the largest sum = 6.
+
+Additional Test Cases:
+Input: nums = [1, 2, -1, 2, 3, -2, 1], k = 5
+Output: 8
+5. Minimum Size Subarray Sum
+Problem:
+Given an array of positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
+
+Example:
+Input: nums = [2, 3, 1, 2, 4, 3], s = 7
+Output: 2
+Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+
+Additional Test Cases:
+Input: nums = [1, 4, 4], s = 5
+Output: 2
+These examples cover a variety of sum-related problems along with additional test cases for each problem statement.
+
+
+
+
+
+
+1. Remove Duplicates from Sorted Array
+Problem:
+Given a sorted array, remove the duplicates in-place such that each element appears only once and returns the new length.
+
+Example:
+Input: nums = [1, 1, 2]
+Output: Length = 2, nums = [1, 2]
+Explanation: After removing duplicates, the array contains elements 1 and 2.
+
+Additional Test Cases:
+Input: nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+Output: Length = 5, nums = [0, 1, 2, 3, 4]
+2. Rotate Array
+Problem:
+Rotate an array to the right by k steps, where k is non-negative.
+
+Example:
+Input: nums = [1, 2, 3, 4, 5, 6, 7], k = 3
+Output: [5, 6, 7, 1, 2, 3, 4]
+Explanation: After rotating the array to the right by 3 steps, the new array is [5, 6, 7, 1, 2, 3, 4].
+
+Additional Test Cases:
+Input: nums = [-1, -100, 3, 99], k = 2
+Output: [3, 99, -1, -100]
+3. Contains Duplicate
+Problem:
+Given an array of integers, find if the array contains any duplicates.
+
+Example:
+Input: nums = [1, 2, 3, 1]
+Output: true
+Explanation: The array contains duplicate element 1.
+
+Additional Test Cases:
+Input: nums = [3, 4, 5, 6]
+Output: false
+4. Missing Number
+Problem:
+Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
+
+Example:
+Input: nums = [3, 0, 1]
+Output: 2
+Explanation: The missing number is 2.
+
+Additional Test Cases:
+Input: nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+Output: 8
+5. Best Time to Buy and Sell Stock
+Problem:
+Say you have an array for which the ith element is the price of a given stock on day i. If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+
+Example:
+Input: prices = [7, 1, 5, 3, 6, 4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5.
+
+Additional Test Cases:
+Input: prices = [7, 6, 4, 3, 1]
+Output: 0
+
+
+
+
+
+
+
+switch//////////////////////////////////////////////////////////
+
+
+1. Switch Statements
+Problem:
+Given a variable day representing the day of the week (1 for Monday, 2 for Tuesday, ..., 7 for Sunday), write a program using a switch statement to print the corresponding day name.
+
+Example:
+Input: day = 3
+Output: "Wednesday"
+Explanation: The input 3 corresponds to Wednesday.
+
+2. Calculator Using Switch
+Problem:
+Write a calculator program that takes two numbers and an operator (+, -, *, /) as input and performs the corresponding operation using a switch statement.
+
+Example:
+Input: num1 = 5, num2 = 3, operator = "+"
+Output: 8
+Explanation: The program performs addition because the operator is +.
+
+3. Grade Calculator
+Problem:
+Given a student's score as input, calculate and print the corresponding grade using a switch statement based on the following criteria:
+
+90 and above: A
+80 - 89: B
+70 - 79: C
+60 - 69: D
+Below 60: F
+Example:
+Input: score = 87
+Output: "B"
+Explanation: The score 87 falls within the range of B grades.
+
+4. Month Name
+Problem:
+Given a number representing a month (1 for January, 2 for February, ..., 12 for December), write a program using a switch statement to print the corresponding month name.
+
+Example:
+Input: month = 9
+Output: "September"
+Explanation: The input 9 corresponds to September.
+
+5. Day Counter
+Problem:
+Given a month number and a year, calculate and print the number of days in that month. Consider leap years for February (29 days in a leap year, 28 days otherwise).
+
+Example:
+Input: month = 2, year = 2020
+Output: 29
+Explanation: February in the year 2020 is a leap year, so it has 29 days.
+
+
+///////////////////////////////////////////////////////////////
+
+
+
+
+
+
+Array Problems:
+Remove Duplicates from Sorted Array
+
+Difficulty: Easy
+Rotate Array
+
+Difficulty: Easy
+Contains Duplicate
+
+Difficulty: Easy
+Missing Number
+
+Difficulty: Easy
+Best Time to Buy and Sell Stock
+
+Difficulty: Easy
+Sum Problems:
+Two Sum
+
+Difficulty: Easy
+Three Sum
+
+Difficulty: Medium
+Subarray Sum Equals K
+
+Difficulty: Medium
+Maximum Subarray
+
+Difficulty: Easy
+Minimum Size Subarray Sum
+
+Difficulty: Medium
+Switch Statement Problems:
+Switch Statements
+
+Difficulty: Easy
+Calculator Using Switch
+
+Difficulty: Easy
+Grade Calculator
+
+Difficulty: Easy
+Month Name
+
+Difficulty: Easy
+Day Counter
+
+Difficulty: Easy

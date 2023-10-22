@@ -1,0 +1,269 @@
+[
+   
+        {
+            "question_title": "Remove Duplicates from Sorted Array",
+            "question": "Given a sorted array, remove the duplicates in-place such that each element appears only once and returns the new length.",
+            "examples": [
+                {
+                    "input": [1, 1, 2],
+                    "output": {"length": 2, "nums": [1, 2]}
+                },
+                {
+                    "input": [0, 0, 1, 1, 1, 2, 2, 3, 3, 4],
+                    "output": {"length": 5, "nums": [0, 1, 2, 3, 4]}
+                }
+            ],
+            "difficulty": "1",
+            "topic":"1",
+            "question_no":"5"
+        },
+        {
+            "question_title": "Rotate Array",
+            "question": "Rotate an array to the right by k steps, where k is non-negative.",
+            "examples": [
+                {
+                    "input": {"nums": [1, 2, 3, 4, 5, 6, 7], "k": 3},
+                    "output": [5, 6, 7, 1, 2, 3, 4]
+                },
+                {
+                    "input": {"nums": [-1, -100, 3, 99], "k": 2},
+                    "output": [3, 99, -1, -100]
+                }
+            ],
+            "difficulty": "1",
+            "topic":"1",
+            "question_no":"6"
+        },
+        {
+            "question_title": "Contains Duplicate",
+            "question": "Given an array of integers, find if the array contains any duplicates.",
+            "examples": [
+                {
+                    "input": [1, 2, 3, 1],
+                    "output": true
+                },
+                {
+                    "input": [3, 4, 5, 6],
+                    "output": false
+                }
+            ],
+            "difficulty": "1",
+            "topic":"1",
+            "question_no":"7"
+        },
+        {
+            "question_title": "Missing Number",
+            "question": "Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.",
+            "examples": [
+                {
+                    "input": [3, 0, 1],
+                    "output": 2
+                },
+                {
+                    "input": [9, 6, 4, 2, 3, 5, 7, 0, 1],
+                    "output": 8
+                }
+            ],
+            "difficulty": "1",
+            "topic":"1",
+            "question_no":"8"
+        },
+        {
+            "question_title": "Best Time to Buy and Sell Stock",
+            "question": "Say you have an array for which the ith element is the price of a given stock on day i. If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.",
+            "examples": [
+                {
+                    "input": [7, 1, 5, 3, 6, 4],
+                    "output": 5
+                },
+                {
+                    "input": [7, 6, 4, 3, 1],
+                    "output": 0
+                }
+            ],
+            "difficulty": "1",
+            "topic":"1",
+            "question_no":"9"
+        },
+    
+    
+        {
+            "question_title": "Two Sum",
+            "question": "Given an array of integers, return indices of the two numbers such that they add up to a specific target.",
+            "examples": [
+                {
+                    "input": [3, 2, 4],
+                    "target": 6,
+                    "output": [1, 2]
+                },
+                {
+                    "input": [1, 2, 3, 4, 5],
+                    "target": 9,
+                    "output": [3, 4]
+                }
+            ],
+            "difficulty": "1",
+            "topic":"3",
+            "question_no":"10"
+        },
+        {
+            "question_title": "Three Sum",
+            "question": "Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.",
+            "examples": [
+                {
+                    "input": [-1, 0, 1, 2, -1, -4],
+                    "output": [[-1, -1, 2], [-1, 0, 1]]
+                },
+                {
+                    "input": [0, 0, 0],
+                    "output": [[0, 0, 0]]
+                }
+            ],
+            "difficulty": "2",
+            "topic":"3",
+            "question_no":"11"
+        },
+        {
+            "question_title": "Subarray Sum Equals K",
+            "question": "Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.",
+            "examples": [
+                {
+                    "input": [1, 1, 1],
+                    "k": 2,
+                    "output": 2
+                },
+                {
+                    "input": [1, 2, 3, 4],
+                    "k": 5,
+                    "output": 2
+                }
+            ],
+            "difficulty": "2",
+            "topic":"3",
+            "question_no":"12"
+        },
+        {
+            "question_title": "Maximum Subarray",
+            "question": "Find the contiguous subarray with the largest sum and return its sum.",
+            "examples": [
+                {
+                    "input": [-2, 1, -3, 4, -1, 2, 1, -5, 4],
+                    "output": 6
+                },
+                {
+                    "input": [1, 2, -1, 2, 3, -2, 1],
+                    "output": 8
+                }
+            ],
+            "difficulty": "1",
+            "topic":"3",
+            "question_no":"13"
+        },
+        {
+            "question_title": "Minimum Size Subarray Sum",
+            "question": "Given an array of positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.",
+            "examples": [
+                {
+                    "input": [2, 3, 1, 2, 4, 3],
+                    "s": 7,
+                    "output": 2
+                },
+                {
+                    "input": [1, 4, 4],
+                    "s": 5,
+                    "output": 2
+                }
+            ],
+            "difficulty": "2",
+            "topic":"3",
+            "question_no":"14"
+        },
+    
+    
+        {
+            "question_title": "Switch Statements",
+            "question": "Given a variable `day` representing the day of the week (1 for Monday, 2 for Tuesday, ..., 7 for Sunday), write a program using a switch statement to print the corresponding day name.",
+            "examples": [
+                {
+                    "input": 3,
+                    "output": "Wednesday"
+                },
+                {
+                    "input": 6,
+                    "output": "Saturday"
+                }
+            ],
+            "difficulty": "1",
+            "topic":"2",
+            "question_no":"15"
+        },
+        {
+            "question_title": "Calculator Using Switch",
+            "question": "Write a calculator program that takes two numbers and an operator (+, -, *, /) as input and performs the corresponding operation using a switch statement.",
+            "examples": [
+                {
+                    "input": {"num1": 5, "num2": 3, "operator": "+"},
+                    "output": 8
+                },
+                {
+                    "input": {"num1": 10, "num2": 2, "operator": "*"},
+                    "output": 20
+                }
+            ],
+            "difficulty": "1",
+            "topic":"2",
+            "question_no":"16"
+        },
+        {
+            "question_title": "Grade Calculator",
+            "question": "Given a student's score as input, calculate and print the corresponding grade using a switch statement based on the following criteria: 90 and above: A, 80 - 89: B, 70 - 79: C, 60 - 69: D, Below 60: F.",
+            "examples": [
+                {
+                    "input": 87,
+                    "output": "B"
+                },
+                {
+                    "input": 45,
+                    "output": "F"
+                }
+            ],
+            "difficulty": "1",
+            "topic":"2",
+            "question_no":"17"
+        },
+        {
+            "question_title": "Month Name",
+            "question": "Given a number representing a month (1 for January, 2 for February, ..., 12 for December), write a program using a switch statement to print the corresponding month name.",
+            "examples": [
+                {
+                    "input": 9,
+                    "output": "September"
+                },
+                {
+                    "input": 12,
+                    "output": "December"
+                }
+            ],
+            "difficulty": "1",
+            "topic":"2",
+            "question_no":"18"
+        },
+        {
+            "question_title": "Day Counter",
+            "question": "Given a month number and a year, calculate and print the number of days in that month. Consider leap years for February (29 days in a leap year, 28 days otherwise).",
+            "examples": [
+                {
+                    "input": {"month": 2, "year": 2020},
+                    "output": 29
+                },
+                {
+                    "input": {"month": 7, "year": 2022},
+                    "output": 31
+                }
+            ],
+            "difficulty": "1",
+            "topic":"2",
+            "question_no":"19"
+        }
+    
+    ]
