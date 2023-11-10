@@ -1,0 +1,252 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+}
+
+.code {
+	height: 30rem;
+	width: 40rem;
+	background-color: rgb(250, 250, 250);
+	border-radius: 4px;
+	font-size: 16px;
+	font-family: "Courier New";
+	font-weight: bold;
+	resize: none;
+}
+
+.code:focus {
+	outline: 1px solid black;
+}
+
+.custom-tooltip {
+	position: relative;
+	cursor: pointer;
+	&::before {
+		content: attr(data-tooltip);
+		position: absolute;
+		font-family: "Segoe UI";
+		font-weight: 500;
+		background-color: rgba(121, 80, 242, 0.8);
+		color: #fff;
+		border-radius: 4px;
+		padding: 0.3rem 0.7rem;
+		font-size: 0.9rem;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease-in-out;
+		bottom: -0.33rem;
+		transform: translateX(-125%);
+	}
+	&:hover::before {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.form-container {
+	padding: 2.5rem;
+	background-color: #ffffff;
+	border: 1px solid rgba(98, 98, 98, 0.2);
+	border-radius: 2px;
+	/* box-shadow: inset<optional> shiftShadowRight shiftShadowDown blurRadius<optional> spreadRadius<optional> color<optional>
+	/* box-shadow: inset 0 0 5px rgba(98, 98, 98, 0.3); */
+	/* box-shadow: 0 0 10px rgba(121, 80, 242, 0.3); */
+	box-shadow: 0 0 10px rgba(98, 98, 98, 0.3);
+	/* transition: box-shadow 0.2s; */
+	/* Multiple box-shadows can be combined like the example below */
+	/* box-shadow: 5px 5px 0px rgba(121, 80, 242, 0.2),
+		-5px -5px 0px rgba(121, 80, 242, 0.2); */
+}
+
+.form-container:hover {
+	border: 1px solid rgba(121, 80, 242, 0.2);
+	/* border: none; */
+	box-shadow: 0 0 10px rgba(121, 80, 242, 0.3);
+}
+
+.horizontal-nav {
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.horizontal-nav a {
+	text-decoration: none;
+	margin: 1.2rem;
+	color: #777;
+}
+
+.horizontal-nav a:hover {
+	color: #222;
+}
+
+.horizontal-nav a.active {
+	color: #333;
+	padding: 1.2rem;
+	margin: 0;
+	border-bottom: 2px solid #888;
+}
+
+.input-text {
+	height: 2.7rem;
+	width: 23.85rem;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	font-size: 16px;
+	font-family: "Segoe UI";
+	font-weight: 500;
+	text-align: center;
+}
+
+.input-text:hover {
+	border: 1px solid #000000;
+}
+
+.input-text::placeholder {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1.05rem;
+	text-align: center;
+	color: #aaaaaa;
+}
+
+.problem-table {
+	width: 70%;
+	border-collapse: collapse;
+	box-shadow: 0 0 5px rgba(98, 98, 98, 0.3);
+}
+
+.problem-table:hover {
+	box-shadow: 0 0 5px rgba(121, 80, 242, 0.3);
+}
+
+.problem-table thead {
+	border: 1px solid #ddd;
+}
+
+.problem-table thead tr th {
+	padding: 0.5rem;
+	font-weight: 500;
+}
+
+.problem-table tbody tr {
+	cursor: pointer;
+}
+
+.problem-table tbody tr:hover {
+	box-shadow: 0 0 5px rgba(98, 98, 98, 0.3);
+}
+
+.problem-table td {
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+}
+
+.problem-table-easy-question {
+	color: rgb(42, 198, 42);
+	box-shadow: -2px 0 rgba(42, 198, 42, 0.7);
+}
+
+.problem-table-medium-question {
+	color: rgb(220, 220, 0);
+	box-shadow: -2px 0 rgba(190, 190, 0, 0.7);
+}
+
+.problem-table-hard-question {
+	color: rgb(225, 34, 0);
+	box-shadow: -2px 0 rgba(225, 34, 0, 0.7);
+}
+
+.problem-table-id-column-values {
+	text-align: center;
+}
+
+.problem-table-acceptance-column-values {
+	font-family: "Consolas";
+	font-weight: 500;
+	text-align: center;
+}
+
+.purple-btn {
+	height: 2.7rem;
+	width: 23.85rem;
+	border: 1px solid #7950f2;
+	border-radius: 4px;
+	color: #7950f2;
+	background-color: #ffffff;
+	font-size: 15px;
+	font-family: "Segoe UI";
+	font-weight: 500;
+	transition: background-color 0.3s;
+}
+
+.purple-btn:hover {
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #7950f2; /* rgba(121, 80, 242, 1); */
+}
+
+.submission-table {
+	width: 70%;
+	border-collapse: collapse;
+	box-shadow: 0 0 5px rgba(98, 98, 98, 0.3);
+}
+
+.submission-table:hover {
+	box-shadow: 0 0 5px rgba(121, 80, 242, 0.3);
+}
+
+.submission-table thead {
+	border: 1px solid #ddd;
+}
+
+.submission-table thead tr th {
+	padding: 0.5rem;
+	font-weight: 500;
+}
+
+.submission-table tbody tr {
+	cursor: pointer;
+}
+
+.submission-table tbody tr:hover {
+	box-shadow: 0 0 5px rgba(98, 98, 98, 0.3);
+}
+
+.submission-table td {
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+}
+
+.submission-table-easy-question {
+	color: rgb(42, 198, 42);
+	box-shadow: -2px 0 rgba(42, 198, 42, 0.7);
+}
+
+.submission-table-medium-question {
+	color: rgb(220, 220, 0);
+	box-shadow: -2px 0 rgba(190, 190, 0, 0.7);
+}
+
+.submission-table-hard-question {
+	color: rgb(225, 34, 0);
+	box-shadow: -2px 0 rgba(225, 34, 0);
+}
+
+.submission-table-id-column-values {
+	text-align: center;
+}
+
+.submission-table-accepted-cell {
+	box-shadow: 0 0 10px -5px rgba(37, 170, 0, 0.8);
+	border-radius: "4px";
+	color: rgb(37, 170, 0);
+	border: 1px solid rgb(37, 170, 0);
+}
+
+.submission-table-rejected-cell {
+	box-shadow: 0 0 10px -5px rgba(221, 0, 0, 0.8);
+	border-radius: "4px";
+	color: rgb(221, 0, 0);
+	border: 1px solid rgb(221, 0, 0);
+}
