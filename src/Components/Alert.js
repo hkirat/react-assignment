@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Alert({ message, type }) {
+function Alert({ message, type, width = "20.85rem" }) {
 	const [visible, setVisible] = useState(true);
 
 	useEffect(() => {
@@ -16,7 +16,7 @@ function Alert({ message, type }) {
 	}
 
 	let alertStyle = {
-		width: "20.85rem",
+		width: width,
 		boxShadow: `0 0 10px -5px
 			${type === "success"
 				? "rgba(42, 198, 42, 0.8)"

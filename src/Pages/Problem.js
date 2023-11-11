@@ -84,9 +84,9 @@ function Problem() {
 				else {
 					setAlertType("success");
 				}
-				setTimeout(() => {
-					navigate("/submissions");
-				}, "10000");
+				// setTimeout(() => {
+				// 	navigate("/submissions");
+				// }, "4000");
 			} else {
 				setAlertMessage(responseBody.error);
 				setAlertType("danger");
@@ -105,11 +105,8 @@ function Problem() {
 			>
 				<div
 					className="problem-description"
-					// style={{ marginLeft: "2rem" }}
+					style={{ marginTop: "1.4rem", height: "32.5rem", padding: "2.6rem 2.6rem", boxShadow: "0 0 5px rgba(98, 98, 98, 0.3)" }}
 				>
-					<br />
-					<br />
-					<br />
 					<span>{problem.id}</span>.{" "}
 					<span style={{ fontWeight: "500" }}>{problem.title}</span>
 					<p>{problem.description}</p>
@@ -150,17 +147,27 @@ function Problem() {
 				>
 					<div
 						className="problem-code-division-nav-area"
-						style={{ display: "flex", justifyContent: "flex-end" }}
+						style={{ display: "flex", justifyContent: "space-between" }}
 					>
 						<button
 							className="purple-btn"
 							style={{
-								margin: "1rem 0rem",
-								width: "13rem",
+								margin: "1.4rem 0rem 1rem",
+								width: "19.7rem",
 							}}
 							onClick={() => navigate("/problems")}
 						>
-							Go To Problems Page
+							Problems
+						</button>
+						<button
+							className="purple-btn"
+							style={{
+								margin: "1.4rem 0rem 1rem",
+								width: "19.7rem",
+							}}
+							onClick={() => navigate("/submissions")}
+						>
+							Submissions
 						</button>
 					</div>
 					<div className="problem-code-box">
@@ -181,16 +188,16 @@ function Problem() {
 						<button
 							className="purple-btn"
 							style={{
-								margin: "1rem 0rem",
-								width: "13rem",
+								margin: "0.8rem 0rem",
+								width: "40.4rem",
 							}}
 							onClick={() => submit()}
 						>
 							Submit
 						</button>
 						{alertMessage !== "" && (
-							<div style={{ position: "absolute", top: "35rem", right: "9.3rem" }}>
-								<Alert message={alertMessage} type={alertType} />
+							<div style={{ position: "absolute", top: "35rem", right: "7.65rem" }}>
+								<Alert width="30rem" message={alertMessage} type={alertType} />
 							</div>
 						)}
 					</div>
