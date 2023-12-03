@@ -1,17 +1,26 @@
-import React from "react";
+import { useState } from "react";
 import { useTable } from "react-table";
 import { useNavigate } from "react-router-dom";
+import Pagination from "./Pagination";
 
-function ProblemTable({ columns, data }) {
+function ProblemTable({ columns, allData }) {
+	const [currentPage, setCurrentPage] = useState(1);
+	const rowsPerPage = 3;
+	const firstIndex = (currentPage - 1) * rowsPerPage;
+	const lastIndex = firstIndex + rowsPerPage - 1;
+	const numPages = Math.ceil(allData.length / rowsPerPage);
+	const data = allData.slice(firstIndex, lastIndex + 1);
+
 	const navigate = useNavigate();
-
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 		useTable({
 			columns,
 			data,
 		});
+
 	return (
-		<table className="problem-table" {...getTableProps()}>
+		<>
+			<table className="problem-table" {...getTableProps()}>
 			<thead>
 				{headerGroups.map((headerGroup) => (
 					<tr {...headerGroup.getHeaderGroupProps()}>
@@ -28,7 +37,9 @@ function ProblemTable({ columns, data }) {
 					prepareRow(row);
 					return (
 						<tr
-							onClick={() => { navigate("/problems/" + row.cells[0].value) }}
+							onClick={() => {
+								navigate("/problems/" + row.cells[0].value);
+							}}
 							{...row.getRowProps()}
 						>
 							{row.cells.map((cell) => {
@@ -45,7 +56,7 @@ function ProblemTable({ columns, data }) {
 								className += String(cellValue).includes("%")
 									? " problem-table-acceptance-column-values"
 									: "";
-								
+
 								className += Number.isInteger(cellValue)
 									? " problem-table-id-column-values"
 									: "";
@@ -61,6 +72,13 @@ function ProblemTable({ columns, data }) {
 				})}
 			</tbody>
 		</table>
+
+		<Pagination
+			numPages={numPages}
+			currentPage={currentPage}
+			setCurrentPage={setCurrentPage}
+		/>
+		</>
 	);
 }
 

@@ -46,6 +46,7 @@ function Submissions() {
 					setLoading(false);
 				} else {
 					setData([]);
+					setLoading(true);
 					console.log(responseBody.error);
 				}
 			} catch (error) {
@@ -78,7 +79,7 @@ function Submissions() {
 							...
 						</span>
 					) : data.length > 0 ? (
-						<SubmissionTable columns={columns} data={data} />
+						<SubmissionTable columns={columns} allData={data} />
 					) : (
 						<div
 							style={{

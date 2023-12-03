@@ -110,6 +110,50 @@ body {
 	color: #aaaaaa;
 }
 
+.pagination-array {
+	display: "flex";
+	justify-content: space-around;
+}
+
+.pagination-item,
+.pagination-item:active,
+.pagination-item-active,
+.pagination-item:hover,
+.pagination-item-first,
+.pagination-item-last {
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	font-family: "Segoe UI";
+	text-align: center;
+	padding: 0.2rem 0.6rem;
+	margin: 0.8rem 0.4rem;
+}
+
+.pagination-item-first,
+.pagination-item-last {
+	color: #7950f2;
+	border: 1px solid #7950f2;
+}
+
+.pagination-item:hover {
+	background-color: #eee;
+}
+
+.pagination-item:active,
+.pagination-item-active,
+.pagination-item-first:active,
+.pagination-item-last:active,
+.pagination-item-first:hover,
+.pagination-item-last:hover {
+	border: 1px solid #7950f2;
+	background-color: #7950f2;
+	color: #fff;
+	outline: none;
+}
+
 .problem-table {
 	width: 70%;
 	border-collapse: collapse;

@@ -43,6 +43,7 @@ function Problems() {
 					setLoading(false);
 				} else {
 					setData([]);
+					setLoading(true);
 					console.log(responseBody.error);
 				}
 			} catch (error) {
@@ -71,8 +72,23 @@ function Problems() {
 				<>
 					{loading ? (
 						<span style={{ fontFamily: "Consolas" }}>Loading...</span>
+					) : data.length > 0 ? (
+						<ProblemTable columns={columns} allData={data} />
 					) : (
-						<ProblemTable columns={columns} data={data} />
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								justifyItems: "center",
+								alignItems: "center",
+								marginTop: "5rem",
+								fontFamily: "Consolas",
+							}}
+						>
+							<h2>
+								Problems Are Being Added.
+							</h2>
+						</div>
 					)}
 				</>
 			) : (
