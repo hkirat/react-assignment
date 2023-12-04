@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function PaginationInitializer(tableData) {
 	const totalRows = tableData.length;
 	const rowsPerPageMultiple = 2;
-	const maxPaginationPages = 3;
+	const [maxPaginationPages, setMaxPaginationPages] = useState(3);
 	const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageMultiple);
 	const [currentPage, setCurrentPage] = useState(1);
 	const numPages = Math.ceil(totalRows / rowsPerPage);
@@ -16,6 +16,7 @@ export default function PaginationInitializer(tableData) {
 		totalRows,
 		rowsPerPageMultiple,
 		maxPaginationPages,
+		setMaxPaginationPages,
 		rowsPerPage,
 		setRowsPerPage,
 		currentPage,

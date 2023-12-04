@@ -1,8 +1,9 @@
 function Pagination({
 	totalRows,
 	rowsPerPageMultiple,
-	rowsPerPage,
 	maxPaginationPages,
+	setMaxPaginationPages,
+	rowsPerPage,
 	setRowsPerPage,
 	currentPage,
 	setCurrentPage,
@@ -72,32 +73,44 @@ function Pagination({
 		if (num !== "...") setCurrentPage(num);
 	}
 
-	const handleDropdownChange = (event) => {
+	const handleRowsPerPage = (event) => {
 		setRowsPerPage(Number(event.target.value));
+		setMaxPaginationPages(Math.ceil(numPages / Number(event.target.value)));
 		firstPage();
 	};
 
-	let numRowsDropdownArray = [];
+	let rowsPerPageArray = [];
 	for (let i = rowsPerPageMultiple; i <= totalRows; i += rowsPerPageMultiple) {
-		numRowsDropdownArray.push(i);
+		rowsPerPageArray.push(i);
 		if (i + rowsPerPageMultiple > totalRows)
-			numRowsDropdownArray.push(totalRows);
+			rowsPerPageArray.push(totalRows);
+	}
+
+	const handleMaxPaginationPages = (event) => {
+		setMaxPaginationPages(Number(event.target.value));
+		firstPage();
+	};
+
+	let maxPaginationPagesArray = [];
+	for (let i = 1; i <= numPages; i++) {
+		maxPaginationPagesArray.push(i);
 	}
 
 	return (
 		<div className="pagination-items">
 			<select
 				className="pagination-item"
-				id="dropdown"
+				id="rowsPerPage"
 				value={rowsPerPage}
-				onChange={handleDropdownChange}
+				onChange={handleRowsPerPage}
 			>
-				{numRowsDropdownArray.map((num, idx) => (
+				{rowsPerPageArray.map((num, idx) => (
 					<option value={num} key={idx}>
 						Rows - {num}
 					</option>
 				))}
 			</select>
+
 			{!paginationPageNumberArray.includes(1) && (
 				<button
 					className="pagination-item pagination-item-first"
@@ -106,9 +119,14 @@ function Pagination({
 					First
 				</button>
 			)}
-			<button className="pagination-item" onClick={prevPage}>
-				Prev
-			</button>
+
+			{
+				numPages > 1 &&
+				<button className="pagination-item" onClick={prevPage}>
+					Prev
+				</button>
+			}
+
 			{paginationPageNumberArray.map((num, idx) => (
 				<button
 					className={`pagination-item pagination-item${
@@ -120,9 +138,14 @@ function Pagination({
 					{num}
 				</button>
 			))}
-			<button className="pagination-item" onClick={nextPage}>
-				Next
-			</button>
+
+			{
+				numPages > 1 &&
+				<button className="pagination-item" onClick={nextPage}>
+					Next
+				</button>
+			}
+
 			{!paginationPageNumberArray.includes(numPages) && (
 				<button
 					className="pagination-item pagination-item-last"
@@ -131,6 +154,19 @@ function Pagination({
 					Last
 				</button>
 			)}
+
+			<select
+				className="pagination-item"
+				id="maxPaginationPages"
+				value={maxPaginationPages}
+				onChange={handleMaxPaginationPages}
+			>
+				{maxPaginationPagesArray.map((num, idx) => (
+					<option value={num} key={idx}>
+						Pages - {num}
+					</option>
+				))}
+			</select>
 		</div>
 	);
 }

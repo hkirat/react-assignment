@@ -76,6 +76,7 @@ function SubmissionTable({ columns, tableData }) {
 				totalRows={paginationVariables.totalRows}
 				rowsPerPageMultiple={paginationVariables.rowsPerPageMultiple}
 				maxPaginationPages={paginationVariables.maxPaginationPages}
+				setMaxPaginationPages={paginationVariables.setMaxPaginationPages}
 				rowsPerPage={paginationVariables.rowsPerPage}
 				setRowsPerPage={paginationVariables.setRowsPerPage}
 				currentPage={paginationVariables.currentPage}
