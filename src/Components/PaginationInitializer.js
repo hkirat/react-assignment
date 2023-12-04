@@ -22,6 +22,6 @@ export default function PaginationInitializer(tableData) {
 		setCurrentPage,
 		numPages,
 		paginatedData,
-		paginationPageNumberArray
+		paginationPageNumberArray,
 	};
 }

@@ -1,5 +1,3 @@
-// import { useState } from "react";
-
 function Pagination({
 	totalRows,
 	rowsPerPageMultiple,
@@ -45,13 +43,11 @@ function Pagination({
 
 		// Show ellipses at the beginning if necessary
 		if (startPage > 1) {
-			// paginationPageNumberArray = [1, "...", ...paginationPageNumberArray];
 			paginationPageNumberArray = ["...", ...paginationPageNumberArray];
 		}
 
 		// Show ellipses at the end if necessary
 		if (endPage < numPages) {
-			// paginationPageNumberArray = [...paginationPageNumberArray, "...", numPages];
 			paginationPageNumberArray = [...paginationPageNumberArray, "..."];
 		}
 	}

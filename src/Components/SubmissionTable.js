@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useTable } from "react-table";
 import { useNavigate } from "react-router-dom";
 import PaginationInitializer from "./PaginationInitializer";

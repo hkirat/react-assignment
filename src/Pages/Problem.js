@@ -196,7 +196,7 @@ function Problem() {
 							Submit
 						</button>
 						{alertMessage !== "" && (
-							<div style={{ position: "absolute", top: "35rem", right: "7.65rem" }}>
+							<div style={{ position: "absolute", top: "35rem", right: "6rem" }}>
 								<Alert width="30rem" message={alertMessage} type={alertType} />
 							</div>
 						)}
