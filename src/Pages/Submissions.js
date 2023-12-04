@@ -79,7 +79,7 @@ function Submissions() {
 							...
 						</span>
 					) : data.length > 0 ? (
-						<SubmissionTable columns={columns} allData={data} />
+						<SubmissionTable columns={columns} tableData={data} />
 					) : (
 						<div
 							style={{

@@ -1,16 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useTable } from "react-table";
 import { useNavigate } from "react-router-dom";
+import PaginationInitializer from "./PaginationInitializer";
 import Pagination from "./Pagination";
 
-function SubmissionTable({ columns, allData }) {
-	const [currentPage, setCurrentPage] = useState(1);
-	const rowsPerPage = 3;
-	const firstIndex = (currentPage - 1) * rowsPerPage;
-	const lastIndex = firstIndex + rowsPerPage - 1;
-	const numPages = Math.ceil(allData.length / rowsPerPage);
-	const data = allData.slice(firstIndex, lastIndex + 1);
-
+function SubmissionTable({ columns, tableData }) {
+	const paginationVariables = PaginationInitializer(tableData);
+	const data = paginationVariables.paginatedData;
 	const navigate = useNavigate();
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 		useTable({
@@ -78,9 +74,15 @@ function SubmissionTable({ columns, allData }) {
 			</table>
 			
 			<Pagination
-				numPages={numPages}
-				currentPage={currentPage}
-				setCurrentPage={setCurrentPage}
+				totalRows={paginationVariables.totalRows}
+				rowsPerPageMultiple={paginationVariables.rowsPerPageMultiple}
+				maxPaginationPages={paginationVariables.maxPaginationPages}
+				rowsPerPage={paginationVariables.rowsPerPage}
+				setRowsPerPage={paginationVariables.setRowsPerPage}
+				currentPage={paginationVariables.currentPage}
+				setCurrentPage={paginationVariables.setCurrentPage}
+				numPages={paginationVariables.numPages}
+				paginationPageNumberArray={paginationVariables.paginationPageNumberArray}
 			/>
 		</>
 	);

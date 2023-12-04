@@ -73,7 +73,7 @@ function Problems() {
 					{loading ? (
 						<span style={{ fontFamily: "Consolas" }}>Loading...</span>
 					) : data.length > 0 ? (
-						<ProblemTable columns={columns} allData={data} />
+						<ProblemTable columns={columns} tableData={data} />
 					) : (
 						<div
 							style={{

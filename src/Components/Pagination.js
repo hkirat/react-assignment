@@ -4,24 +4,22 @@ function Pagination({
 	totalRows,
 	rowsPerPageMultiple,
 	rowsPerPage,
+	maxPaginationPages,
 	setRowsPerPage,
 	currentPage,
 	setCurrentPage,
+	numPages,
+	paginationPageNumberArray
 }) {
-	let paginationArray = [];
-	const numPages = Math.ceil(totalRows / rowsPerPage);
-	const maxPaginationPages = 3;
-	let startPage, endPage;
-
 	if (numPages <= maxPaginationPages) {
 		// Show all pages if there are fewer pages than maxPaginationPages
-		paginationArray = Array.from({ length: numPages }, (_, i) => i + 1);
+		paginationPageNumberArray = Array.from({ length: numPages }, (_, i) => i + 1);
 	} else {
 		// Determine the range of pages to show based on the current page
 		// Make sure startPage is greater than or equal to 1 at all times,
 		// and that the currentPage is in the center of the array by using maxPaginationPages / 2
-		startPage = Math.max(1, currentPage - Math.floor(maxPaginationPages / 2));
-		endPage = Math.min(numPages, startPage + maxPaginationPages - 1);
+		let startPage = Math.max(1, currentPage - Math.floor(maxPaginationPages / 2));
+		let endPage = Math.min(numPages, startPage + maxPaginationPages - 1);
 
 		// Adjust the startPage if it's too close to the end
 		// For ex: if maxPaginationPages is 5, numPages is 11 and the currentPage is 11,
@@ -34,21 +32,21 @@ function Pagination({
 		startPage = Math.max(1, endPage - maxPaginationPages + 1);
 
 		// Generate the pagination array
-		paginationArray = Array.from(
+		paginationPageNumberArray = Array.from(
 			{ length: endPage - startPage + 1 },
 			(_, i) => startPage + i
 		);
 
 		// Show ellipses at the beginning if necessary
 		if (startPage > 1) {
-			// paginationArray = [1, "...", ...paginationArray];
-			paginationArray = ["...", ...paginationArray];
+			// paginationPageNumberArray = [1, "...", ...paginationPageNumberArray];
+			paginationPageNumberArray = ["...", ...paginationPageNumberArray];
 		}
 
 		// Show ellipses at the end if necessary
 		if (endPage < numPages) {
-			// paginationArray = [...paginationArray, "...", numPages];
-			paginationArray = [...paginationArray, "..."];
+			// paginationPageNumberArray = [...paginationPageNumberArray, "...", numPages];
+			paginationPageNumberArray = [...paginationPageNumberArray, "..."];
 		}
 	}
 
@@ -99,7 +97,7 @@ function Pagination({
 					</option>
 				))}
 			</select>
-			{!paginationArray.includes(1) && (
+			{!paginationPageNumberArray.includes(1) && (
 				<button className="pagination-item pagination-item-first" onClick={firstPage}>
 					First
 				</button>
@@ -107,7 +105,7 @@ function Pagination({
 			<button className="pagination-item" onClick={prevPage}>
 				Prev
 			</button>
-			{paginationArray.map((num, idx) => (
+			{paginationPageNumberArray.map((num, idx) => (
 				<button
 					className={`pagination-item pagination-item${
 						currentPage === num ? "-active" : ""
@@ -121,7 +119,7 @@ function Pagination({
 			<button className="pagination-item" onClick={nextPage}>
 				Next
 			</button>
-			{!paginationArray.includes(numPages) && (
+			{!paginationPageNumberArray.includes(numPages) && (
 				<button className="pagination-item pagination-item-last" onClick={lastPage}>
 					Last
 				</button>
