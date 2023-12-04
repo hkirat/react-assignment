@@ -1,16 +1,36 @@
-function Pagination({ numPages, currentPage, setCurrentPage }) {
+// import { useState } from "react";
+
+function Pagination({
+	totalRows,
+	rowsPerPageMultiple,
+	rowsPerPage,
+	setRowsPerPage,
+	currentPage,
+	setCurrentPage,
+}) {
 	let paginationArray = [];
-	const maxPaginationPages = 3; // Adjust this value based on your preference
+	const numPages = Math.ceil(totalRows / rowsPerPage);
+	const maxPaginationPages = 3;
+	let startPage, endPage;
 
 	if (numPages <= maxPaginationPages) {
 		// Show all pages if there are fewer pages than maxPaginationPages
 		paginationArray = Array.from({ length: numPages }, (_, i) => i + 1);
 	} else {
 		// Determine the range of pages to show based on the current page
-		let startPage = Math.max(1, currentPage - Math.floor(maxPaginationPages / 2));
-		let endPage = Math.min(numPages, startPage + maxPaginationPages - 1);
+		// Make sure startPage is greater than or equal to 1 at all times,
+		// and that the currentPage is in the center of the array by using maxPaginationPages / 2
+		startPage = Math.max(1, currentPage - Math.floor(maxPaginationPages / 2));
+		endPage = Math.min(numPages, startPage + maxPaginationPages - 1);
 
 		// Adjust the startPage if it's too close to the end
+		// For ex: if maxPaginationPages is 5, numPages is 11 and the currentPage is 11,
+		// based on the above calculations, startPage will be 9, considering that the
+		// currentPage will have 2 numbers to its left and right. But this time, its right
+		// cannot allow for 2 more pages (as it's the last page), so to account for this,
+		// we'll have to set the startPage to 7 [7, 8, 9, 10, 11] instead of 9 [9, 10, 11].
+		// Similarly, if currentPage is 10, the startPage will be 8 [8, 9, 10, 11], again we'll
+		// have to set it to 7 [7, 8, 9, 10, 11]
 		startPage = Math.max(1, endPage - maxPaginationPages + 1);
 
 		// Generate the pagination array
@@ -52,20 +72,44 @@ function Pagination({ numPages, currentPage, setCurrentPage }) {
 		if (num !== "...") setCurrentPage(num);
 	}
 
+	const handleDropdownChange = (event) => {
+		setRowsPerPage(Number(event.target.value));
+		firstPage();
+	};
+
+	// const dropdownArray = Array.from(Array(totalRows).keys()).map(num => num + 1);
+	let dropdownArray = [];
+	for (let i = rowsPerPageMultiple; i <= totalRows; i += rowsPerPageMultiple) {
+		dropdownArray.push(i);
+		if (i + rowsPerPageMultiple > totalRows)
+			dropdownArray.push(totalRows);
+	}
+
 	return (
 		<div className="pagination-array">
-			{
-				!paginationArray.includes(1) &&
-				<button className="pagination-item-first" onClick={firstPage}>
+			<select
+				className="pagination-item"
+				id="dropdown"
+				value={rowsPerPage}
+				onChange={handleDropdownChange}
+			>
+				{dropdownArray.map((num, idx) => (
+					<option value={num} key={idx}>
+						Rows - {num}
+					</option>
+				))}
+			</select>
+			{!paginationArray.includes(1) && (
+				<button className="pagination-item pagination-item-first" onClick={firstPage}>
 					First
 				</button>
-			}
+			)}
 			<button className="pagination-item" onClick={prevPage}>
 				Prev
 			</button>
 			{paginationArray.map((num, idx) => (
 				<button
-					className={`pagination-item${
+					className={`pagination-item pagination-item${
 						currentPage === num ? "-active" : ""
 					}`}
 					key={idx}
@@ -77,12 +121,11 @@ function Pagination({ numPages, currentPage, setCurrentPage }) {
 			<button className="pagination-item" onClick={nextPage}>
 				Next
 			</button>
-			{
-				!paginationArray.includes(numPages) &&
-				<button className="pagination-item-last" onClick={lastPage}>
+			{!paginationArray.includes(numPages) && (
+				<button className="pagination-item pagination-item-last" onClick={lastPage}>
 					Last
 				</button>
-			}
+			)}
 		</div>
 	);
 }

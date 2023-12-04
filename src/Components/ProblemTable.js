@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Pagination from "./Pagination";
 
 function ProblemTable({ columns, allData }) {
+	const totalRows = allData.length;
+	const rowsPerPageMultiple = Math.ceil(totalRows / 4);
+	const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageMultiple);
 	const [currentPage, setCurrentPage] = useState(1);
-	const rowsPerPage = 3;
 	const firstIndex = (currentPage - 1) * rowsPerPage;
 	const lastIndex = firstIndex + rowsPerPage - 1;
-	const numPages = Math.ceil(allData.length / rowsPerPage);
 	const data = allData.slice(firstIndex, lastIndex + 1);
 
 	const navigate = useNavigate();
@@ -74,7 +75,10 @@ function ProblemTable({ columns, allData }) {
 		</table>
 
 		<Pagination
-			numPages={numPages}
+			totalRows={totalRows}
+			rowsPerPageMultiple={rowsPerPageMultiple}
+			rowsPerPage={rowsPerPage}
+			setRowsPerPage={setRowsPerPage}
 			currentPage={currentPage}
 			setCurrentPage={setCurrentPage}
 		/>

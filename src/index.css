@@ -115,12 +115,8 @@ body {
 	justify-content: space-around;
 }
 
-.pagination-item,
-.pagination-item:active,
-.pagination-item-active,
-.pagination-item:hover,
-.pagination-item-first,
-.pagination-item-last {
+.pagination-item {
+	outline: none;
 	cursor: pointer;
 	background-color: #fff;
 	border: 1px solid #ccc;
@@ -142,8 +138,8 @@ body {
 	background-color: #eee;
 }
 
-.pagination-item:active,
 .pagination-item-active,
+.pagination-item-active:hover,
 .pagination-item-first:active,
 .pagination-item-last:active,
 .pagination-item-first:hover,
@@ -151,7 +147,6 @@ body {
 	border: 1px solid #7950f2;
 	background-color: #7950f2;
 	color: #fff;
-	outline: none;
 }
 
 .problem-table {
