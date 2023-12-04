@@ -9,16 +9,22 @@ function Pagination({
 	currentPage,
 	setCurrentPage,
 	numPages,
-	paginationPageNumberArray
+	paginationPageNumberArray,
 }) {
 	if (numPages <= maxPaginationPages) {
 		// Show all pages if there are fewer pages than maxPaginationPages
-		paginationPageNumberArray = Array.from({ length: numPages }, (_, i) => i + 1);
+		paginationPageNumberArray = Array.from(
+			{ length: numPages },
+			(_, i) => i + 1
+		);
 	} else {
 		// Determine the range of pages to show based on the current page
 		// Make sure startPage is greater than or equal to 1 at all times,
 		// and that the currentPage is in the center of the array by using maxPaginationPages / 2
-		let startPage = Math.max(1, currentPage - Math.floor(maxPaginationPages / 2));
+		let startPage = Math.max(
+			1,
+			currentPage - Math.floor(maxPaginationPages / 2)
+		);
 		let endPage = Math.min(numPages, startPage + maxPaginationPages - 1);
 
 		// Adjust the startPage if it's too close to the end
@@ -75,30 +81,32 @@ function Pagination({
 		firstPage();
 	};
 
-	// const dropdownArray = Array.from(Array(totalRows).keys()).map(num => num + 1);
-	let dropdownArray = [];
+	let numRowsDropdownArray = [];
 	for (let i = rowsPerPageMultiple; i <= totalRows; i += rowsPerPageMultiple) {
-		dropdownArray.push(i);
+		numRowsDropdownArray.push(i);
 		if (i + rowsPerPageMultiple > totalRows)
-			dropdownArray.push(totalRows);
+			numRowsDropdownArray.push(totalRows);
 	}
 
 	return (
-		<div className="pagination-array">
+		<div className="pagination-items">
 			<select
 				className="pagination-item"
 				id="dropdown"
 				value={rowsPerPage}
 				onChange={handleDropdownChange}
 			>
-				{dropdownArray.map((num, idx) => (
+				{numRowsDropdownArray.map((num, idx) => (
 					<option value={num} key={idx}>
 						Rows - {num}
 					</option>
 				))}
 			</select>
 			{!paginationPageNumberArray.includes(1) && (
-				<button className="pagination-item pagination-item-first" onClick={firstPage}>
+				<button
+					className="pagination-item pagination-item-first"
+					onClick={firstPage}
+				>
 					First
 				</button>
 			)}
@@ -120,7 +128,10 @@ function Pagination({
 				Next
 			</button>
 			{!paginationPageNumberArray.includes(numPages) && (
-				<button className="pagination-item pagination-item-last" onClick={lastPage}>
+				<button
+					className="pagination-item pagination-item-last"
+					onClick={lastPage}
+				>
 					Last
 				</button>
 			)}

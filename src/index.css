@@ -110,7 +110,7 @@ body {
 	color: #aaaaaa;
 }
 
-.pagination-array {
+.pagination-items {
 	display: "flex";
 	justify-content: space-around;
 }
