@@ -1,0 +1,127 @@
+body {
+    /* text-align: center; */
+}
+
+
+/*----------------Home page styles----------------*/
+
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: solid; */
+}
+
+.home-container-items {
+    padding: 150px;
+    border: solid;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.home-container-items .link-container * {
+    margin: 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.home-container-items h1 {
+    margin-bottom: 30px;
+}
+
+/*----------------login page styles----------------*/
+
+.login-container,
+.signup-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: solid; */
+}
+
+.login-container .login-form,
+.signup-container .signup-form {
+    padding: 150px;
+    /* align-items: center; */
+    border: solid;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.login-form *,
+.signup-form * {
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.login-form h1,
+.signup-form h1 {
+    margin-bottom: 40px;
+}
+
+/*----------------signup page styles----------------*/
+
+
+
+
+/*----------------All problems page styles----------------*/
+
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    padding: 40px;
+    border: dashed;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.summary-container table * {
+    padding: 5px;
+}
+
+.pagination {
+    margin-top: 30px;
+}
+
+
+
+/*----------------single problem page styles----------------*/
+.page-container {
+    background-color: rgb(234, 234, 234);
+    display: flex;
+    border: solid;
+    border-radius: 25px;
+}
+
+.desc-container {
+    height: 500px;
+    width: 600px;
+    flex-direction: column;
+    margin: 20px;
+    padding: 50px
+}
+
+.code-editor {
+    flex-direction: column;
+    border: dotted;
+    /* border-radius: 50px; */
+    margin: 20px;
+    padding: 50px
+}
+
+.code-editor form * {
+    margin: 20px;
+}
+
+.code-editor select {
+    padding: 10px;
+    margin-left: 0px;
+}
