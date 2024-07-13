@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(31, 30, 30);
+    color: whitesmoke;
+}
+
+.easy {
+    color: green;
+}
+
+.medium {
+    color: rgb(255, 174, 0);
+}
+
+.hard {
+    color: red;
+}
+
+table th,
+table td {
+    padding: 0.75rem 2rem;
+    vertical-align: middle;
+}
+
+.centre {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+    width: 90%;
+}
